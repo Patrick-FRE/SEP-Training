@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./master.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="POST">
+            <h1>Sign Up</h1>
+            <section id="user_input-section">
+                <div id="user_name-section">
+                    <label for="first_name">
+                        <input type="text" id="first_name" placeholder="First Name">
+                    </label>
+                    <label for="last_name">
+                        <input type="text" id='last_name' placeholder="Last Name">
+                    </label>
+                </div>
+                <label for="phone_number">
+                    <input type="number" id='phone_number' placeholder="Mobile No.">
+                </label>
+                <label for="email">
+                    <input type="email" id='email' placeholder="Email Address">
+                </label>
+                <div id="user_password-section">
+                    <label for="password">
+                        <input type="password" id='password' placeholder="Password">
+                    </label>
+                    <label for="password_confirm">
+                        <input type="password" id='password_confirm' placeholder="Confirm Password">
+                    </label>
+                </div>
+            </section>
+            <div id='agreement-section'>
+                <span>
+                    <span> <input type="checkbox">I Agree</span>
+
+                    <p>
+                        By clicking <span>Register</span>, you agree to the <a href="#">Terms and Conditions</a> set
+                        out
+                        by this
+                        site,
+                        including our Cookie Use.
+                    </p>
+                </span>
+            </div>
+            <div id="btn-section">
+                <button id='register-btn'>Register</button>
+                <button id='signIn-btn'>Sign In</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
