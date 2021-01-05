@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card--container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.card--container .card__front,
+.card--container .card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+.card--container .card__back {
+    background-color: black;
+    transform: rotateX(180deg);
+}
+.card--container .card__back::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.card--container .card__back .card__info {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+}
+.card--container .card__back .card__info h2 {
+    font-size: 24px;
+    color: white;
+}
+.card--container .card__back .card__info h2 span {
+    font-size: 16px;
+    color: silver;
+}
+
+.card--container .card__back .card__info .card__social_icons {
+    padding: 10px 0;
+}
+.card--container .card__back .card__info .card__social_icons a {
+    display: inline-block;
+    margin: 0 5px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    background: #262626;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: 0.5s;
+    font-size: 16px;
+}
+.card--container .card__back .card__info .card__social_icons a:hover {
+    background: red;
+    font-size: 20px;
+}
+
+.card--container:hover .card__front {
+    transform: rotateX(-180deg);
+}
+.card--container:hover .card__back {
+    transform: rotateX(0deg);
+}
+
+.card--container .card__front img,
+.card--container .card__back img {
+    width: 100%;
+    height: 100%;
+}

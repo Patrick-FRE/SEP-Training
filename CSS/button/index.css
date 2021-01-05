@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: black;
+}
+
+.button--container {
+    padding-top: 50px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+a {
+    position: relative;
+    color: rgba(8, 230, 63, 0.918);
+    display: inline-block;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 4px;
+    padding: 15px 30px;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, black);
+}
+a span {
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(8, 230, 63, 0.918));
+    animation: anim 2s linear infinite;
+}
+@keyframes anim {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+a span:nth-child(2) {
+    right: 0;
+    top: -100%;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg, transparent, rgba(8, 230, 63, 0.918));
+    animation: anim2 2s linear infinite;
+    animation-delay: 0.5s;
+}
+@keyframes anim2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(270deg, transparent, rgba(8, 230, 63, 0.918));
+    animation: anim3 2s linear infinite;
+    animation-delay: 1s;
+}
+@keyframes anim3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+a span:nth-child(4) {
+    left: 0;
+    bottom: -100%;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(360deg, transparent, rgba(8, 230, 63, 0.918));
+    animation: anim4 2s linear infinite;
+    animation-delay: 1.5s;
+}
+@keyframes anim4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+a:hover {
+    color: black;
+    background: rgba(8, 230, 63, 0.918);
+    box-shadow: 0 0 10px rgba(8, 230, 63, 0.918),
+        0 0 20px rgba(8, 230, 63, 0.918), 0 0 40px rgba(8, 230, 63, 0.918);
+}
+
+hr {
+    height: 5px;
+    border: 0;
+    background: linear-gradient(235deg, rgb(43, 255, 0), rgb(0, 255, 191));
+    animation: animate1 5s linear infinite;
+}
+@keyframes animate1 {
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(360deg);
+    }
+}
