@@ -1,0 +1,51 @@
+.container input{
+    height: 30px;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.container{
+    margin: auto;
+    text-align: left;
+    width: 375px;
+}
+
+.multi input:nth-child(1){
+    float: right;
+}
+
+.single{
+    width: 357px;
+}
+
+.details{
+    width: 300px;
+    float:right;
+}
+
+.register{
+    background-color: blue;
+    color: white;
+    border-radius: 3px;
+    padding: 2px;
+}
+
+.big-btn{
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.left-btn{
+    width: 180px;
+    height: 40px;
+    background-color: blue;
+    color: white;
+}
+
+.right-btn{
+    width: 180px;
+    height: 40px;
+    float: right;
+    background-color:green;
+    color: white;
+}
