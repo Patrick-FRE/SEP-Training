@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width: 500px;
+}
+
+.signup,
+.top-row,
+.sec-row,
+.thrd-row,
+.bot-row,
+.check-row,
+.button-row {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+.signup {
+  font-size: x-large;
+  font-family: Arial;
+  font-weight: bold;
+}
