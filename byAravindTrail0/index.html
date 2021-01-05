@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trail 0 by Aravind</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Sign Up Form</title>
 </head>
 <body>
-    <h1>This page is from Aravind</h1>
+    <div class="container">
+        <h1 class="Heading">Sign Up</h1>
+        <div class="DivSignUp"> 
+            <form class="form-group">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input class="form-control" name="firstName" type="text" placeholder="First Name"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <input class="form-control" name="lastName" type="text" placeholder="Last Name"/>
+                    </div>
+                </div>
+                <input class="form-control" id="mobileNo" type="text" placeholder="Mobile Number"/>
+                <input class="form-control" id="eMail" type="text" placeholder="Email Address"/>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input class="form-control" name="pass" type="password" placeholder="Password"/>
+                    </div>
+                    <div class="col-lg-6">
+                        <input class="form-control" name="cPass" type="password" placeholder="Confirm Password"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <input class="col-lg-1" type="checkbox"><span class="col-lg-2" id="agreeTxt"> I Agree </span></Input>
+                    <p class="col-lg-9">By clicking <button class="btn btn-primary btn-xs">Register</button>, you agree to the <a href="#">Terms and Conditions</a> set
+                    out by this site, including our Cookie Use.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary btn-block" type="submit">Register</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button class="btn btn-success btn-block" type="submit">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
