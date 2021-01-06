@@ -31,3 +31,50 @@ body {
   font-family: Arial;
   font-weight: bold;
 }
+
+input[type=text] {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  font-size: 16px;
+  width:48%;
+  height:30px;
+  margin-right:1%;
+  margin-left:1%;
+  text-indent:5px;
+}
+
+input[type=text]:focus {
+  outline: none !important;
+  border: 1px solid #1037cf;
+  box-shadow: 0 0 10px #719ECE;
+}
+
+#phone, #email {
+  width:100%;
+}
+
+#reg, #signin {
+  width: 46%;
+  height: 35px;
+  margin-right: 2%;
+  margin-left: 2%;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  font-size:medium;
+  font-weight:bold;
+  color:#ffffff;
+}
+a {
+  text-decoration: none;
+}
+#reg {
+  background-color:#2a47b9;
+}
+#signin {
+  background-color:#137e0b
+}
+#reg-color {
+  background-color: #2a47b9;
+  border-radius: 4px;
+  color: #ffffff;
+}
