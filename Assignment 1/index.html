@@ -11,7 +11,7 @@
 
   <style>
     .body{
-      max-width:25rem;
+      width:25rem;
       margin: auto;
     }
 
@@ -19,54 +19,76 @@
       text-align: center;
     }
 
+    .row{
+      margin-top: 10px;
+    }
+
+    .nopadding-R {
+      padding-right: 0;
+    }
+
+    .nopadding-L {
+      padding-left: 0;
+    }
 
   </style>
 
   <body>
-    <main class='body'>
-      <h2 class="display-6 text-center">Sign Up</h2>
-      <form>
-        <div class='row form-group' >
-          <div class='col-md-6'>
-            <input  class='form-control' type="text" id="fname" placeholder='First Name'>
-          </div>
+    <main>
+      <div class='container'>
+        <h2 class="display-6 text-center">Sign Up</h2>
+        <div class='body'>
+          <form class='form-group'>
 
-          <div class='col-md-6'>
-            <input  class='form-control' type="text" id="lname" placeholder='Last Name'>
-          </div>
-          
-        </div>
+            <div class='row' >
 
-        <div class='row form-group' >
-          <input class='col-md-12 form-control' type="tel" id="mobileNo" placeholder='Mobile No.'>
-        </div>
+              <div class='col-md-6 nopadding-L'>
+                <input  class='form-control' type="text" id="fname" placeholder='First Name'>
+              </div>
+      
+              <div class='col-md-6 nopadding-R'>
+                <input  class='form-control' type="text" id="lname" placeholder='Last Name'>
+              </div>
+                
+            </div>
+            
+    
+            <div class='row' >
+              <input class='col-md-12 form-control' type="tel" id="mobileNo" placeholder='Mobile No.'>
+            </div>
+    
+            <div class='row' >
+              <input class='col-md-12 form-control' type="email" id="email" placeholder='Email Address'>
+            </div>
+    
+            <div class='row' >
+              <input class='col-md-12 form-control'  type="password" id="password" placeholder='Password'>
+            </div>
 
-        <div class='row form-group' >
-          <input class='col-md-12 form-control' type="email" id="email" placeholder='Email Address'>
-        </div>
+            <div class='row' >
+              <input class='col-md-12 form-control'   type="password" id="comfirmPassword" placeholder='Comfirm Password'>
+            </div>
 
-        <div class='row form-group' >
-          <input class='col-md-12 form-control'  type="password" id="password" placeholder='Password'>
+            <div class='row' >
+              <p class='col-md-3'><input type="checkbox" id="concentBox"><span>I agree</span></p>
+              <p class='col-md-9'>
+                By clicking <button type="button" class="btn btn-primary" id="registerBtn" disabled>Register</button>, you agree to the 
+                <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
+                including our Cookie Use.
+              </p>
+            </div>
+
+            <div class='row'>
+              <button type="button" class="btn btn-primary col-md-6" id="registerBtn">Register</button>
+              <button type="button" class="btn btn-success col-md-6" id="signInBtn">Sign in</button>
+            </div>
+          </form>
         </div>
-        <div class='row form-group' >
-          <input class='col-md-12 form-control'   type="password" id="comfirmPassword" placeholder='Comfirm Password'>
-        </div>
-        <div class='row form-group' >
-          <p class='col-md-3'><input type="checkbox" id="concentBox"><span>I agree</span></p>
-          <p class='col-md-9'>
-            By clicking <button type="button" class="btn btn-primary" id="registerBtn" disabled>Register</button>, you agree to the 
-            <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
-            including our Cookie Use.
-          </p>
-         </div>
-        <div>
-          <div class='row'>
-            <button type="button" class="btn btn-primary col-md-6" id="registerBtn">Register</button>
-            <button type="button" class="btn btn-success col-md-6" id="signInBtn">Sign in</button>
-          </div>
-        </div>
-      </form>
-    </main>      
+      </div>
+      
+      
+    </main> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>     
   </body>
 
 </html>
