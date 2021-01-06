@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     font-size: 18px; 
     font-family: 'Open Sans', sans-serif;
@@ -7,6 +12,7 @@ body{
 .container{
     width: 50%;
     margin:3% auto;
+    box-sizing: border-box;
 }
 
 header{
@@ -16,17 +22,26 @@ header{
 .row{
     display:flex;
     flex-direction: row;
+    /* flex-wrap:wrap; */
+    margin:0.2em 0;
+}
+.row:nth-of-type(n+5){
+    margin: 0.5em 0;
+}
+.row:nth-of-type(5){
     margin:0.5em;
 }
 
 input[type='text']
 {
     border: 1px solid #cccccc;
-    height: 2em;
+    height: 2.5em;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    flex-basis: 100%;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
     margin:0.5em;  
     font-size:18px;
     font-family: 'Open Sans', sans-serif;
@@ -73,10 +88,6 @@ a{
     text-decoration: none;
     color:#3487a8;
 }
-a:active{
-    color:#245e75;
-    
-}
 input[type="button"]{
     font-size:20px;
     color:white;
@@ -85,11 +96,14 @@ input[type="button"]{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    flex-basis: 48%;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
     margin:0.5em;
 }
-
-
+label{
+    cursor: pointer;
+}
 input[type="button"]:first-of-type{
     background-color:#2655ee;
 }
@@ -106,9 +120,8 @@ input[type="button"]:nth-of-type(2):hover{
 
 
 @media only screen 
-  and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 1) {
+  and (min-device-width: 501px) {
       body{
           font-size:16px;
       }
@@ -121,14 +134,16 @@ input[type="button"]:nth-of-type(2):hover{
       .agree-checkbox{
         width:40%;
     }
+    input[type="button"]{
+        font-size:16px;
+        padding: 0.5em 1em;
+    }
 
 }
 
 
 @media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 812px) 
-  and (-webkit-min-device-pixel-ratio: 3) { 
+  and (max-device-width: 500px)  { 
     .container{
         width: 90%;
     }
@@ -140,10 +155,6 @@ input[type="button"]:nth-of-type(2):hover{
     }
     input[type='text']{
         font-size:16px;
-        height:2.5em;
-    }
-    .row:nth-of-type(-n+4){
-        flex-direction: column;
     }
     .agree-checkbox{
         width:20%;
@@ -153,8 +164,12 @@ input[type="button"]:nth-of-type(2):hover{
         width:100%;
     }
     p{
-        margin: 0 0 0 1.5em;
+        margin-left: 1.5em;
         font-size: 14px;
+    }
+    input[type="button"]{
+        font-size:16px;
+        padding: 0.5em 1em;
     }
 
 }
