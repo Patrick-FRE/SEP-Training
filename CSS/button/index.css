@@ -2,8 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 
+    font-family: Arial, Helvetica, sans-serif;
     background-color: black;
 }
 
@@ -107,7 +107,7 @@ a:hover {
         0 0 20px rgba(8, 230, 63, 0.918), 0 0 40px rgba(8, 230, 63, 0.918);
 }
 
-hr {
+/* hr {
     height: 5px;
     border: 0;
     background: linear-gradient(235deg, rgb(43, 255, 0), rgb(0, 255, 191));
@@ -121,4 +121,4 @@ hr {
     50% {
         filter: hue-rotate(360deg);
     }
-}
+} */

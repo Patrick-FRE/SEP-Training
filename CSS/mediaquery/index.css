@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.246);
+}
+
+.p_box {
+    position: relative;
+    top: 30px;
+}
+.box {
+    
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 1rem;
+    position: sticky;
+    top: 50%;
+    left: 30px;
+}
+
