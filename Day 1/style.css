@@ -39,12 +39,17 @@ input[type='text']:focus{
 }
 
 ::placeholder{
-    color:#696969;
+    color:#a3a3a3;
 }
 ::-webkit-input-placeholder{
-    color:#696969;
+    color:#a3a3a3;
 }
-
+:-ms-input-placeholder{
+    color:#a3a3a3;
+}
+::-moz-placeholder{
+    color:#a3a3a3;
+}
 .agree-checkbox{
     width:20%;
 }
