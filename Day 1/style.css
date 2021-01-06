@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+body{
+    font-size: 18px; 
+    font-family: 'Open Sans', sans-serif;
+}
+.container{
+    width: 50%;
+    margin:3% auto;
+}
+
+header{
+    text-align: center;
+}
+
+.row{
+    display:flex;
+    flex-direction: row;
+    margin:0.5em;
+}
+
+input[type='text']
+{
+    border: 1px solid #cccccc;
+    height: 2em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width:100%;
+    margin:0.5em;  
+    font-size:16px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0 0.5em;
+}
+
+input[type='text']:focus{
+    outline: none;
+    border: 1.5px solid #a1d2e6;
+    box-shadow: 0 0 10px #e3e3e3;
+}
+
+::placeholder{
+    color:#696969;
+}
+::-webkit-input-placeholder{
+    color:#696969;
+}
+
+.form-group{
+    width:20%;
+}
+
+label:last-of-type{
+    font-weight: 600;
+}
+
+p{
+    margin: 0 0 0 3em;
+}
+
+span{
+    background-color: #2655ee;
+    padding: 0 0.3em;
+    color:white;
+    font-size: 14px;
+}
+
+a{
+    text-decoration: none;
+    color:#3487a8;
+}
+
+input[type="button"]{
+    font-size:20px;
+    color:white;
+    padding: 0.5em 1.5em;
+    border:none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width:100%;
+    margin:0.5em;
+}
+
+input[type="button"]:first-of-type{
+    background-color:#2655ee;
+}
+
+input[type="button"]:nth-of-type(2){
+    background-color:#46A049;
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      body{
+          font-size:16px;
+      }
+      .container{
+          width: 70%;
+      }
+      .form-group{
+        width:40%;
+    }
+
+}
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    .container{
+        width: 90%;
+    }
+    .row:nth-of-type(-n+4){
+        flex-direction: column;
+    }
+    .form-group{
+        width:40%;
+    }
+    p{
+        margin: 0 0 0 1.5em;
+    }
+
+}
