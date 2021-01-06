@@ -7,44 +7,69 @@
   </head>
 
   <style>
+    .main {
+      text-align: center;
+    }
+
+    .name{
+      display:inline;
+    }
+
+    .info{
+      margin:auto;
+      width: 16rem; 
+    }
+
+    .info-individual{
+      width: 100%;
+    }
+
+    .name-individual{
+      width: 50%;
+    }
+
 
   </style>
 
   <body>
-    <h2>Sign Up</h2>
-    <form>
-      <div>
-        <input type="text" id="fname" placeholder='First Name'>
-        <input type="text" id="lname" placeholder='Last Name'>
-      </div>
-      <div>
-        <input type="tel" id="mobileNo" placeholder='Mobile No.'>
-      </div>
-      <div>
-        <input type="email" id="email" placeholder='Email Address'>
-      </div>
-      <div>
-        <input type="password" id="password" placeholder='Password'>
-      </div>
-      <div>
-        <input type="password" id="comfirmPassword" placeholder='Comfirm Password'>
-      </div>
-      <div>
-        <p><input type="checkbox" id="concentBox"><span>I agree</span></p>
-        <p>
-          By clicking <button id="registerBtn" disabled>Register</button>, you agree to the 
-          <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
-          including our Cookie Use.
-        </p>
-       </div>
-      <div>
-        <div>
-          <button id="registerBtn">Register</button>
-          <button id="signInBtn">Sign in</button>
+    <main class='main'>
+      <h2 >Sign Up</h2>
+      <form>
+        <div class='info name' >
+          <input class='name-individual' type="text" id="fname" placeholder='First Name'>
+          <input class='name-individual' type="text" id="lname" placeholder='Last Name'>
         </div>
-      </div>
-      
-    </form>
+
+        <div class='info' >
+          <input class='info-individual' type="tel" id="mobileNo" placeholder='Mobile No.'>
+        </div>
+
+        <div class='info' >
+          <input type="email" id="email" placeholder='Email Address'>
+        </div>
+
+        <div class='info' >
+          <input type="password" id="password" placeholder='Password'>
+        </div>
+        <div class='info' >
+          <input type="password" id="comfirmPassword" placeholder='Comfirm Password'>
+        </div>
+        <div class='info' >
+          <p><input type="checkbox" id="concentBox"><span>I agree</span></p>
+          <p>
+            By clicking <button id="registerBtn" disabled>Register</button>, you agree to the 
+            <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
+            including our Cookie Use.
+          </p>
+         </div>
+        <div>
+          <div>
+            <button id="registerBtn">Register</button>
+            <button id="signInBtn">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </main>      
   </body>
 
 </html>
