@@ -10,48 +10,59 @@
   </head>
 
   <style>
-    .info-individual{
+    .body{
+      max-width:25rem;
+      margin: auto;
+    }
 
+    .text-center {
+      text-align: center;
     }
 
 
   </style>
 
   <body>
-    <main class='main'>
-      <h2 >Sign Up</h2>
+    <main class='body'>
+      <h2 class="display-6 text-center">Sign Up</h2>
       <form>
-        <div class='row' >
-          <input class='col-md-6' type="text" id="fname" placeholder='First Name'>
-          <input class='col-md-6' type="text" id="lname" placeholder='Last Name'>
+        <div class='row form-group' >
+          <div class='col-md-6'>
+            <input  class='form-control' type="text" id="fname" placeholder='First Name'>
+          </div>
+
+          <div class='col-md-6'>
+            <input  class='form-control' type="text" id="lname" placeholder='Last Name'>
+          </div>
+          
         </div>
 
-        <div class='row' >
-          <input class='col-md-12' type="tel" id="mobileNo" placeholder='Mobile No.'>
+        <div class='row form-group' >
+          <input class='col-md-12 form-control' type="tel" id="mobileNo" placeholder='Mobile No.'>
         </div>
 
-        <div class='row' >
-          <input type="email" id="email" placeholder='Email Address'>
+        <div class='row form-group' >
+          <input class='col-md-12 form-control' type="email" id="email" placeholder='Email Address'>
         </div>
 
-        <div class='row' >
-          <input type="password" id="password" placeholder='Password'>
+        <div class='row form-group' >
+          <input class='col-md-12 form-control'  type="password" id="password" placeholder='Password'>
         </div>
-        <div class='row' >
-          <input type="password" id="comfirmPassword" placeholder='Comfirm Password'>
+        <div class='row form-group' >
+          <input class='col-md-12 form-control'   type="password" id="comfirmPassword" placeholder='Comfirm Password'>
         </div>
-        <div class='row' >
+        <div class='row form-group' >
           <p class='col-md-3'><input type="checkbox" id="concentBox"><span>I agree</span></p>
           <p class='col-md-9'>
-            By clicking <button id="registerBtn" disabled>Register</button>, you agree to the 
+            By clicking <button type="button" class="btn btn-primary" id="registerBtn" disabled>Register</button>, you agree to the 
             <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
             including our Cookie Use.
           </p>
          </div>
         <div>
-          <div>
-            <button id="registerBtn">Register</button>
-            <button id="signInBtn">Sign in</button>
+          <div class='row'>
+            <button type="button" class="btn btn-primary col-md-6" id="registerBtn">Register</button>
+            <button type="button" class="btn btn-success col-md-6" id="signInBtn">Sign in</button>
           </div>
         </div>
       </form>
