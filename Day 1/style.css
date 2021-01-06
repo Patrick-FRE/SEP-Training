@@ -26,13 +26,12 @@ input[type='text']
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    width:100%;
+    flex-basis: 100%;
     margin:0.5em;  
-    font-size:16px;
+    font-size:18px;
     font-family: 'Open Sans', sans-serif;
     padding: 0 0.5em;
 }
-
 input[type='text']:focus{
     outline: none;
     border: 1.5px solid #a1d2e6;
@@ -46,11 +45,11 @@ input[type='text']:focus{
     color:#696969;
 }
 
-.form-group{
+.agree-checkbox{
     width:20%;
 }
 
-label:last-of-type{
+.agree-checkbox, label{
     font-weight: 600;
 }
 
@@ -69,7 +68,10 @@ a{
     text-decoration: none;
     color:#3487a8;
 }
-
+a:active{
+    color:#245e75;
+    
+}
 input[type="button"]{
     font-size:20px;
     color:white;
@@ -78,17 +80,25 @@ input[type="button"]{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    width:100%;
+    flex-basis: 48%;
     margin:0.5em;
 }
 
+
 input[type="button"]:first-of-type{
     background-color:#2655ee;
+}
+input[type="button"]:first-of-type:hover{
+    background-color: #1d378c;
 }
 
 input[type="button"]:nth-of-type(2){
     background-color:#46A049;
 }
+input[type="button"]:nth-of-type(2):hover{
+    background-color:#3e8541;
+}
+
 
 @media only screen 
   and (min-device-width: 768px) 
@@ -100,7 +110,10 @@ input[type="button"]:nth-of-type(2){
       .container{
           width: 70%;
       }
-      .form-group{
+      input[type='text']{
+        font-size: 16px;
+    }
+      .agree-checkbox{
         width:40%;
     }
 
@@ -114,14 +127,26 @@ input[type="button"]:nth-of-type(2){
     .container{
         width: 90%;
     }
+    .row{
+        margin: 0.5em 0 0.5em 0;
+    }
+    input[type='text']{
+        font-size:16px;
+        height:2.5em;
+    }
     .row:nth-of-type(-n+4){
         flex-direction: column;
     }
-    .form-group{
-        width:40%;
+    .agree-checkbox{
+        width:20%;
+    }
+    .agree-checkbox, label{
+        font-size: 14px;
+        width:100%;
     }
     p{
         margin: 0 0 0 1.5em;
+        font-size: 14px;
     }
 
 }
