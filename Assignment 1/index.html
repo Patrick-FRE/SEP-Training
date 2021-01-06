@@ -4,28 +4,14 @@
     <title>
       Sign Up
     </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   </head>
 
   <style>
-    .main {
-      text-align: center;
-    }
-
-    .name{
-      display:inline;
-    }
-
-    .info{
-      margin:auto;
-      width: 16rem; 
-    }
-
     .info-individual{
-      width: 100%;
-    }
 
-    .name-individual{
-      width: 50%;
     }
 
 
@@ -35,28 +21,28 @@
     <main class='main'>
       <h2 >Sign Up</h2>
       <form>
-        <div class='info name' >
-          <input class='name-individual' type="text" id="fname" placeholder='First Name'>
-          <input class='name-individual' type="text" id="lname" placeholder='Last Name'>
+        <div class='row' >
+          <input class='col-md-6' type="text" id="fname" placeholder='First Name'>
+          <input class='col-md-6' type="text" id="lname" placeholder='Last Name'>
         </div>
 
-        <div class='info' >
-          <input class='info-individual' type="tel" id="mobileNo" placeholder='Mobile No.'>
+        <div class='row' >
+          <input class='col-md-12' type="tel" id="mobileNo" placeholder='Mobile No.'>
         </div>
 
-        <div class='info' >
+        <div class='row' >
           <input type="email" id="email" placeholder='Email Address'>
         </div>
 
-        <div class='info' >
+        <div class='row' >
           <input type="password" id="password" placeholder='Password'>
         </div>
-        <div class='info' >
+        <div class='row' >
           <input type="password" id="comfirmPassword" placeholder='Comfirm Password'>
         </div>
-        <div class='info' >
-          <p><input type="checkbox" id="concentBox"><span>I agree</span></p>
-          <p>
+        <div class='row' >
+          <p class='col-md-3'><input type="checkbox" id="concentBox"><span>I agree</span></p>
+          <p class='col-md-9'>
             By clicking <button id="registerBtn" disabled>Register</button>, you agree to the 
             <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
             including our Cookie Use.
