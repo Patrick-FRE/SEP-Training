@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="./style.css" />
+		<title>Sign Up</title>
+	</head>
+	<body>
+		<div class="container">
+      <h1 class="title">Sign Up</h1>
+			<form class="form">
+        <div class="form__row">
+          <input class="form__input form__input--two" type="text" placeholder="First Name">
+          <input class="form__input form__input--two" type="text" placeholder="Last Name">
+        </div>
+        <div class="form__row">
+          <input class="form__input" type="text" placeholder="Mobile No.">
+        </div>
+        <div class="form__row">
+          <input class="form__input" type="text" placeholder="Email Address">
+        </div>
+        <div class="form__row">
+          <input class="form__input form__input--two" type="text" placeholder="Password">
+          <input class="form__input form__input--two" type="text" placeholder="Confirm Password">
+        </div>
+        <div class="form__row form__agreement">
+          <div class="form__checkbox">
+            <input type="checkbox" id='agree' name="agree" value="agree">
+            <label class="form__label" for='agree'>I Agree</label>
+          </div>
+          <div class="form__description">
+            <p>By clicking <span>Register</span>, you agree to the <a href='#'>Terms and Conditions</a>
+               set out by this site, including our Cookie Use.</p>
+          </div>
+        </div>
+        <div class="form__row">
+          <input class="form__input form__input--two form__submit form__blue" type="submit" value="Register"/>
+          <input class="form__input form__input--two form__submit form__green" type="submit" value="Sign In"/>
+        </div>
+      </form>
+		</div>
+	</body>
+</html>
