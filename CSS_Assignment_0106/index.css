@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: black;
+    padding: 20px 130px;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px;
+}
+
+.tital {
+    background-color: #c6bfbf;
+    padding: 30px 110px;
+}
+
+.row {
+    display: flex;
+    padding: 10px 100px 110px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #0b4d14;
+    padding: 20px 130px;
+    overflow: auto;
+    
+}
+
+.footer a{
+    display:block;
+    float: left;
+    color: white;
+    padding: 10px;
+}
+
+.footer .right {
+    float: right;
+}
