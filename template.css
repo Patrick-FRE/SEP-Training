@@ -1,0 +1,42 @@
+.container_menu {
+    background-color: black;
+    padding-left:100px;
+    padding-top: 10px;
+    padding-right: 100px;
+    padding-bottom: 10px;
+}
+
+.menu_elem {
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 30px;
+}
+
+.container_body_header {
+    background-color: #c6bfbf;
+    padding-left:100px;
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.container_body_content {
+    padding-left:100px;
+    padding-top: 20px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    font-family: sans-serif, Arial,Helvetica;
+}
+
+.container_footer {
+    background-color:#0b4d14;
+    padding-left:50px;
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+
+#container_footer_elem_right {
+    float:right;
+}
