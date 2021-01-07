@@ -14,9 +14,9 @@ body{
     margin:3% auto;
     box-sizing: border-box;
 }
-
 header{
     text-align: center;
+    padding: 0.5em 0;
 }
 
 .row{
@@ -67,7 +67,8 @@ input[type='text']:focus{
     color:#a3a3a3;
 }
 .agree-checkbox{
-    width:20%;
+    width:40%;
+    min-width:25%;
 }
 
 .agree-checkbox, label{
@@ -144,7 +145,8 @@ input[type="button"]:nth-of-type(2):hover{
 
 
 @media only screen 
-  and (max-device-width: 500px)  { 
+  and (max-device-width: 500px)
+  and (min-device-width:375px)  { 
     .container{
         width: 90%;
     }
@@ -157,8 +159,21 @@ input[type="button"]:nth-of-type(2):hover{
     input[type='text']{
         font-size:16px;
     }
-    .agree-checkbox{
-        width:40%;
+    ::placeholder{
+        color:#a3a3a3;
+        font-size:14px;
+    }
+    ::-webkit-input-placeholder{
+        color:#a3a3a3;
+        font-size:14px;
+    }
+    :-ms-input-placeholder{
+        color:#a3a3a3;
+        font-size:14px;
+    }
+    ::-moz-placeholder{
+        color:#a3a3a3;
+        font-size:14px;
     }
     .agree-checkbox, label{
         font-size: 14px;
@@ -174,3 +189,59 @@ input[type="button"]:nth-of-type(2):hover{
     }
 
 }
+
+@media only screen 
+  and (max-device-width: 374px) {
+    .container{
+        width: 95%;
+    }
+    .row{
+        margin: 0;
+    }
+    .row:nth-of-type(n+5){
+        margin:1em;
+    }
+    input[type='text']{
+        font-size:16px;
+    }
+    ::-moz-placeholder{
+        color:#a3a3a3;
+        font-size:14px;
+    }
+    .agree-checkbox, label{
+        font-size: 14px;
+        width:100%;
+    }
+    p{
+        margin-left: 1.5em;
+        font-size: 14px;
+    }
+    input[type="button"]{
+        font-size:16px;
+        padding: 0.5em 1em;
+    }
+    ::placeholder{
+        color:#a3a3a3;
+        font-size:12px;
+    }
+    ::-webkit-input-placeholder{
+        color:#a3a3a3;
+        font-size:12px;
+    }
+    :-ms-input-placeholder{
+        color:#a3a3a3;
+        font-size:12px;
+    }
+    ::-moz-placeholder{
+        color:#a3a3a3;
+        font-size:12px;
+    }
+    .agree-checkbox{
+        width:40%;
+    }
+    .agree-checkbox, label{
+        font-size: 12px;
+        width:100%;
+    }
+
+  }
