@@ -56,8 +56,11 @@
 // const arr = [1, 2, 3];
 // console.log(arr);
 
-// var | let | const
-// scope: function, block
+//          var       | let    | const  | function
+// hoisting: yes(fn),   no(b),   no(b),   yes(fn),
+// reasign:  yes,       yes,     no,      yes
+
+
 // not defined and undefined
 
 // function foo() {
@@ -69,7 +72,7 @@
 // }
 // foo(); // 
 
-// class
+// // class
 // class Person {
 //     constructor(name, age) {
 //         this.name = name;
@@ -87,21 +90,31 @@
 // oop
 // encapsulation
 
+// ES2019 #
 // class Person {
-//     constructor(name, age) {
-//         this._name = name;
-//         this._age = age;
-//     }
+//     #name = 'Dio';
+//     #age = 200;
+
 //     get name() {
-//         return this._name;
+//         return this.#name;
 //     }
 //     set name(newName) {
-//         this._name = newName;
+//         this.#name = newName;
+//     }
+//     get age() {
+//         return this.#age;
+//     }
+//     set age(newAge) {
+//         this.#age = newAge;
 //     }
 //     walk() {
-//         console.log('walk to company');
+//         console.log('walk around the world!');
 //     }
 // }
+
+// const p = new Person();
+// p.name = 'Jojo'
+// console.log(p);
 // // inheritance
 // class Employee extends Person {
 //     constructor(name, age, company) {
@@ -137,12 +150,14 @@
 // const e = new Employee('David', 3, 'Antra');
 // console.log(e.wolk()); //
 
-// // Polymorphism
+// Polymorphism
 // class Animal {
 //     constructor(name) {
 //         this.name = name;
 //     }
-//     move() { }
+//     move() { 
+//         console.log('move')
+//     }
 // }
 // class Fash extends Animal {
 //     constructor(name) {
@@ -169,7 +184,11 @@
 //     }
 // }
 
-// (new Fash('fish')).move();
+// // iife
+
+// const fish = new Fash('fish');
+// fish.move();
+
 // (new Bird('bird')).move();
 // (new Monkey('monkey')).move();
 
@@ -186,7 +205,127 @@
 // }
 // const circle1 = new Circle(20);
 // console.log(circle1.getArea());
-// console.log(circle1.#pi);
 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// loop array;
 
+// const arr = [1, 2, 3]; 
+// // for, for of
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+// for (let num of arr) {
+//     console.log(num);
+// }
+// forEach, map, difference?
 
+// console.log(arr.forEach(function(ele, index, oarr) {
+//     console.log(ele, index, oarr);
+//     if (ele === 2) {
+//         return 2;
+//     }
+// }));
+// console.log(arr.map(function(ele, index, oarr) {
+//     console.log(ele, index, oarr);
+//     if (ele !== 2) {
+//         return 2;
+//     }
+// })); // can we return in the forEach, what does forEach return?
+
+// const arr = [1, 2, 3]; 
+
+// console.log(arr.map(function(ele, index, oarr) {
+//     if (ele === 2) {
+//         return 2;
+//     }
+// })); // [undefined, 2, undefined]
+
+// Array.prototype.myForEach = function(callback) {
+//     for (let i = 0; i < this.length; i++) {
+//         callback(this[i], i, this);
+//     }
+// }
+
+// Array.prototype.myMap = function(callback) {
+//     const res = [];
+//     for (let i = 0; i < this.length; i++) {
+//         res.push(callback(this[i], i, this));
+//     }
+//     return res;
+// }
+
+// Array.prototype.myFilter = function (callback) {
+//     const cb = [];
+//     for (let i = 0; i < this.length; i++) {
+//         if (callback(this[i], i, this)) {
+//             cb.push(this[i]);
+//         };
+//     }
+//     return cb;
+// }
+// const arr = [2, 2, 3, 4];
+// const cb = ele => ele === 2;
+// console.log(arr.myFilter(cb));
+
+// some, every
+
+// reduce
+
+// Array.prototype.myReduce = function (callback, initAcc) {
+//     let acc = initAcc;
+//     for (let i = 0; i < this.length; i++) {
+//         acc = callback(acc, this[i], i, this);
+//     }
+//     return acc;
+// }
+
+// console.log([1, 2, 3].myReduce((acc, cur, i, oarr) => {
+//     acc.push(cur, cur);
+//     return acc;
+// }, [])) // [1, 1, 2, 2, 3, 3]
+
+// Object forEach
+
+// const obj = { name: 'Dio', age: 200 };
+
+// Object forEach, Array forEach
+// for (let key in obj) {
+//     console.log(obj[key]);
+// }
+
+// const arr = [1, 2, 3];
+// arr.forEach()
+
+// spread operator, rest parameters;   
+// function foo(num, num2, ...args) {
+//     console.log(args);
+
+// }
+// foo(1, 2, 3, 4);
+
+// const obj = { name: 'Dio', age: 200 };
+// const obj2 = {...obj};
+
+// console.log(obj2 === obj);
+
+// console.log(obj, obj2)
+
+// const foo = input => {
+//     const set = new Set([...input]);
+//     return [...set].join('');
+// }
+// console.log(foo('qwerqwe'));
+
+// shadow copy, deep copy
+const obj = { 
+    name: 'Dio', 
+    age: 200, 
+    date: new Date,
+    arr: [
+        {date: new Date}
+    ]
+}
+// const obj2 = {...obj};
+
+const obj2 = JSON.parse(JSON.stringify(obj));
+console.log(obj, obj2);
