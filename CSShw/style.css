@@ -18,15 +18,18 @@ ul {
     color: white;
     position: fixed;
     top: 0;
+    min-width: 1005px;
 }
 
 .header-list{
 
 }
 
-.header-list div{
+.header-list a{
     display: inline;
     margin-right: 40px;
+    text-decoration: none;
+    color: white;
 }
 
 .footer {
@@ -36,22 +39,25 @@ ul {
     color: white;
     position: fixed;
     bottom: 0;
+    min-width: 1005px;
 }
 
 .footer-list {
     
 }
 
-.footer-list div {
+.footer-list a {
     display: inline;
+    text-decoration: none;
+    color: white;
 }
 
-.footer-list > div:nth-child(-n+3){
+.footer-list > a:nth-child(-n+3){
     float: left;
     margin-right: 50px;
 }
 
-.footer-list > div:nth-last-child(-n+3){
+.footer-list > a:nth-last-child(-n+3){
     float: right;
     margin-left: 50px;
 }
@@ -61,6 +67,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    min-width: 1005px;
 }
 
 .content-header{
@@ -72,8 +79,8 @@ ul {
     margin: 20px 200px;
 }
 
-.content-header p{
-
+.content-header a{
+    margin: 0;
 }
 
 .content-row{
