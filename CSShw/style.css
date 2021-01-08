@@ -7,6 +7,8 @@ body {
 
 ul {
     padding: 0;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 .header {
@@ -24,6 +26,7 @@ ul {
 
 .header-list div{
     display: inline;
+    margin-right: 40px;
 }
 
 .footer {
@@ -45,10 +48,12 @@ ul {
 
 .footer-list > div:nth-child(-n+3){
     float: left;
+    margin-right: 50px;
 }
 
 .footer-list > div:nth-last-child(-n+3){
     float: right;
+    margin-left: 50px;
 }
 
 .content{
@@ -57,3 +62,28 @@ ul {
     flex-direction: column;
     justify-content: space-around;
 }
+
+.content-header{
+    background-color: gray;
+    width: 100%;
+}
+
+.content-header * {
+    margin: 20px 200px;
+}
+
+.content-header p{
+
+}
+
+.content-row{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 200px;
+}
+
+.content-row p {
+    margin-right: 40px;
+}
+
+
