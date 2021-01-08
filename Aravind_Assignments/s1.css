@@ -1,0 +1,25 @@
+.Heading{
+    width: 800px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.DivSignUp{
+    width: 800px;
+    margin: auto;
+}
+
+.SignUpForm{
+    padding: 3%;
+}
+
+.row{
+    margin-top: 10px;
+}
+
+#mobileNo, #eMail{
+    margin-top: 10px;
+}
