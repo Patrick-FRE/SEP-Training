@@ -133,9 +133,48 @@ const isPrime = function(num){
 // Sample array : [1,2,3,4,5]
 // Expected Output : 2,4 
 
+//sort the array first then return the second and the last second elements.
+const secondElements = function(arr){
+    let newArr = arr.sort((a,b)=>a-b);
+    let l = newArr.length;
+    let res = [];
+    if(l<3) return newArr;
+    res.push(newArr[1]);
+    res.push(newArr[newArr.length-2]);
+    return res;
+}
+
+// console.log(secondElements([3,1]));
+
 // 12. Write a JavaScript function which says whether a number is perfect. 
 // According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
 // Example : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+
+const perfectNumber = function(num){
+    let sum = 1;
+    for(let i =2; i*i<=num;i++){
+        if(num%i === 0){
+            if(i*i !== num){
+                sum = sum + i + num/i;
+            } else{
+                sum += i;
+            }
+        }
+    }
+    if(sum === num && num !== 1){
+        return true;
+    } else{
+        return false;
+    }
+}
+
+// console.log(perfectNumber(6));
+// console.log(perfectNumber(28));
+// console.log(perfectNumber(496));
+// console.log(perfectNumber(8128));
+// console.log(perfectNumber(24));
+
+
 
 // 13. Write a JavaScript function to compute the factors of a positive integer. 
 
