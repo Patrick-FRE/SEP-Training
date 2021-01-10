@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit
+}
+
+html{
+    font-size: 62.25%;
+}
+body{
+    font-size: 1.6rem;
+    box-sizing: border-box;
+}
+
+.container {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    max-width: 50rem;
+    transform: translate(-50%, -50%);
+}
+
+.aform {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    /* box-sizing: border-box; */
+    display: flex;
+    /* flex-direction: row; */
+    /* border: 3px solid; */
+
+    flex: 1 1 100%;
+    margin: 10px;
+}
+
+.halff {
+    /* color: green; */
+    /* border: 2px solid; */
+    flex:1 1 100%;
+    margin: 5px 5px;
+    /* margin: 0.5rem 10px; */
+    
+}
+
+input{
+    padding: 1rem;
+    /* padding:1rem; */
+    width: 100%;
+    /* padding: 5px; */
+}
+
+
+
+header h1{
+    color: green;
+    text-align: center;
+    margin: 10px 0;
+    
+}
+
+.wrap{
+    display: flex;
+    /* border: 3px solid; */
+    width: 100%;
+}
+
+.wrap .checkgreen{
+    /* border: 1px solid; */
+    /* flex-direction: column; */
+    flex: 1 1 20%;
+    line-height: 5rem;
+    /* min-width: 2rem; */
+}
+input[type='checkbox']{
+    width: auto;
+}
+
+p{
+    /* border: 1px solid; */
+    flex: 8 1 60%;
+    /* padding: 5px; */
+    line-height: 5rem;
+
+    /* text-align: center; */
+}
+
