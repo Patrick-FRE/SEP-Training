@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    box-sizing: inherit;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.layout{
+    border: 2px dashed red;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    border: 10px solid green;
+    flex: 1 1 100%;
+    margin: 20px 0;
+
+    /* align-content: center; */
+}
+
+.item {
+    border: 1px solid red;
+    margin: 10px;
+}
+
+header h1 {
+    background-color: black;
+    font-size: 5rem;
+    text-align: center;
+    color: aliceblue;
+}
+
+h2 {
+    font-size: 4rem;
+    text-align: center;
+    padding: 10px;
+}
+.item-box {
+    border: 1px solid blue;
+
+    flex: 1 1 100%;
+    display: grid;
+    justify-content: center;
+    /* align-content: center; */
+    height: 50rem;
+    grid-template-columns: 30rem 30rem;
+    /* grid-template-rows: 25% 25%; */
+}
+
+.item {
+    flex: 1 1 40%;
+    font-size: 2rem;
+    color: blueviolet;
+    text-align: center;
+}
+
+.about {
+    margin: 10px;
+    height: 200px;
+    background-color: rgb(197, 195, 195);
+}
+
+.about p {
+    margin: 10px;
+}
+
+.Timeline {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+}
+.article h1 {
+    margin: 10px;
+    border-bottom: 1px solid black;
+}
+
+h1 + p {
+    margin: 10px 20px;
+}
+
+.article p:nth-of-type(2) {
+    color: blue;
+    margin: 10px 20px;
+}
+
+section > .container {
+    display: flex;
+    margin: 10px;
+    width: 300px;
+}
+
+.container > button {
+    margin: 10px;
+    width: 100%;
+}
