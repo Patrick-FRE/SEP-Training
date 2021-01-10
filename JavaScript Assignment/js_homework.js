@@ -37,6 +37,23 @@ const checkPalidrome = function (str) {
 // 3. Write a JavaScript function that generates all combinations of a string. 
 // Example string : 'dog' 
 // Expected Output : d,do,dog,o,og,g 
+const combinations = function(str){
+    let set = new Set();
+    for(let i = 0; i<str.length; i++){
+        for(let j = 1; j<=str.length; j++){
+            //substring method will discard the ending element, so j need to be equaled to str.length
+            if(i !== j){
+                //discard the empty string
+                let substr = str.substring(i, j);
+                set.add(substr);
+            }
+        }
+    }
+    let res = [...set];
+    return res;
+}
+
+// console.log(combinations('dog'));
 
 
 // 4. Write a JavaScript function that returns a passed string with letters in alphabetical order. 
@@ -124,10 +141,38 @@ const isPrime = function (num) {
 
 // 9. Write a JavaScript function which accepts an argument and returns the type. 
 // Note : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
+const  detectType = function(input){
+    let types = ['object', 'boolean', 'function', 'number', 'string', 'undefined'];
+    if(typeof input){
+        for(let i = 0; i<types.length;i++){
+            if(typeof input === types[i]){
+                return types[i];
+            }
+        }
+        return -1;
+    }
+}
 
 
 // 10. Write a JavaScript function which returns the n rows by n columns identity matrix. 
-//Don't understand the question.
+//100
+//010
+//001
+
+const identityMatrix = function(n){
+    for(let i = 0; i<n; i++){
+        for(let j = 0; j<n; j++){
+            if(j === i){
+                console.log('1');
+            }else{
+                console.log('0');
+            }
+        }
+        console.log('--------');
+    }
+}
+
+// identityMatrix(4);
 
 // 11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively. 
 // Sample array : [1,2,3,4,5]
@@ -324,6 +369,19 @@ function foo(arr, num){
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
 // Sample array : [1, 2, 3] and subset length is 2 
 // Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]] //Why is there an array with 3 elements???
+const subset = function(arr, n){
+    let set = new Set();
+    for(let i = 0; i<arr.length;i++){
+        for(let j = i+1; j<arr.length; j++){
+                let comb = [arr[i]].concat(arr.slice(j, j+n-1));
+                if(comb.length === n){
+                    set.add(comb);
+                }  
+        }
+    }
+    return [...set];
+}
+console.log(subset([1,2,3,4],3));
 
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
 // Sample arguments : 'microsoft.com', 'o' 
