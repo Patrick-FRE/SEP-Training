@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.contaner{
+    padding: 100px;
+    background-color: cadetblue;
+    
+}
+.title-text{
+    margin: auto;
+}
+
+.grid-box{
+    padding: 50px;
+    display: grid;
+    /* 指定每一列的列寬, 分三個數值就表示這個列有三個元素 */
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-template-areas: "sidebar";
+    
+}
+
+.full-col{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.box {
+    background-color: antiquewhite;
+}

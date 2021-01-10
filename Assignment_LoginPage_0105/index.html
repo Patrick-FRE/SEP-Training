@@ -3,26 +3,38 @@
     <head>
         <meta charset='UTF-8'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" href="./index.css">
-        <script src=".index.js"></script>
+        <title>HTML Assignment</title>
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>HTML Assignment</h1>
-        <p>Instructions:</p>
-        <ul>
-            <li>Tags must be nested properly.</li>
-            <li>Don't use any inline style sheet.</li>
-            <li>Webpage must be responsible and adjustable with all screen size devices.</li>
-        </ul>
-
-        <h1>Sign Up</h1>
-        <input type="text" placeholder="First Name" />
-        <input type="text" placeholder="Last Name"/>
-        <input type="text" placeholder="Mobile No." />
-        <input type="text" placeholder="Email Address" />
-        <input type="text" placeholder="Password" />
-        <input type="text" placeholder="Confirm Password" />
-
+        <div class="contaner">
+            <div class="title-text">
+                <div class="title-signup">Sign Up</div>
+            </div>
+            <div class="grid-box">
+                
+                    <div class="box">
+                        <input type="text" placeholder="First Name" required>
+                    </div>
+                    <div class="box">
+                        <input type="text" placeholder="Last Name" required>
+                    </div>
+                    <div class="box full-col">
+                        <input type="number" placeholder="Mobile No" required>
+                    </div>
+                    <div class="box full-col">
+                        <input type="text" placeholder="Email Address" required>
+                    </div>
+                    <div class="box">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="box">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                
+            </div>
+        </div>
     </body>
 </html>
