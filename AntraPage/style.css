@@ -1,0 +1,105 @@
+/* css clear */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 1.6rem;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* box-sizing: border-box; */
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.25%;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+/* nav - container - nav-item */
+
+.nav {
+    /* position: fixed; */
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    /* margin: 0 auto; */
+
+    max-width: 108rem;
+    margin: 0 auto;
+}
+
+.nav-list {
+    /* height: 6rem; */
+    
+    /* border: 2px dashed red; */
+    display: flex;
+    /* justify-content: center; */
+    /* align-content: cneter; */
+    line-height: 7rem;
+    margin: 0 2rem;
+    /* align-content: center; */
+}
+
+.nav-item {
+    /* border: 1px solid green; */
+    margin: 0 1rem;
+}
+
+.header {
+    background-color: grey;
+}
+
+.heading{
+    padding: 2rem 2rem;
+}
+
+.header p{
+    padding: 1.5rem 1.5rem;
+}
+
+.content {
+    border: 2px dashed green;
+    /* position: fixed; */
+    display: flex;
+    justify-content: center;
+}
+
+.content-article {
+    margin: 1.5rem;
+    border: 2px dashed red;
+}
+
+.footer {
+    background-color: rgb(2, 48, 42);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    color: white;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.__navlist{
+    display: flex;
+}
+li {
+    margin: 0 1rem;
+
+    line-height: 4rem;
+}
