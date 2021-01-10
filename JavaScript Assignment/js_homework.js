@@ -267,6 +267,25 @@ const letterOccurence = function (str) {
 
 // 18. Write a function for searching JavaScript arrays with a binary search. 
 // Note : A binary search searches by splitting an array into smaller and smaller chunks until it finds the desired value.
+const binarySearch = function(array, target){
+    let right = array.length-1;
+    let left = 0;
+    let middle = Math.floor(array.length-1/2);
+    while(left < right){
+        if(array[middle] === target){
+            return middle;
+        } else if(array[middle] > target){
+            right = middle -1;
+            middle = Math.floor((right + left)/2);
+        } else{
+            left = middle + 1;
+            middle = Math.floor((right + left)/2);
+        }
+    }
+    return -1;
+}
+
+// console.log(binarySearch([1,2,3,4,5,7,8,10,11,12,31,41,51,90],12));
 
 
 // 19. Write a JavaScript function that returns array elements larger than a number. 
@@ -278,20 +297,85 @@ function foo(arr, num){
 // 20. Write a JavaScript function that generates a string id (specified length) of random characters. 
 // Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
  const idGenerator = function(n){
+    //  create an empty string
+    //  generate a random character for n times
+    //  each time join with the string
+    //  return the string
+    //  Is it possible to use reg expression to generate random characters?
+     let str = '';
+     let list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+     let i = 0;
+     while(i<n){    
+        str += list[getRandomInt(61)];
+        i++;
+     }
 
+     function getRandomInt(max){
+        return Math.floor(Math.random() * Math.floor(max));
+     }
+     return str;
  }
+
+//  console.log(idGenerator(6));
+//  console.log(idGenerator(20));
+
 
 
 // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array. 
 // Sample array : [1, 2, 3] and subset length is 2 
-// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+// Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]] //Why is there an array with 3 elements???
 
 // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string. 
 // Sample arguments : 'microsoft.com', 'o' 
 // Expected output : 3 
+const countLetter = function(str, letter){
+    let count = 0;
+    for(let i = 0; i<str.length;i++){
+        if(str[i] === letter){
+            count++;
+        }
+    }
+    return count;
+}
+// console.log(countLetter('microsoft.com', 'o'));
 
 // 23. Write a JavaScript function to find the first not repeated character. 
 // Sample arguments : 'abacddbec' 
 // Expected output : 'e' 
 
+const firstNonRepeat = function(str){
+    let obj = {};
+    for(let i = 0; i<str.length; i++){
+        if(str[i] in obj){
+            obj[str[i]] += 1;
+        } else{
+            obj[str[i]] = 1;
+        }
+    }
+    for(let i = 0; i<str.length; i++){
+        if(str[i] in obj && obj[str[i]] === 1){
+            return str[i];
+        }
+    }
+    return -1;
+
+}
+// console.log(firstNonRepeat('abacddbecertts'));
+// console.log(firstNonRepeat('aabbcc'));
+
 // 24. Write a JavaScript function to apply Bubble Sort algorithm. 
+const bubbleSort = function(arr){
+    let len = arr.length;
+    for(let i = 0; i<len; i++){
+        //run len-1 times to swap
+        for(let j = 0; j<len; j++){
+            if(arr[j] > arr[j+1]){
+                let temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+// console.log(bubbleSort([1,3,2,41,10,20]));
