@@ -1,0 +1,120 @@
+* {
+    font-family: "Francois One", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .blog-title {
+    position: relative;
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  body {
+    background-color: #fff1e6;
+    color: #444545;
+  }
+
+  nav {
+    background-color: #fde2e4;
+  }
+  
+  #searchBtn {
+    border-color: #f4ebbe;
+    color: #8ba6a9;
+  }
+
+  /*side nav bar*/
+  .sidenav {
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 120px;
+    right: 30px;
+    background: #eee;
+    overflow-x: hidden;
+    padding: 8px 0;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    color: #0781be;
+    display: block;
+  }
+
+  .sidenav p{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    display: block;
+  }
+
+  .sidenav h3{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #064579;
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+h3{
+    font-size: 18px;
+    font-weight: 300;
+}
+  /*border not displaying*/
+.footer {
+    margin-top: 30px;
+    border-top: blanchedalmond;
+    border-radius: 1px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #efd3d7;
+    color: #444545;
+    text-align: center;
+  }
+  
+  /*font-awsome style*/
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  .fa-facebook {
+    background: #3b5998;
+    color: white;
+  }
+  
+  .fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
