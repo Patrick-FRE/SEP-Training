@@ -1,4 +1,4 @@
-##JS Assignment due by 11th, Jan
+## JS assignment due by 11th Jan
 
 https://jsfiddle.net/Shirley619/642w38oL/276/
 
