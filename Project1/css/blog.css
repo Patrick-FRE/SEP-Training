@@ -1,4 +1,4 @@
-@import '../header.css';
+@import './header.css';
 
 .header h1{
     text-decoration: underline;
