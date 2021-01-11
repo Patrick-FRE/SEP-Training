@@ -158,3 +158,38 @@ function bsearch(arr, target) {
 function findFirstNotRepeatedChar(s) {
     return new Set(s).filter().reduce((acc, curr) => {s.indexOf(acc) < s.indexOf(curr)? : , 0})
 }
+
+// 24. Write a JavaScript function to apply Bubble Sort algorithm. 
+// function bubbleSort(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             if (arr[i] > arr[j]) {
+//                 [arr[i], arr[j]] = [arr[j], arr[i]];
+//             }
+//         }
+//     }
+// }
+
+// 25. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output. 
+// practice to use reduce in oneline
+// const longestCountryName = (arr) => arr.reduce((acc, curr) => (curr.length > acc.length ? curr : acc), arr[0]);
+
+26. Write a JavaScript function to find longest substring in a given a string without repeating characters. 
+
+27. Write a JavaScript function that returns the longest palindrome in a given string. 
+
+// 28. Write a JavaScript program to pass a 'JavaScript function' as parameter. 
+// function passFunctions(func) {
+//     return (func)()
+// }
+
+// 29. Write a JavaScript function to get the function name. 
+// I'm not sure what exactly "function name" is, so I give two version of it.
+// function funcName(func) {
+//     return func.name;
+// }
+// function funcName1() {
+//     return arguments.callee.name;
+// }
+// arguments.callee
+//     Reference to the currently executing function that the arguments belong to. Forbidden in strict mode.
