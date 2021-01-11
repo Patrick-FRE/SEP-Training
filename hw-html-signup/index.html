@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form class="form-signup" action="">
+            <!-- header -->
+            <header class="form-signup-header">
+                <h1>Sign up</h1>
+            </header>
+            <!-- First Name and Last Name -->
+            <div class="form-row">
+                <div class="form-item">
+                    <input type="text" class="form-fname" placeholder="First Name" />
+                </div>
+                <div class="form-item">
+                    <input type="text" class="form-lname" placeholder="Last Name" />
+                </div>
+            </div>
+            <!-- Mobile No. -->
+            <div class="form-row">
+                <div class="form-item">
+                    <input type="text" class="form-mobile" placeholder="Mobile No.">
+                </div>
+            </div>
+            <!-- Email Address -->
+            <div class="form-row">
+                <div class="form-item">
+                    <input type="text" class="form-email" placeholder="Email Address">
+                </div>
+            </div>
+            <!-- Password -->
+            <div class="form-row">
+                <div class="form-item">
+                    <input type="password" class="form-password" placeholder="Password" minlength="8">
+                </div>
+                <div class="form-item">
+                    <input type="password" class="form-confirm-password" placeholder="Confirm Password" minlength="8">
+                </div>
+            </div>
+            <!-- Agree -->
+            <div class="form-row">
+                <div class="check-agree">
+                    <input type="checkbox" id="agree" name="agree">
+                    <label for="agree">I Agree</label>
+                </div>
+
+                <p class="check-items">
+                    By clicking <span class="btn primary">Register</span>, you agree to the <a>Terms
+                        and Conditions</a> set out
+                    by the
+                    site, including our Cookie Use.
+                </p>
+            </div>
+            <!-- Button -->
+            <div class="form-row">
+                <div class="form-item">
+                    <button type="submit" class="btn primary">Register</button>
+                </div>
+                <div class="form-item">
+                    <button type="submit" class="btn success">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
