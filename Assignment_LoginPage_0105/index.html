@@ -11,30 +11,42 @@
     <body>
         <div class="contaner">
             <div class="title-text">
-                <div class="title-signup">Sign Up</div>
+                <h1>Sign Up</h1>
+            </div>
+            <div class="grid-box">                
+                <div class="box">
+                    <input type="text" placeholder="First Name" required>
+                </div>
+                <div class="box">
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="box full-col">
+                    <input type="number" placeholder="Mobile No" required>
+                </div>
+                <div class="box full-col">
+                    <input type="text" placeholder="Email Address" required>
+                </div>
+                <div class="box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="box">
+                    <input type="password" placeholder="Confirm Password" required>
+                </div> 
+            </div>
+            <div class="grid-box-one-three">
+                <div class="checkbox">
+                    <input type="checkbox">
+                    <p>I Agree</p>                       
+                </div>
+                <div class="box three-one-col">
+                    <p>By clicking <span id='register'>Register</span>. 
+                        you agree to the <a href="#">Terms and Conditions</a>set out by this site. including our Cookie Use.</p>                        
+                </div>
             </div>
             <div class="grid-box">
-                
-                    <div class="box">
-                        <input type="text" placeholder="First Name" required>
-                    </div>
-                    <div class="box">
-                        <input type="text" placeholder="Last Name" required>
-                    </div>
-                    <div class="box full-col">
-                        <input type="number" placeholder="Mobile No" required>
-                    </div>
-                    <div class="box full-col">
-                        <input type="text" placeholder="Email Address" required>
-                    </div>
-                    <div class="box">
-                        <input type="password" placeholder="Password" required>
-                    </div>
-                    <div class="box">
-                        <input type="password" placeholder="Confirm Password" required>
-                    </div>
-                
-            </div>
+                <button id='btn-register'>Register</button>
+                <button id='btn-sign'>Sign In</button>
+            </div>  
         </div>
     </body>
 </html>
