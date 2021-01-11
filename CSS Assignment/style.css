@@ -130,7 +130,8 @@ header{
 }
 
 h1{
-    padding: 1em 0 0 0;
+    font-size:3em;
+    padding: 1em 0.5em 0 0;
 }
 p{
     padding:var(--padding-lg);
@@ -186,6 +187,12 @@ li>a:hover{
     #footer-left-block,#footer-right-block{
         display:block;
         margin:0 auto;
+    }
+    p{
+        padding:var(--font-size-sm)
+    }
+    .column{
+        padding:var(--font-size-sm);
     }
     footer li{
         padding:var(--font-size-sm);
