@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin: 0% 15%;
+
+}
+
+.card-container {
+    width: 100%;
+}
+
+
+.blog-box {
+    border: 3px lightgray solid;
+    padding: 10px;
+    
+}
+
+.blog-category {
+    font-family: sans-serif;
+    font-style: bold;
+}
+
+.blog-world {
+    color: cornflowerblue;
+}
+
+.blog-design {
+    color: green;
+}
+
+.blog-date {
+    color: grey;
+}
+
+.continue-reading-text {
+    color: cornflowerblue;
+}
