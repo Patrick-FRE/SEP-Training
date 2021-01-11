@@ -1,4 +1,5 @@
-#JS Assignment due by 11th, Jan
+##JS Assignment due by 11th, Jan
+
 https://jsfiddle.net/Shirley619/642w38oL/276/
 
 ## How to record your SEP-TRAINING assignments by using this repo:
