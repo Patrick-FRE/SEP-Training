@@ -1,0 +1,83 @@
+@import '../header.css';
+
+.header h1{
+    text-decoration: underline;
+}
+
+.splitpanel{
+    margin: auto;
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: 65% 35%;
+    margin-top: 120px;
+    width: 80%;
+}
+
+.content{
+    margin-left: 20px;
+}
+
+.content h1{
+    margin-bottom: 0px;
+}
+
+.important{
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+}
+
+code{
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;  
+    padding: 3px;
+    display: block;
+    width: 100%;
+}
+
+.navigate .about{
+    padding: 10px;
+    background-color: rgb(223, 213, 213);
+}
+
+.navigate a{
+    display: block;
+    margin: 3px;
+}
+
+.button{
+    border-radius: 20px;
+    background-color: white;
+    display: inline-block;
+    height: 30px;
+    border-color: rgb(0, 132, 255);
+    color: rgb(0, 132, 255);
+}
+
+.disabled{
+    border-color: rgb(95, 97, 99);
+    color:rgb(95, 97, 99);
+}
+
+.date{
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 400px){
+    .header h1{
+        font-size: medium;
+    }
+
+    .content{
+        margin-left: 2px;
+    }
+
+    .splitpanel{
+        margin-top: 70px;
+        width: 90%;
+        grid-column-gap: 10px;
+    }
+}

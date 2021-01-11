@@ -1,0 +1,26 @@
+.header{
+    background-color: rgb(101, 166, 209);
+    margin: auto;
+    top: 0px;
+    left: 0;
+    padding: 8px;
+    position: fixed;
+    width: 100%;
+}
+
+.header span{
+    margin: auto;
+}
+
+.header h1{
+    text-align: center;
+}
+
+.header ion-icon{
+    margin: auto;
+}
+
+.header .grid{
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
