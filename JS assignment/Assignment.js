@@ -20,7 +20,19 @@ console.log(checkPalindrome("asksa"));
 console.log(checkPalindrome("fdasfa"));
 
 //3
-function comGen(s) {}
+function comGen(str) {
+  let fn = function (active, rest, a) {
+    if (!active && !rest) return;
+    if (!rest) {
+      a.push(active);
+    } else {
+      fn(active + rest[0], rest.slice(1), a);
+      fn(active, rest.slice(1), a);
+    }
+    return a;
+  };
+  return fn("", str, []);
+}
 console.log(comGen("dfsa"));
 
 //4
@@ -154,11 +166,66 @@ console.log(uniq("thequickbrownfoxjumpsoverthelazydog"));
 
 //17
 function count(arr) {
-  const final = arr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+  const final = arr.reduce(
+    (acc, e) => acc.set(e, (acc.get(e) || 0) + 1),
+    new Map()
+  );
   return final;
 }
 
-console.log(count([1,1,2,3]));
-
+console.log(count([1, 1, 2, 3]));
 
 //18
+function binarySearch(arr, toFind, start, end) {
+  if (start > end) return -1;
+  let mid = Math.floor((start + end) / 2);
+  if (arr[mid] === toFind) return mid;
+  if (arr[mid] > toFind) return binarySearch(arr, toFind, start, mid - 1);
+  else return binarySearch(arr, toFind, mid + 1, end);
+}
+console.log(binarySearch([1, 1, 2, 3], 2, 0, 3));
+
+//19
+function largerThan(arr, x) {
+  return arr.filter((element) => element > x);
+}
+console.log(largerThan([1, 1, 2, 3], 2));
+
+//20
+const idGenerator = function (n) {
+  let str = [];
+  let list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (let i = 0; i < n; i++)
+    str.push(list[Math.floor(Math.random() * list.length)]);
+  return str.join("");
+};
+
+console.log(idGenerator(10));
+
+//21
+function comLength(str, n) {
+  return comGen(str).filter((element) => element.length == n);
+}
+console.log(comLength("sdsd", 2));
+
+//22
+function countOccur(str, l) {
+  return str.split("").filter((item) => item == l).length;
+}
+console.log(countOccur("microsoft", "o"));
+
+//23
+function firstSingle(arr) {
+  letter = "";
+  try {
+    count(arr.split("")).forEach(function (value, key) {
+      if (value == 1) {
+        letter = key;
+        throw BreakException;
+      }
+    });
+  } catch (e) {}
+  return letter;
+}
+
+console.log(firstSingle("abacddbec"));
