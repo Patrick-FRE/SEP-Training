@@ -1,9 +1,11 @@
+//1
 function reverseNum(number) {
     var str = number + '';
     var ans = parseInt(str.split('').reverse().join(''));
     console.log(ans);
 }
 
+//2
 function palindrome(str) {
     if(str.split('').reverse().join('') === str){
         return true
@@ -16,9 +18,7 @@ function palindrome(str) {
 // console.log(ans);
 
 
-
-
-
+//3
 function combination(str) {
     let res = [];
     for(let i=0; i < str.length; i++){
@@ -34,6 +34,7 @@ function combination(str) {
 
 //combination("doggle");
 
+//4
 function alphOrder(str) {
     if (!str){
         return '';
@@ -51,7 +52,7 @@ function alphOrder(str) {
 
 //alphOrder('zgadgf')
 
-
+//5
 function first2Upper(str) {
     let arr = str.split(' ');
     arr.forEach((element, index) => {
@@ -65,6 +66,7 @@ function first2Upper(str) {
 
 //first2Upper('the quick brown fox');
 
+//6
 function longestWord(str) {
     if(!str){
         return '';
@@ -84,6 +86,7 @@ function longestWord(str) {
 
 //longestWord('Web Development Tutorialaasd');
 
+//7.
 function countVowel(str) {
     let res = 0;
     let vowel = ['a','e','i','o','u'];
@@ -102,6 +105,8 @@ function countVowel(str) {
 
 //countVowel('The quick brown fox');
 
+
+//8
 function primeNum(num) {
     for (let i = 2; i < num; i++) {
         if(num % i === 0){
@@ -114,6 +119,8 @@ function primeNum(num) {
 // let ans = primeNum(17);
 // console.log(ans);
 
+
+//9
 function type(para) {
     return(typeof(para));
 }
@@ -126,7 +133,7 @@ function type(para) {
 
 // console.log(ans1,ans2,ans3,ans4, ans5);
 
-
+//10
 function iMatrix(n) {
     if(n ===1){
         return [1];
@@ -144,6 +151,7 @@ function iMatrix(n) {
 
 // iMatrix(1)
 
+//11
 function secLowAndHigh(arr) {
     let temp = new Set(arr);
     let res = [...temp];
@@ -158,6 +166,7 @@ function secLowAndHigh(arr) {
 // let res = secLowAndHigh([1,1,1,2,3,4,4,5,6,6]);
 // console.log(res);
 
+//12
 function perfectNum(num) {
     if(!num) {
         return false;
@@ -178,6 +187,8 @@ function perfectNum(num) {
 // let res = perfectNum(67);
 // console.log(res);
 
+
+//13
 function factor(num) {
     if (!num) {
         return 0;
@@ -196,10 +207,14 @@ function factor(num) {
 
 //factor(24);
 
+
+//14
 function coins(num, arr) {
     
 }
 
+
+//15
 function exponent(base, exp) {
     let res = 1;
     while(exp > 0){
@@ -213,6 +228,8 @@ function exponent(base, exp) {
 
 //exponent(3, 3);
 
+
+//16
 function extractUnique(str) {
     let arr = str.split('');
     let set = new Set(arr);
@@ -221,6 +238,8 @@ function extractUnique(str) {
 }
 //extractUnique('hequickbrownfoxjumpsoverthelazydog');
 
+
+//17
 function countOccur(str) {
     let dic = {};
     for(c of str){
@@ -237,10 +256,14 @@ function countOccur(str) {
 
 //countOccur('asdfwas');
 
+
+//18
 function binary(str, wanted) {
     
 }
 
+
+//19
 function filterArr(arr, num) {
     return arr.filter((ele) => {
         return ele>num;
@@ -250,6 +273,8 @@ function filterArr(arr, num) {
 // let res = filterArr([1,2,3,4,5,56,23,2,7,8], 6)
 // console.log(res);
 
+
+//20
 function generateID(len) {
     let sample = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     let ranStrId = '';
@@ -264,13 +289,35 @@ function generateID(len) {
 //generateID(13);
 
 
-//22
-function subset(arr, len) {
-    for (let i = 0; i < arr.length; i++) {
-        
-        
-    }
+//21
+function subset(arra, arra_size)
+ {
+    var result_set = [], 
+        result;
+    
+    for(var x = 0; x < Math.pow(2, arra.length); x++)
+    {
+        result = [];
+        i = arra.length - 1; 
+        do{
+            if( (x & (1 << i)) !== 0){
+                    result.push(arra[i]);
+                }
+        }while(i--);
+
+        if( result.length >= arra_size)
+        {
+            result_set.push(result);
+            }
+        }
+
+    return result_set; 
 }
+
+console.log(subset([1, 2, 3], 2));
+
+//22
+
 
 //23
 function firstNotRepeat(str){
