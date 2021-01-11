@@ -61,18 +61,18 @@
   background-color: #0b4d14;
 }
 .bottom-menu-list {
-    float: left;
-    display: flex;
-    list-style: none;
-    padding: 50px;
-  }
-  
-  .bottom-menu-list li {
-    float: left;
-    padding: 50px;
-  }
-  .bottom-menu-list a {
-    color: #ffff;
-    font-size: small;
-    font-style: Helvetica;
-  }
+  float: left;
+  display: flex;
+  list-style: none;
+  padding: 50px;
+}
+
+.bottom-menu-list li {
+  float: left;
+  padding: 50px;
+}
+.bottom-menu-list a {
+  color: #ffff;
+  font-size: small;
+  font-style: Helvetica;
+}
