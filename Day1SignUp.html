@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+<link href="/dist/css/commons.css?59d503b1802611b46bf6" rel="stylesheet"><link href="/dist/css/index.css?59d503b1802611b46bf6" rel="stylesheet">
+<style>
+    /*
+ * @Author: Yuhan 
+ * @Date: 2018-04-02 22:20:22 
+ * @Last Modified by: Yuhan
+ * @Last Modified time: 2018-04-03 00:07:47
+ */
+:root{
+    --color-primary:#4285F4;
+    --color-primary-dark:#0d47a1;
+    --color-success:#00C851;
+    --color-success-dark:#007E33;
+    --color-grey:#e0e0e0;
+    --color-grey-dark:#757575;
+}
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing: inherit
+}
+
+html{
+    font-size: 62.25%
+}
+
+body{
+    font-size: 1.6rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+label{
+    cursor:pointer;
+}
+
+input[type='checkbox']{
+    cursor:pointer;
+}
+
+
+/* common */
+.form-container{
+    position: fixed;
+    width:100%;
+    max-width: 50rem;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.hide{
+    display:none;
+}
+
+.btn{
+    border:none;
+    background-color: var(--color-grey-dark);
+    outline: none;
+}
+
+.primary{
+    color: #fff;
+    background-color:var(--color-primary);
+}
+.primary:active{
+    background-color: var(--color-primary-dark);
+}
+.success{
+    color:#fff;
+    background-color:var(--color-success);
+}
+.success:active{
+    background-color: var(--color-success-dark);
+}
+
+.form-signup{
+    display:flex;
+    flex-direction: column;
+}
+
+.form-signup .form-signup__header{
+    text-align: center;
+    margin:5px 0;
+}
+
+.form-signup .form-row{
+    display: flex;
+    flex:1 1 100%;
+    margin:1px;
+}
+.form-signup .form-row .form-item{
+    flex:1 1 100%;
+    margin:0.5rem 1rem;
+}
+.form-item input{
+    padding:1rem;
+    width:100%;
+    border-radius: 5px;
+    border:1px solid var(--color-grey);
+    outline:none;
+}
+
+.form-item input:focus{
+    box-shadow: 0 0 2px 1px #88b8ff;
+}
+
+.form-row .agree-wrapper{
+    display: flex;
+    margin-top: 8px;
+}
+.agree-wrapper{
+    display: flex;
+    margin-top: 80px;
+}
+
+
+.form-row .check-agree{
+   
+    flex:1 1 40%;
+    font-weight: bold;
+    font-size: 1.4rem;
+    line-height: 2.5rem; 
+    min-width: 2rem;
+}
+
+
+.form-row .terms{
+    font-size: 1.2rem;
+}
+.form-row .terms a{
+    text-decoration: none;
+}
+.form-row .terms .badge-register{
+    background-color: var(--color-primary);
+    display: inline-block;
+    color:#fff;
+    padding:1px 4px;
+    border-radius: 3px;
+}
+
+
+
+
+@media (max-width:600px){
+    .form-signup .form-row{
+        flex-direction: column;
+    }
+    .check-agree label{
+        display: none;
+    }
+    .check-agree {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+</style>
+</head>
+<body>
+  <div class="form-container">
+    <form action="" class="form-signup">
+        <header class="form-signup__header">
+            <h1 class="heading">Sign Up</h1>
+        </header>    
+        <!-- 把h1放在header里面 -->
+        <div class="form-row">
+            <div class="form-item">
+                <input type="text" class="fname" placeholder="First Name">
+            </div>
+            <div class="form-item">
+                <input type="text" class="lname" placeholder="Last Name">
+            </div>
+        </div>
+        <!-- 一行是个div,然后里面每个input放个>div -->
+        <div class="form-row">
+            <div class="form-item">
+                <input type="text" class="phone" placeholder="Mobile No.">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-item">
+                <input type="text" class="email" placeholder="Email Address">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-item">
+                <input type="password" class="password" placeholder="Password">
+            </div>
+            <div class="form-item">
+                <input type="password" class="repassword" placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="agree-wrapper">
+                <div class="check-agree">
+                    <input type="checkbox" id="agree" class="agree">
+                    <label for="agree">I Agree</label>
+                </div>
+                <p class="terms">
+                    By clicking
+                    <span class="badge-register">Register</span>, you agree to the
+                    <a href="#" class="conditions">Terms and Conditions</a>
+                    set out by this site, including our Cookie Use
+                </p>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-item">
+                <input type="submit" class="btn primary" value="Register">
+            </div>
+            <div class="form-item">
+                <input type="button" class="btn success" value="Sign In">
+            </div>
+        </div>
+    </form>
+  </div>
+<script type="text/javascript" src="/dist/js/commons.js?59d503b1802611b46bf6"></script><script type="text/javascript" src="/dist/js/index.js?59d503b1802611b46bf6"></script></body>
+</html>
