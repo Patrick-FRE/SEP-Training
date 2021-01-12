@@ -358,7 +358,6 @@
 // setState({age: 200});
 // console.log(state);
 
-
 // this:
 // global this;
 
@@ -413,7 +412,7 @@
 // }
 // const myObj = {
 //     myMethod(item) {
-//         console.log(this); 
+//         console.log(this);
 //         // const foo = function() {
 //         //     console.log(this)
 //         // }.bind(this);
@@ -423,7 +422,7 @@
 //         });
 //     }
 // }
-// myObj.myMethod([1]); //  
+// myObj.myMethod([1]); //
 
 // arrow constructor function
 // const Car = (color) => {
@@ -451,7 +450,7 @@
 //     return function(num2) {
 //         return num1 + num2;
 //     }
-// } 
+// }
 // const bar = ((function() {
 //     let a = 5;
 //     return function() {
@@ -459,7 +458,6 @@
 //     }
 // }))();
 // console.log(bar());
-
 
 // const limitedFunction = (num, cb) => {
 //     let counter = 0;
@@ -527,32 +525,159 @@
 
 // XHR
 
+// function getUser(cb, id) {
+//     let xhttp = new XMLHttpRequest();
+//     xhttp.onreadystatechange = function () {
+//         if (this.readyState === 4 && this.status === 200) {
+//             const data = JSON.parse(xhttp.response);
+//             cb(data);
+//         }
+//     };
+//     const url = 'https://jsonplaceholder.typicode.com/posts/'
+//     xhttp.open("GET", url + id, true);
+//     xhttp.send();
+// }
+// function getUser(id) {
+//     return new Promise((resolve, reject) => {
+//         const xhttp = new XMLHttpRequest();
+//         const url = 'https://jsonplaceholder.typicode.com/posts/';
 
-function getUser(cb, id) {
-    let xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            // Typical action to be performed when the document is ready:
-            // document.getElementById("demo").innerHTML = xhttp.responseText;
-            const data = JSON.parse(xhttp.response);
-            cb(data);
-        }
-    };
-    const url = 'https://jsonplaceholder.typicode.com/posts/'
-    xhttp.open("GET", url + id, true);
-    xhttp.send();
+//         xhttp.open("GET", url + id, true);
+//         xhttp.send();
+//         xhttp.onreadystatechange = function () {
+//             if (this.readyState === 4 && this.status === 200) {
+//                 const data = JSON.parse(xhttp.response);
+//                 resolve(data);
+//             }
+//         };
+//     });
+// }
+// getUser(5)
+//     .then(data => {
+//         print(data);
+//         return getUser(12);
+//     })
+//     .then(data => {
+//         print(data);
+//         return getUser(3);
+//     })
+//     .then(data => print(data));
+// syntactic sugar
+// async await
+
+// async function getUsers() {
+//     try {
+//         const data5 = await getUser(5);
+//         print(data5);
+//     } catch (error) {
+//         console.log(error);
+//     }
+
+
+//     const data12 = await getUser(12);
+//     print(data12);
+//     const data3 = await getUser(3);
+//     print(data3);
+// }
+// getUsers();
+
+// function print(data) {
+//     console.log(data);
+// }
+// getUser(data => {
+//     print(data);
+//     getUser((data) => {
+//         print(data);
+//         getUser((data) => {
+//             print(data);
+//         }, 3)
+//     }, 12)
+// }, 5)  // 5, 12, 3
+
+// Promise
+
+// const foo = () => {
+//     console.log('this is foo()');
+// }
+// const bar = () => {
+//     console.log('this is bar()');
+// }
+// const getRandomTime = () => {
+//     return Math.floor(Math.random() * 6);
+// }
+
+// const p = new Promise((resolve, reject) => {
+//     const timer = getRandomTime();
+//     console.log(`${timer}s`);
+//     setTimeout(() => {
+//         resolve('hello');
+//     }, timer * 1000);
+
+// })
+//     .then(data => {  // 
+//         console.log('this is data: ', data);
+//         return data + '2';
+//     })
+//     .then(data2 => console.log('this is data2: ', data2))
+//     .catch(err => console.log(err));
+
+// MyPromise
+class MyPromise {
+    thenCallBackQueue = [];
+    currentData;
+
+    constructor(exe) {
+        exe(this.resolve, this.reject.bind(this));
+    }
+    resolve = (data) => {
+        setTimeout(() => {
+            this.currentData = data;
+            while (this.thenCallBackQueue.length) {
+                const cb = this.thenCallBackQueue.shift();
+                if (this.currentData instanceof MyPromise) {
+                    this.currentData.then(dataFromRes => {
+                        this.currentData = cb(dataFromRes)
+                    })
+                } else {
+                    this.currentData = cb(this.currentData);
+                }
+
+            }
+        });
+    }
+    // reject() { }
+    then(thenCallBack) {
+        this.thenCallBackQueue.push(thenCallBack);
+        return this;
+    }
+    // catch(catchCallBack) { }
+    // all() {}
 }
-function print(data) {
-    console.log(data);
-}
-getUser(data => {
-    print(data);
-    getUser((data) => {
-        print(data);
-        getUser((data) => {
-            print(data);
-        }, 3)
-    }, 12)
-}, 5)  // 5, 12, 3
+
+const p = new MyPromise((resolve, reject) => {
+    // setTimeout(() => resolve('hello'), 0);
+    resolve('hello');
+})
+    .then(data => {  // 
+        console.log('this is data: ', data);
+        return new MyPromise((res, rej) => {
+            // setTimeout(() => {
+                res('Dio')
+            // }, 0);
+        });
+    })
+    .then(data2 => console.log('this is data2: ', data2))
+    // .catch(err => console.log(err));
+
+// shift, unshift, pop, push
+
+
+// fetch
+
+myfetch()
+
+// fetch('https://jsonplaceholder.typicode.com/todos/1')
+//   .then(response => response.json())
+//   .then(json => console.log(json))
 
 
