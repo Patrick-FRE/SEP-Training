@@ -229,3 +229,25 @@ function firstSingle(arr) {
 }
 
 console.log(firstSingle("abacddbec"));
+
+//24
+function bubbleSort(arr) {
+  let swapped=false;
+  function swap(a, b){
+    let temp=arr[a]
+    arr[a]=arr[b]
+    arr[b]=temp
+    swapped=true
+  }
+
+  do{
+    swapped=false
+    for(let i=0;i<arr.length;i++){
+      if(arr[i]>arr[i+1]) swap(i,i+1)
+
+    }
+  }while(swapped)
+  return arr
+}
+console.log(bubbleSort([1, 3, 46, 1, 2, 5, 77, 12]));
+
