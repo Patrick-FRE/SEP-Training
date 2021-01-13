@@ -24,9 +24,10 @@ class MyPromise {
         });
     }
     reject = (err) => {
-        setTimeout(() => {this.catchCallBack(err);
-            return this;}, 0)
-        
+        setTimeout(() => {
+            this.currentData = err;
+            this.catchCallBack(err);
+        }, 0)
     }
     then(thenCallBack) {
         this.thenCallBackQueue.push(thenCallBack);
@@ -34,6 +35,7 @@ class MyPromise {
     }
     catch(catchCallBack) {
         this.catchCallBack = catchCallBack;
+        return this;
     }
     // all() {}
 }
@@ -44,20 +46,24 @@ const getRandomTime = () => {
 
 const p = new MyPromise((resolve, reject) => {
     // setTimeout(() => {
-        const time = getRandomTime();
-        if (time < 3) {
-            setTimeout(() => resolve('hello'), time);
-        } else {
-            reject('OUT OF CONNECTION!');
-        }
+    // const time = getRandomTime();
+    // if (time < 3) {
+    //     setTimeout(() => resolve('hello'), time);
+    // } else {
+    //     reject('OUT OF CONNECTION!');
+    // }
+    resolve('hello');
     // }, 0)
 })
     .then(data => {  // 
         console.log('this is data: ', data);
         return new MyPromise((res, rej) => {
-            // setTimeout(() => {
-            res('Dio')
-            // }, 0);
+            const time2 = getRandomTime();
+            if(time2 >3){
+            res('Jojo');
+            } else{
+                rej('OUT OF CONNECNTION! (2nd)');
+            } //Why is the second rej never handled?
         });
     })
     .then(data2 => console.log('this is data2: ', data2))

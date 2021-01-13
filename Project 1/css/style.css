@@ -1,5 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Source+Serif+Pro:ital,wght@0,600;1,600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--paragraph-font);
+}
+:root{
+    --paragraph-sm: 0.8em;
+    --paragraph-tn: 0.64em;
+    --primary-color: #5BB2F0;
+    --primary-variant: #B9DEF9;
+    --secondary-color: #EC2D9C;
+    --secondary-variant: #F05BB2;
+    --text-color: #020E17;
+    --hint-color: #9A9A9A;;
+    --ui-color:#D2D2D2;
+    --heading-font: 'Source Serif Pro', serif;
+    --paragraph-font: 'Montserrat', sans-serif;
+    --fontweight-semibod: 600;
+    --fontweight-regular: 400;
+    --fontweight-light: 300;
+}
+h1{
+    font-size: 3.052em;
+    font-family: var(--heading-font);
+}
+h2{
+    font-size: 2.441em;
+    font-family: var(--heading-font);
+
+}
+h3{
+    font-size: 1.953em;
+    font-family: var(--heading-font);
+}
+h4{
+    font-size: 1.563em;
+    font-family: var(--heading-font);
+}
+h5{
+    font-size: 1.25em;
+    font-family: var(--heading-font);
+}
+body{
+    font-size: 16px;
+    color:var(--text-color);
+    line-height: 1.3em;
+}
+
+@media only screen and (max-width: 500px){
+ body{
+     font-size: 14px;
+     line-height: 1.4em;
+ }
 }
