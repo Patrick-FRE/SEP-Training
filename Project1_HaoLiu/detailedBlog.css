@@ -1,0 +1,76 @@
+.title{
+    display: inline;
+   padding-left: 38vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+.blog-head{
+    padding-top: 5vh;
+    
+}
+.icon{
+    padding-right: 1em;
+    float: right;
+    color: grey;
+}
+
+.subs{
+    font-size: 90%;
+    padding-left: 1em;
+    color: grey;
+    
+}
+.row{
+    margin-top: 50px;
+    padding-left: 3.5vw;}
+    
+h6{
+    color: lightslategray;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+.p3{
+    border: 1px solid rgb(217, 218, 219);
+}
+.p4{
+    padding-top: 10px;
+}
+code{
+    background-color:rgb(167, 167, 158);
+}
+
+.container-right{
+    margin-left: 10vw;
+}
+
+.foot{
+    background-color: lightgray;
+    margin-top: 10px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-tag{
+    color: lightskyblue;
+    text-align: center;
+}
+
+.side-li{
+    margin-top: 13vh;
+}
+
+.ita{
+  font-style: italic;
+}
+.about{
+    padding: 10px 10px;
+}
+.card{
+  background-color: rgb(212, 216, 213);
+    width: 18rem
+}
+div.a{
+    color: rgb(188, 218, 236);
+}
