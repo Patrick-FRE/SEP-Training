@@ -2,6 +2,7 @@
 class MyPromise {
   thenCallBackQueue = [];
   currentData;
+  currentError;
 
   constructor(exe) {
     exe(this.resolve, this.reject.bind(this));
@@ -21,20 +22,7 @@ class MyPromise {
       }
     });
   };
-  // reject(data) {
-  //   setTimeout(() => {
-  //     this.currentData = data;
-  //     while (this.thenCallBackQueue.length) {
-  //       const cb = this.thenCallBackQueue.shift();
-  //       if (this.currentData instanceof MyPromise) {
-  //         this.currentData.then(dataFromRes => {
-  //           this.currentData = cb(dataFromRes);
-  //         });
-  //       } else {
-  //         this.currentData = cb(this.currentData);
-  //       }
-  //     }
-  //   });
+  // reject(error) {
   // }
   then(thenCallBack) {
     this.thenCallBackQueue.push(thenCallBack);
