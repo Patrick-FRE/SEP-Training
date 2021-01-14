@@ -5,19 +5,31 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
         <link rel="stylesheet" href="./index.css" />
-        <script src="./index.js" defer></script>
+        
     </head>
     <body>
         <header></header>
-        <main>
-            <h1>Welcom to Antra</h1>
+        <main class="main" onclick="alertClassName()">
+            <!-- <h1>Welcom to Antra</h1>
 
-            <div>
-                aahdfhadkjfakdsjfhkadsjfas;dfadsfasff
-                <span class="main__showspan">test span</span>
-                fjadhfadskjfhadskfjhasdlfkhasdlkf
+            <div class="show_event_boboling" onclick="alertClassName(event)">
+                show me the money
+                <span class="show_inline_block" onclick="alertClassName(event)">test span</span>
+                show me the money
             </div>
-            <p id="add"></p>
+            <p id="add"></p> -->
+
+            <div class="parent"">
+                <div class="child"></div>
+            </div>
         </main>
+
+
+        <script>
+            function alertClassName() {
+                console.log(event.target.className);
+            }
+        </script>
+        <script src="./index.js" defer></script>
     </body>
 </html>

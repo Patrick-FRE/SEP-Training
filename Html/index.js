@@ -1,4 +1,4 @@
-console.log('hello')
+// console.log('hello')
 
 // function getElementsByClassName(className) {
 //     const nodeList = [];
