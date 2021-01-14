@@ -1,0 +1,68 @@
+.title{
+    display: inline;
+   padding-left: 38vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+.blog-head{
+    padding-top: 5vh;
+    
+}
+.icon{
+    padding-right: 1em;
+    float: right;
+    color: grey;
+}
+
+.subs{
+    font-size: 90%;
+    padding-left: 1em;
+    color: grey;
+    
+}
+body {
+    padding: 20px 0;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 10px;
+    align-items: stretch;
+  }
+  
+  .grid > article {
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+  
+  .grid > article img {
+    max-width: 100%;
+  }
+  
+  .grid .text {
+    padding: 10px;
+  }
+  
+    .card-blog{
+        padding-top: 5vh;
+    }
+h6{
+    color: #696969;
+}
+.btn{
+    font-size: 90%;
+    color: lightskyblue;
+}
+.foot{
+    background-color: lightgray;
+    margin-top: 10px;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot-tag{
+    color: lightskyblue;
+    text-align: center;
+}
