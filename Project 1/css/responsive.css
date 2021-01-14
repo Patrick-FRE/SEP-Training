@@ -1,3 +1,16 @@
+@media only screen and (max-width: 800px){
+    header{
+        padding:var(--twoside-padding-sm);
+    }
+    main{
+        padding:var(--twoside-padding-sm);
+    }
+    footer{
+        padding:var(--twoside-padding-sm);
+    }
+}
+
+
 
 @media only screen and (max-width: 550px){
 
@@ -6,8 +19,7 @@
         line-height: 1.5;
     }
     header{
-        background-color: #fff;
-        padding:var(--twoside-padding-sm);
+        background-color: #fff; 
     }
     /*toggle menu*/
     #menu-on-smscreen{
@@ -86,19 +98,12 @@
     #menu-on-smscreen>span{
         font-size:30px;
         color:var(--primary-variant);
-        /* padding-top:calc(2.441em * 0.8); */
     }
     
 
     .grid-container{
         grid-template-columns: 1fr;
         column-gap: 0;
-    }
-    main{
-        padding:var(--twoside-padding-sm);
-    }
-    footer{
-        padding:var(--twoside-padding-sm);
     }
     .hideen-on-smscreen{
         display:none;

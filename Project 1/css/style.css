@@ -16,6 +16,9 @@
     --fontweight-light: 300;
     --twoside-padding-lg: 0 8vh;
     --twoside-padding-sm: 0 5vh;
+    --two-columns-lg:2fr 1fr;
+    --one-column-lg: 1fr;
+    --row-lg:1fr 1fr;
 }
 *{
     margin: 0;
