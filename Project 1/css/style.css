@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Source+Serif+Pro:ital,wght@0,600;1,600&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--paragraph-font);
-}
 :root{
     --paragraph-sm: 0.8em;
     --paragraph-tn: 0.64em;
@@ -15,12 +9,40 @@
     --secondary-variant: #F05BB2;
     --text-color: #020E17;
     --hint-color: #9A9A9A;;
-    --ui-color:#D2D2D2;
+    --ui-color: #E9E9E9;;
     --heading-font: 'Source Serif Pro', serif;
     --paragraph-font: 'Montserrat', sans-serif;
     --fontweight-semibod: 600;
-    --fontweight-regular: 400;
     --fontweight-light: 300;
+    --twoside-padding-lg: 0 8vh;
+    --twoside-padding-sm: 0 5vh;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--paragraph-font);
+}
+
+
+/*font-style*/
+.italic{
+    font-style: italic;
+}
+.semi-bold{
+    font-weight:var(--fontweight-semibod);
+}
+.light{
+    font-weight: var(--fontweight-light);
+}
+.underline{
+    text-decoration: underline;
+}
+h1,h2,h3{
+    padding: 0.8em 0 0.3em 0;
+}
+h4,h5{
+    padding:1em 0 0.8em 0;
 }
 h1{
     font-size: 3.052em;
@@ -43,15 +65,180 @@ h5{
     font-size: 1.25em;
     font-family: var(--heading-font);
 }
+
+/*Paragraph styles*/
+p{
+    padding: 1.5em 0;
+}
+.ps{
+    font-size: 0.8em;
+    padding: 0.3em 0;
+}
+.pt{
+    font-size: 0.64em;
+}
+.hr{
+    border-bottom: 1px solid var(--ui-color);
+}
+.border-block{
+    border: 1px solid var(--hint-color);
+    padding: 0.5em;
+}
+
+/*list style*/
+ul, ol{
+    padding: 1em 2em;
+}
+li{
+    padding: 0.5em 0.3em;
+}
+.none-dec{
+    list-style: none;
+}
+.none-indent{
+    padding-right:0;
+    padding-left:0;
+}
+
+
+
+/* Text color*/
+.primary-color{
+    color:var(--primary-color);
+}
+.primary-variant{
+    color:var(--primary-variant)
+}
+.secondary-color{
+    color:var(--secondary-color);
+}
+.secondary-variant{
+    color:var(--secondary-variant);
+}
+.ui-color{
+    color:var(--ui-color);
+}
+.hint-color{
+    color:var(--hint-color);
+}
+
+/*button*/
+button{
+    border-radius: 25px;
+    background-color: transparent;
+    /* border-width: 1.5px;
+    border-style: solid; */
+    text-decoration: none;
+    text-align:center;
+    display:inline-block;
+    margin-right: 10px;
+    font-size:18px;
+    border-radius:25px;
+    padding: 12px 18px;
+}
+
+
+.btn-primary{
+    border: 2px solid var(--primary-color);
+    /* border-color: var(--primary-color); */
+    color:var(--primary-color);
+    transform:translate(0,0);
+    transition: background-color .3s, box-shadow .3s, transform .3s ease;
+}
+.btn-secondary{
+    border: 2px solid var(--hint-color);
+    /* border-color: var(--hint-color); */
+    color:var(--hint-color);
+    transform:translate(0,0);
+    transition: color .3s, background-color .3s, box-shadow .3s, transform .3s ease;
+}
+.btn-primary:hover{
+ background-color: #fff;
+ box-shadow: 2px 3px #2D9CEC;
+ 
+}
+.btn-primary:active{
+    box-shadow: none;
+    background-color:var(--primary-variant);
+    color:#fff;
+    transform:translateY(3px);
+}
+.btn-secondary:hover{
+    background-color: #fff;
+    box-shadow: 2px 3px #808080;;
+}
+.btn-secondary:active{
+    box-shadow: none;
+    background-color:#CCCCCC;;
+    color:#fff;
+    transform:translateY(3px);
+}
+.button-group{
+    padding:1em 0;
+}
+
+
+
+
 body{
     font-size: 16px;
     color:var(--text-color);
-    line-height: 1.3em;
+    line-height: 1.4;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+header{
+    background-color: var(--primary-variant);
+    position: sticky;
+    top:0;
+    padding:var(--twoside-padding-lg);
+    text-align: center;
+    
+}
+main{
+    flex: 1 0 auto;
+    padding:var(--twoside-padding-lg)
+}
+footer{
+    background-color: var(--ui-color);
+    flex-shrink: 0;
+    padding:var(--twoside-padding-lg);
+    text-align: center;
+}
+.grid-container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows:1fr;
+    column-gap: 2.5em;
+    padding:40px 0;
+}
+.post{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.sidebar{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding-top: calc(3.052em * 0.8);
+}
+#blog-title{
+    padding: 1em 0;
+}
+#about{
+    background-color: var(--ui-color);
+    padding: 0 1.5em 1.5em 1.5em;
+}
+a{
+    transition:color 0.3s ease;
+}
+a:hover{
+    color:var(--secondary-variant);
+}
+.icon-holder{
+    font-size:32px;
+    display:inline-block;
+    padding: 0.5em 0.5em 0.5em 0;
 }
 
-@media only screen and (max-width: 500px){
- body{
-     font-size: 14px;
-     line-height: 1.4em;
- }
-}
