@@ -314,7 +314,7 @@ function subset(arra, arra_size)
     return result_set; 
 }
 
-console.log(subset([1, 2, 3], 2));
+//console.log(subset([1, 2, 3], 2));
 
 //22
 
@@ -427,3 +427,6 @@ function findName() {
 }
 
 //findName();
+
+
+//test
