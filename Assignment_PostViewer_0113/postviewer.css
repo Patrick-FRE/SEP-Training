@@ -5,17 +5,36 @@
   box-sizing: border-box;
 }
 .header {
-  background-color: gray;
+  background: -webkit-linear-gradient(left,black, white);
+  background: -o-linear-gradient(right,black,white);
+  background: -moz-linear-gradient(right, black,white);
+  background: linear-gradient(to right,black,white);
+  font-size: larger;
   height: auto;
-  text-align: center;
+  text-align: left;
   padding: 20px;
+  color: white;
 }
 
-.fetchBtn {
-  padding: 10px;
+button {
+  background-color: red;
+  color: white;
 }
 
 table {
+  border: solid;
+  border-collapse: collapse;
+}
+td, th{
+  border: solid;
+  padding: 10px;
+}
+
+.body{
+  padding: 20px 70px;
+}
+
+/* table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -29,4 +48,4 @@ table {
   
   tr:nth-child(even) {
     background-color: #dddddd;
-  }
+  } */
