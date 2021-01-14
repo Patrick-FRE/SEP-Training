@@ -1,14 +1,106 @@
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 550px){
 
     body{
         font-size: 14px;
         line-height: 1.5;
     }
+    header{
+        background-color: #fff;
+        padding:var(--twoside-padding-sm);
+    }
+    /*toggle menu*/
+    #menu-on-smscreen{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+        
+    }
+    #toggle-bttn input{
+        display: inline-block;
+        width: 40px;
+        height: 39px;
+        cursor: pointer;
+        position:absolute;
+        top:20px;
+        left:0;
+        opacity: 0; /* hide this */
+        z-index: 10; /* and place it over the hamburger */
+        -webkit-touch-callout: none;
+    }
+    #toggle-bttn span{
+        display: block;
+        width: 32px;
+        height: 3px;
+        margin-bottom: 5px;
+        position: relative;
+        background: var(--primary-variant);
+        border-radius: 3px;  
+        z-index: 9;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                    opacity 0.55s ease;
+    }
+    #toggle-bttn span:first-child{
+        transform-origin: 0% 0%;
+    }
+    #toggle-bttn span:nth-last-child(2){
+        transform-origin: 0% 100%;
+    }
+    #toggle-bttn input:checked ~ span{
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+    }
+    #toggle-bttn input:checked ~ span:nth-last-child(2){
+        opacity: 1;
+        transform: rotate(-45deg) translate(0, 1px);
+    }
+    #toggle-bttn input:checked ~ span:nth-last-child(3){
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+    #toggle-bttn ul{
+        position: absolute;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        width: 200px;
+        height: calc(100vh + 100px);
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
+        background:#fff;
+        /* to stop flickering of text in safari */
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        z-index:8;
+    }
+    #toggle-bttn ul>li{
+        display: block;
+    }
+    #toggle-bttn input:checked ~ ul{
+        transform: none;
+    }
+    #menu-on-smscreen>span{
+        font-size:30px;
+        color:var(--primary-variant);
+        /* padding-top:calc(2.441em * 0.8); */
+    }
+    
+
+    .grid-container{
+        grid-template-columns: 1fr;
+        column-gap: 0;
+    }
     main{
         padding:var(--twoside-padding-sm);
     }
-    .sidebar{
+    footer{
+        padding:var(--twoside-padding-sm);
+    }
+    .hideen-on-smscreen{
         display:none;
     }
     .post{

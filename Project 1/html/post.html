@@ -13,7 +13,25 @@
 <body>
     <div class="container">
         <header>
-            <h2 id="blog-title" class="underline">My First Blog</h2>
+            <h2 id="blog-title-lgscreen" class="underline hideen-on-smscreen">My First Blog</h2>
+            <nav id="menu-on-smscreen">
+                <div id="toggle-bttn">
+                    <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul class="none-indent none-dec">
+                        <h4 class="italic">Archive</h4>
+                        <li class="none-indent"><a class="primary-color" href="#">August/2020</a></li>
+                        <li class="none-indent"><a class="primary-color" href="#">September/2020</a></li>
+                        <li class="none-indent"><a class="primary-color" href="#">Octorber/2020</a></li>
+                        <li class="none-indent"><a class="primary-color" href="#">November/2020</a></li>
+                        <li class="none-indent"><a class="primary-color" href="#">December/2020</a></li>
+                    </ul>
+                </div>
+                <h2 id="blog-title-smscreen" class="underline">My First Blog</h2>
+                <span class="icon-holder"><i class="fas fa-search"></i></span>
+            </nav>
         </header>
         <main>
             <div class="grid-container">
@@ -74,7 +92,7 @@
                             est nisi bibendum sapien, at efficitur diam mauris sed magna. Cras vel odio metus. Nam sed nibh
                             massa. Sed aliquam libero quis velit vulputate, nec ultrices eros varius.</p>
                     </div>
-                    <div>
+                    <div id="archive" class="hideen-on-smscreen">
                         <h3 class="italic">Archive</h3>
                         <ul class="none-dec none-indent">
                             <li class="none-indent"><a class="primary-color" href="#">August/2020</a></li>
@@ -84,11 +102,12 @@
                             <li class="none-indent"><a class="primary-color" href="#">December/2020</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <h3 class="italic">Visit</h3>
+                    <div id="follow-us" class="hideen-on-smscreen">
+                        <h3 class="italic">Follow Us</h3>
                         <span class="icon-holder"><a class="hint-color" href="https://www.facebook.com"><i class="fab fa-facebook"></i></a></span>
                         <span class="icon-holder"><a class="hint-color" href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></span>
                         <span class="icon-holder"><a class="hint-color" href="https://www.github.com"><i class="fab fa-github"></i></a></span>
+                        <p><a href="#">Subscribe</a></p>
                     </div>
                 </div>
             </div>

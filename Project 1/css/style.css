@@ -65,6 +65,12 @@ h5{
     font-size: 1.25em;
     font-family: var(--heading-font);
 }
+#blog-title-smscreen{
+    padding: 0.8em 0;
+}
+#toggle-bttn h4{
+    padding: 0.8em 0 0.3em 0;
+}
 
 /*Paragraph styles*/
 p{
@@ -99,6 +105,10 @@ li{
     padding-right:0;
     padding-left:0;
 }
+#toggle-bttn>ul{
+    padding: 1em 0;
+}
+
 
 
 
@@ -195,8 +205,20 @@ header{
     top:0;
     padding:var(--twoside-padding-lg);
     text-align: center;
+    z-index:999;
     
 }
+/*toggle menu*/
+#menu-on-smscreen{
+    display:none;
+    position: relative;    
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    
+}
+
+
 main{
     flex: 1 0 auto;
     padding:var(--twoside-padding-lg)
@@ -223,7 +245,7 @@ footer{
     grid-column-end: 3;
     padding-top: calc(3.052em * 0.8);
 }
-#blog-title{
+#blog-title-lgscreen{
     padding: 1em 0;
 }
 #about{
