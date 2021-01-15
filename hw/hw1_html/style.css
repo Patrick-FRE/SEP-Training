@@ -1,0 +1,64 @@
+.form-container {
+    position: fixed;
+    width: 100%;
+    max-width: 50rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.header-row {
+    font-size: 23px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.name-row {
+    display: flex;
+    justify-content: center;
+}
+
+.name-row > input {
+    border-radius: 3px;
+    margin-inline: 5px;
+}
+
+.phone-number-row {
+    display: flex;
+    flex: 1 100%;
+    justify-content: center;
+}
+
+.phone-number-row > input {
+    border-radius: 3px;
+    
+}
+
+.email-row > input {
+    border-radius: 3px;
+    /* position: absolute;
+    display: flex;
+    align-items: left; */
+}
+
+.password-row > input {
+    border-radius: 3px;
+    
+}
+
+.terms-row > label {
+    cursor: pointer;
+}
+
+.terms-row > input {
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button > input {
+    border-radius: 3px;
+    
+}
