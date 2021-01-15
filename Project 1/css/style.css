@@ -26,9 +26,9 @@
     --card-width-lg:550px;
     --card-height-lg:600px;
     --card-width-md:450px;
-    --card-heigt-md:500px;
+    --card-heigt-md:550px;
     --card-width-sm: 280px;
-    --card-height-sm: 330px;
+    --card-height-sm: 370px;
     
 }
 *{
@@ -200,6 +200,10 @@ button{
 .button-group{
     padding:1em 0;
 }
+#home-page-btns{
+    text-align: center;
+    padding: 20px 0 50px 0;
+}
 
 
 
@@ -286,9 +290,16 @@ a:hover{
     padding: 0.5em 0.5em 0.5em 0;
 }
 
+/*display control*/
+.hidden-on-lgscreen{
+    display:hidden;
+}
+.hideen-on-smscreen{
+    display:block;
+}
+
 
 /*card*/
-
 .card-row{
     display:flex;
     flex-direction: row;
@@ -309,9 +320,22 @@ a:hover{
 .card:hover{
     box-shadow: 4px 4px 5px var(--primary-variant);
 }
+h3.card-title{
+    padding-bottom:8px;
+}
+.card-content>p{
+    padding: 1em 0;
+}
+.hashtag-container{
+    margin-top:1em;
+}
 .hashtag{
     padding: 5px;
     color:white;
+}
+.card-link{
+    color:black;
+    text-decoration: none;
 }
 .life{
     background-color: var(--primary-color);
