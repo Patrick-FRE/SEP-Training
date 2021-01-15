@@ -1,0 +1,96 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 100px auto 100px;
+    grid-template-areas: 
+        "header header header" 
+        "main main sidebar" 
+        "footer footer footer";
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #3e393d;
+}
+.header div {
+    width: 100px;
+}
+
+.header :nth-child(2) {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.header :last-child span {
+    display: block;
+    text-align:right;
+}
+.main {
+    grid-area: main;
+    padding: 20px;
+}
+.main > h1, .main > h2, .main > p {
+    margin-top: 15px;
+}
+
+.main a {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 120px;
+    height: 30px;
+    border: 1px solid #528be5;
+    border-radius: 25px;
+    color: #528be5;
+    text-decoration: none;
+    margin-top: 150px;
+}
+.sidebar {
+    grid-area: sidebar;
+}
+.sidebar .about {
+    margin: 35px 50px;
+    background-color:#F8F9FB;
+    height: 150px;
+}
+.sidebar .about h3, .sidebar .archives h3, .sidebar .elsewhere h3 {
+    margin: 15px;
+    font-style: italic;
+}
+.sidebar .about p {
+    margin: 15px;
+}
+.sidebar .archives, .elsewhere {
+    margin: 35px 50px;
+}
+
+.sidebar .archives ul, .elsewhere ul {
+    list-style-type: none;
+    margin: 15px;
+    text-decoration: underline;
+    color: #528be5;
+}
+.footer {
+    grid-area: footer;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    color: #87898c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#F9F9F9;
+}
