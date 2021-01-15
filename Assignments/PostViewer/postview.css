@@ -1,0 +1,7 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    padding: 5px;
+    border: 2px solid gray;
+}
