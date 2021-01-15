@@ -117,9 +117,22 @@ const AppController = ((view, model) => {
             // })
         });
     }
+    const addTodo = () => {
+        document.getElementById("inputTodo").addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                const todolistContent = document.querySelector('#' + view.domString.todolist);
+                let inputValue = document.getElementById("inputTodo").value;                
+                let firstTodo = document.createElement("li");
+                firstTodo.innerHTML = `<span>${inputValue}</span> 
+                <button class="btn-remove" id="${inputValue}">X</button>`;
+                todolistContent.prepend(firstTodo);
+            }
+        })
+    }
     const init = () => {
         console.log('init');
         initTodos();
+        addTodo();
     }
     return {
         init
