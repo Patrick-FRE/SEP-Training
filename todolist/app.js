@@ -21,10 +21,12 @@ const View = (() => {
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
+        console.log("render method is fired");
     }
     const inittodoListTmp = function (todoArray) {
         let template = '';
-        todoArray.forEach(ele => {
+        //The newest one should be on the top
+        todoArray.sort((a, b) => {return b.id - a.id}).forEach(ele => {
             template +=
                 `<li>
                     <span>${ele.title}</span> 
@@ -80,7 +82,7 @@ const AppController = ((view, model) => {
         }
         set todolist(newlist) {
             this.#todolist = newlist;
-            // console.log(this.#todolist);
+            console.log(`${this.#todolist.length} from the render method` );
             const element = document.getElementById(view.domString.todolist);
             const tmp = view.inittodoListTmp(this.#todolist);
             view.render(element, tmp);
@@ -100,11 +102,11 @@ const AppController = ((view, model) => {
             // console.log(todoInput);
             submitBtn.addEventListener('click', () => {
                 if(todoInput.value.length !== 0){
-                    // console.log("detect new todo");
                     const todo = todoInput.value;
                     Model.addTodo(todo, state.todolist);
                     todoInput.value = "";
-                    // console.log(state.todolist);
+                    console.log(`${state.todolist.length} from the adding method`);
+                    view.render(element, tmp);
                     //new todo is not rendered??
                 }
             })
@@ -121,7 +123,6 @@ const AppController = ((view, model) => {
                         return +event.target.id !== +todo.id;
                     });
                 }
-                // console.log(state.todolist);
             })
 
             //This method only works for the first one
@@ -136,7 +137,11 @@ const AppController = ((view, model) => {
             //         console.log(state.todolist.length);
             //     });
             // })
+            // const element = document.getElementById(view.domString.todolist);
+            // const tmp = view.inittodoListTmp(state.todolist);
 
+        
+        
         });
     }
     const init = () => {
