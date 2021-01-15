@@ -1,0 +1,115 @@
+@import url(./popup.css);
+
+header{
+    background-color: rgb(101, 166, 209);
+    margin: auto;
+    top: 0px;
+    left: 0;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+header input{
+    margin: auto;
+    border: none;
+    width: 90%;
+    height: 100%;
+    outline-width: 0;
+}
+
+.searchBox{
+    margin: auto;
+    width: 60%;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+ion-icon{
+    margin: auto;
+}
+
+.content{
+    margin-top: 110px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.content .grid{
+    display: grid;
+    grid-column-gap: 20px;
+    grid-row-gap:80px;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-top: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    transition: 0.3s;
+    margin: auto;
+    width: 80%;
+    min-height: 276px;
+}
+    
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img{
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    width: 95%;
+    border-radius: 5px;
+}
+
+.card p{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 5px;;
+}
+
+.result_title{
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#popup {
+    position: absolute;
+    top: 32px;
+    background: #fafafa;
+    border-radius: 6px;
+    overflow: hidden;
+    -webkit-transition: all 500ms;
+    transition: all 500ms;
+}
+
+@media only screen and (max-width: 400px){
+    h1{
+        font-size: medium;
+    }
+
+    header input{
+        width: 80%;
+    }
+
+    .content{
+        margin-top: 70px;
+        padding-left: 5px;
+        padding-right: 5px;   
+    }
+
+    .content .grid{
+        display: grid;
+        grid-column-gap: 10px;
+        grid-row-gap:5px;
+        grid-template-columns: 50% 50%;
+    }
+}
