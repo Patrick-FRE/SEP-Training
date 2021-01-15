@@ -9,24 +9,35 @@ const todoAPI = (() => {
         method: 'DELETE',
     });
 
+    const addTodo = (newTodo) => {
+        return fetch([baseUrl, todoPath].join('/'), {
+            method: 'POST',
+            body: JSON.stringify(newTodo),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json());
+    }
+
     return {
         getAllTodos,
-        delefeTodo
+        delefeTodo,
+        addTodo
     }
 })();
 
 const View = (() => {
     const domString = {
-        todolist: 'todo-content'
+        todolist: 'todo-content',
+        todoinput: 'todo-input'
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
-        // console.log("render method is fired");
     }
     const inittodoListTmp = function (todoArray) {
         let template = '';
-        //The newest one should be on the top
-        todoArray.sort((a, b) => {return b.id - a.id}).forEach(ele => {
+        todoArray.forEach(ele => {
             template +=
                 `<li>
                     <span>${ele.title}</span> 
@@ -43,101 +54,102 @@ const View = (() => {
     }
 })();
 
-const Model = ((api) => {
+const Model = ((api, view) => {
     class Todo {
-        constructor(userId, id, title, completed) {
+        constructor(userId, title, completed) {
             this.userId = userId;
-            this.id = id;
+            // this.id = id; //this is not requried as JSON placeholder will always give the same id
             this.title = title;
             this.completed = completed;
         }
     }
     const fetchTodos = api.getAllTodos;
     const deleteTodo = api.delefeTodo;
+    const addTodo = api.addTodo;
 
-    return {
-        fetchTodos,
-        deleteTodo,
-        Todo
-    }
-})(todoAPI);
-
-const AppController = ((view, model) => {
     class State {
         #todolist = [];
+        #todoinput = '';
+
+        get todoinput() {
+            return this.#todoinput;
+        }
+
+        set todoinput(newinput) {
+            this.#todoinput = newinput;
+        }
 
         get todolist() {
             return this.#todolist;
-            
+
         }
         set todolist(newlist) {
             this.#todolist = newlist;
-            console.log(`${this.#todolist.length} from the render method` );
             const element = document.getElementById(view.domString.todolist);
             const tmp = view.inittodoListTmp(this.#todolist);
             view.render(element, tmp);
         }
     }
-    const state = new State();
-    // console.log(state);
 
+    return {
+        fetchTodos,
+        deleteTodo,
+        addTodo,
+        State,
+        Todo
+    }
+})(todoAPI, View);
+
+const AppController = ((view, model) => {
+    const state = new model.State();
+
+
+    //add todo will be done here
+    const addLisnterOnInput = () => {
+        const submitBtn = document.querySelector('#submit');
+        const todoInputEle = document.querySelector('#' + view.domString.todoinput);
+    
+        submitBtn.addEventListener('click', () => {
+            if (todoInputEle.value.length !== 0) {
+                state.todoinput = todoInputEle.value;
+                console.log(state.todoinput);
+                const newTodo = new model.Todo(1, state.todoinput, false);
+                model.addTodo(newTodo).then(data =>{
+                    state.todolist = [data,...state.todolist];
+                    console.log(data);
+                })
+                todoInputEle.value = "";
+            }
+        })
+    }
+
+
+
+
+    const addListenerOnRemove = () => {
+        const todolistContent = document.getElementById(view.domString.todolist);
+        todolistContent.addEventListener('click', (event) => {
+            if (event.target.className === "btn-remove") {
+                //event.listener is not always fired?
+                console.log(event.target);
+                state.todolist = state.todolist.filter(todo => {
+                    if (+event.target.id === +todo.id) {
+                        //check if the deleted todo's id is the same as the button's id
+                        console.log(event.target, todo);
+                    } else {
+                        return todo;
+                    }
+                    // return +event.target.id !== +todo.id;
+                });
+            }
+        })
+
+    }
     const initTodos = () => {
         model.fetchTodos().then(data => {
             state.todolist = data;
-
-
-            //add todo will be done here
-            const submitBtn = document.querySelector('#submit');
-            const todoInput = document.querySelector('#todo-input');
-            // console.log(todoInput);
-            submitBtn.addEventListener('click', () => {
-                if(todoInput.value.length !== 0){
-                    const newTodoText = todoInput.value;
-                    const newTodo = new Model.Todo(1, state.todolist.length,newTodoText, false );
-                    console.log(newTodo);
-                    state.todolist.push(newTodo);
-                    console.log(state.todolist);
-                    todoInput.value = "";
-                    // view.render(view.domString.todolist, state.todolist);
-                    //new todo is not rendered??
-                }
-            })
-            //except for the first one, 
-        
-
-            const todolistContent = document.querySelector('#' + view.domString.todolist);
-            todolistContent.addEventListener('click', (event) => {
-                if (event.target.className === "btn-remove") {
-                    console.log(event.target);
-                    state.todolist = state.todolist.filter(todo => {
-                        if(+event.target.id === +todo.id ){
-                            console.log(event.target, todo);
-                        } else{
-                            // console.log(event.target, todo);
-                            return todo;
-                        }
-                        // return +event.target.id !== +todo.id;
-                    });
-                }
-            })
-
-            //This method only works for the first one
-            // const btnRemove = document.querySelectorAll('.btn-remove');
-            // console.log(btnRemove);
-            // btnRemove.forEach(ele => {
-            //     ele.addEventListener('click', (event) => {
-            //         console.log(event.target.id);
-            //         state.todolist = state.todolist.filter(todo => {
-            //             return +ele.id !== +todo.id;
-            //         });
-            //         console.log(state.todolist.length);
-            //     });
-            // })
-            // const element = document.getElementById(view.domString.todolist);
-            // const tmp = view.inittodoListTmp(state.todolist);
-
-        
-        
+            addListenerOnRemove();
+            addLisnterOnInput();
         });
     }
     const init = () => {
