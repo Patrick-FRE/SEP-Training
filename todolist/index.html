@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f9e34dc167.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
         <header id="todo-header">
             <h1>My Todo List</h1>
         </header>
-        <main class="content">
+        <main id="content">
             <div id="input-row">
-                <input type="text" name="" id="todo-input">
+                <input type="text" name="" id="todo-input" placeholder="Add new todo"><button id="submit">Submit</button>
             </div>
-            <ul>
-                <li></li>
+            <ul id="todo-content">
+                <li><span>I am a new to do</span><button class="btn-remove"><i class="fas fa-trash-alt"></i></button></li>
             </ul>
         </main>
     </div>
     
-    
+ <script src="app.js"></script>   
 </body>
 </html>
