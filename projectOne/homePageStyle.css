@@ -19,8 +19,9 @@ u{
 }
 
 body{
-  min-width: 350px;
+  min-width: 300px;
   margin: 0;
+  background-color: #f9f9f9;
 }
 
 .container {
@@ -36,9 +37,8 @@ body{
     "footer footer";
 }
 
-.blog-header {
+.navbar {
   line-height: 1;
-  border-bottom: 1px solid #e5e5e5;
   grid-area: nav;
   margin: 0;
   background-color: #f9f9f9;
