@@ -21,7 +21,7 @@ const View = (() => {
     }
     const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
-        console.log("render method is fired");
+        // console.log("render method is fired");
     }
     const inittodoListTmp = function (todoArray) {
         let template = '';
@@ -52,22 +52,12 @@ const Model = ((api) => {
             this.completed = completed;
         }
     }
-
-    const addTodo = (todoText, todolist) => {
-            const id = todolist.length > 0? todolist[todolist.length - 1].id + 1 : 1;
-            const userId = 1;
-            const newTodo = new Todo(userId, id, todoText, true );
-            // console.log(newTodo);
-            todolist.push(newTodo);
-    }
-
     const fetchTodos = api.getAllTodos;
     const deleteTodo = api.delefeTodo;
 
     return {
         fetchTodos,
         deleteTodo,
-        addTodo,
         Todo
     }
 })(todoAPI);
@@ -102,25 +92,31 @@ const AppController = ((view, model) => {
             // console.log(todoInput);
             submitBtn.addEventListener('click', () => {
                 if(todoInput.value.length !== 0){
-                    const todo = todoInput.value;
-                    Model.addTodo(todo, state.todolist);
+                    const newTodoText = todoInput.value;
+                    const newTodo = new Model.Todo(1, state.todolist.length,newTodoText, false );
+                    console.log(newTodo);
+                    state.todolist.push(newTodo);
+                    console.log(state.todolist);
                     todoInput.value = "";
-                    console.log(`${state.todolist.length} from the adding method`);
-                    view.render(element, tmp);
+                    // view.render(view.domString.todolist, state.todolist);
                     //new todo is not rendered??
                 }
             })
+            //except for the first one, 
         
 
             const todolistContent = document.querySelector('#' + view.domString.todolist);
-
-
-
             todolistContent.addEventListener('click', (event) => {
                 if (event.target.className === "btn-remove") {
                     console.log(event.target);
                     state.todolist = state.todolist.filter(todo => {
-                        return +event.target.id !== +todo.id;
+                        if(+event.target.id === +todo.id ){
+                            console.log(event.target, todo);
+                        } else{
+                            // console.log(event.target, todo);
+                            return todo;
+                        }
+                        // return +event.target.id !== +todo.id;
                     });
                 }
             })

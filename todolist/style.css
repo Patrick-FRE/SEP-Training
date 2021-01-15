@@ -53,7 +53,7 @@ ul,li{
     top:50%;
     left:50%;
     background-color:var(--white-color) ;
-    box-shadow: 3px 3px 3px var(--secondary-color);
+    box-shadow: 3px 3px 3px rgb(161, 161, 161);
     border-radius: 8px;
 }
 #todo-header{
@@ -110,7 +110,7 @@ button{
     transition:color .3s ease;
 }
 button:hover{
-    color:var(--ascending-color);
+    color:var(--white-color);
 }
 #submit{
     flex: 1 0 0;
