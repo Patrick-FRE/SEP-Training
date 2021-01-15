@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Sign Up
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  </head>
+
+  <style>
+    .body{
+      width:25rem;
+      margin: auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .row{
+      margin-top: 10px;
+    }
+
+    .nopadding-R {
+      padding-right: 0;
+    }
+
+    .nopadding-L {
+      padding-left: 0;
+    }
+
+  </style>
+
+  <body>
+    <main>
+      <div class='container'>
+        <h2 class="display-6 text-center">Sign Up</h2>
+        <div class='body'>
+          <form class='form-group'>
+
+            <div class='row mx-auto no-gutter' >
+
+              <div class='col-md-6 nopadding-L'>
+                <input  class='form-control' type="text" id="fname" placeholder='First Name'>
+              </div>
+      
+              <div class='col-md-6 nopadding-R'>
+                <input  class='form-control' type="text" id="lname" placeholder='Last Name'>
+              </div>
+                
+            </div>
+            
+    
+            <div class='row mx-auto' >
+              <input class='col-md-12 form-control' type="tel" id="mobileNo" placeholder='Mobile No.'>
+            </div>
+    
+            <div class='row mx-auto' >
+              <input class='col-md-12 form-control' type="email" id="email" placeholder='Email Address'>
+            </div>
+    
+            <div class='row mx-auto' >
+              <input class='col-md-12 form-control'  type="password" id="password" placeholder='Password'>
+            </div>
+
+            <div class='row mx-auto' >
+              <input class='col-md-12 form-control'   type="password" id="comfirmPassword" placeholder='Comfirm Password'>
+            </div>
+
+            <div class='row mx-auto' >
+              <p class='col-md-3'><input type="checkbox" id="concentBox"><span>I agree</span></p>
+              <p class='col-md-9'>
+                By clicking <button type="button" class="btn btn-primary" id="registerBtn" disabled>Register</button>, you agree to the 
+                <a href="https://www.google.com">Terms and Conditions</a> set out by this site, 
+                including our Cookie Use.
+              </p>
+            </div>
+
+            <div class='row mx-auto'>
+              <button type="button" class="btn btn-primary col-md-6" id="registerBtn">Register</button>
+              <button type="button" class="btn btn-success col-md-6" id="signInBtn">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      
+    </main> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>     
+  </body>
+
+</html>

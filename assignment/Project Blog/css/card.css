@@ -1,0 +1,20 @@
+.card{
+  box-shadow: 0 4px 4px 0 black;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.card-text{
+  color: black;
+}
+
+.date{
+  color:grey;
+}
+
+.card-title{
+  font-size: 3rem;
+  color: black;
+}
