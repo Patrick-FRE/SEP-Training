@@ -8,6 +8,29 @@
     footer{
         padding:var(--twoside-padding-sm);
     }
+    #post-gallery{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        row-gap: 0;
+    }
+    .card-row{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card-container{
+        padding: 20px 0;
+    }
+    .card{
+        width: var(--card-width-md);
+        height: var(--card-heigt-md);
+
+    }
+    .card-content{
+        height:calc(var(--card-heigt-md) * 0.45);
+        width:var(--card-width-md);
+        padding: 10px 20px;
+    }
 }
 
 
@@ -116,6 +139,19 @@
         font-size:16px;
         border-radius:20px;
         padding: 9px 14px;
+    }
+    #post-gallery{
+        margin: 20px auto;
+    }
+    .card{
+        width: var(--card-width-sm);
+        height: var(--card-height-sm);
+
+    }
+    .card-content{
+        height:calc(var(--card-height-sm) * 0.45);
+        width:var(--card-width-sm);
+        padding: 8px 10px;
     }
    }
    

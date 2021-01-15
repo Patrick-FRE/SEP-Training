@@ -19,6 +19,17 @@
     --two-columns-lg:2fr 1fr;
     --one-column-lg: 1fr;
     --row-lg:1fr 1fr;
+    --travel-picture: url('https://source.unsplash.com/tQpypKA92k8/1920x2400');
+    --design-picture: url('https://source.unsplash.com/LPWl2pEVGKc/1920x2400');
+    --web-picture: url('https://source.unsplash.com//m_HRfLhgABo/1920x1278');
+    --life-picture:url('https://source.unsplash.com/fMD_Cru6OTk/1920x1080');
+    --card-width-lg:550px;
+    --card-height-lg:600px;
+    --card-width-md:450px;
+    --card-heigt-md:500px;
+    --card-width-sm: 280px;
+    --card-height-sm: 330px;
+    
 }
 *{
     margin: 0;
@@ -230,12 +241,22 @@ footer{
     padding:var(--twoside-padding-lg);
     text-align: center;
 }
+
+
+/*Content grid*/
 .grid-container{
     display:grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows:1fr;
     column-gap: 2.5em;
     padding:40px 0;
+}
+#post-gallery{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 3em;
+    margin:40px auto;
+    padding:var(--twoside-padding-lg);
 }
 .post{
     grid-column-start: 1;
@@ -265,3 +286,70 @@ a:hover{
     padding: 0.5em 0.5em 0.5em 0;
 }
 
+
+/*card*/
+
+.card-row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.card{
+    width: var(--card-width-lg);
+    height: var(--card-height-lg);
+    box-shadow: 2px 2px 5px var(--primary-variant);
+    border-radius: 8px;
+    transition:box-shadow .3s ease;
+    /* background-image:url('https://source.unsplash.com/fMD_Cru6OTk/1920x1280'); */
+    background-size: cover;
+    background-position: 50% 80%;
+    position:relative;
+    background-repeat: no-repeat;
+}
+.card:hover{
+    box-shadow: 4px 4px 5px var(--primary-variant);
+}
+.hashtag{
+    padding: 5px;
+    color:white;
+}
+.life{
+    background-color: var(--primary-color);
+}
+.travel{
+    background-color: var(--secondary-color);
+}
+.design{
+    background-color: var(--primary-variant);
+}
+.web-dev{
+    background-color: var(--secondary-variant);
+}
+.card-content{
+    position: absolute;
+    bottom:0;
+    height:calc(var(--card-height-lg) * 0.45);
+    width:var(--card-width-lg);
+    background-color:white;
+    padding: 10px 30px;
+}
+.card-content>p:first-child{
+    overflow:hidden;
+    height: 60px;
+    width:calc(550px - 60px);
+}
+.car-content p:last-of-type{
+    margin-bottom: 20px;
+}
+.design-post{
+    background-image:var(--design-picture);
+}
+.travel-post{
+    background-image: var(--travel-picture);
+}
+.life-post{
+    background-image: var(--life-picture);
+}
+.web-post{
+    background-image: var(--web-picture);
+}
