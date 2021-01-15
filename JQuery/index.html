@@ -1,11 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <!-- <button class="continue"></button>
+        <button class="continue"></button>
+        <button class="continue"></button>
+        <button class="continue"></button> -->
+        <div
+            id="banner-message"
+            style="
+                display: none;
+                background-color: red;
+                width: 140px;
+                height: 140px;
+            "
+        ></div>
+
+        <button id="button-container-show">button-show</button>
+        <button id="button-container-hide">button-hide</button>
+        <script>
+            class MyJQuery {
+                #elements;
+                constructor(selector) {
+                    this.#elements = document.querySelectorAll(selector);
+                }
+                html(tmp) {
+                    this.#elements.forEach((element) => {
+                        element.innerHTML = tmp;
+                    });
+                }
+                on(eventType, cb) {
+                    this.#elements.forEach((element) => {
+                        element.addEventListener(eventType, cb);
+                    });
+                }
+                show() {
+                    this.#elements.forEach((element) => {
+                        element.style.removeProperty("display");
+                    });
+                }
+                hide() {
+                    this.#elements.forEach((element) => {
+                        element.style.display = "none";
+                    });
+                }
+            }
+
+            const $$ = (selector) => {
+                return new MyJQuery(selector);
+            };
+            $$.ajax = (optioins) => {
+                fetch(optioins.url)
+                .then(data => data.json())
+                .then(json => {
+                    optioins.success(json);
+                })
+            }
+            // 1
+            // $$("button.continue").html("Next Step...");
+            // 2
+            var hiddenBox = $$("#banner-message");
+            $$("#button-container-show").on("click", function (event) {
+                hiddenBox.show();
+            });
+            $$("#button-container-hide").on("click", function (event) {
+                hiddenBox.hide();
+            });
+
+            // 3
+            $$.ajax({
+                url: "https://jsonplaceholder.typicode.com/todos/1",
+                success: function (result) {
+                    console.log(result);
+                },
+            });
+        </script>
+    </body>
 </html>
