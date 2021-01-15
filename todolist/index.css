@@ -43,6 +43,8 @@ body {
         var(--color-black),
         var(--color-green)
     );
+
+    user-select: none;
 }
 .content {
     display: flex;
@@ -70,6 +72,7 @@ body {
     font-size: 1.5rem;
     letter-spacing: 1px;
     text-transform: capitalize;
+    user-select: none;
 }
 
 .todolist__input,
@@ -79,9 +82,10 @@ ul li {
     height: var(--height-todolist-header);
     
     line-height: var(--height-todolist-header);
-    padding: 5px 15px;
+    padding: 0 15px;
     font-size: 1rem;
     border: none;
+    outline: none;
 }
 
 ul li {
@@ -92,15 +96,27 @@ ul li {
 ul li span {
     overflow: hidden;
     user-select: none;
+    line-height: var(--height-todolist-header);
 }
 
 ul li button {
     width: 20px;
+    height: var(--height-todolist-header);
     border: none;
     background-color: rgb(30, 255, 0, 0);;
-    color: red;
-    font-size: x-large;
+    color: rgba(255, 0, 0, 0.1);
+    font-size: 1.5rem;
     user-select: none;
+    outline: none;
+}
+ul li button:hover {
+    font-size: 1.6rem;
+    color: rgba(255, 0, 0, 1);
+    cursor: pointer;
+}
+ul li button:active {
+    color: rgba(255, 0, 0, 1);
+    font-size: 1.4rem;
 }
 
 ul li:hover {
