@@ -133,13 +133,7 @@ const AppController = ((view, model) => {
                 //event.listener is not always fired?
                 console.log(event.target);
                 state.todolist = state.todolist.filter(todo => {
-                    if (+event.target.id === +todo.id) {
-                        //check if the deleted todo's id is the same as the button's id
-                        console.log(event.target, todo);
-                    } else {
-                        return todo;
-                    }
-                    // return +event.target.id !== +todo.id;
+                    return +event.target.id !== +todo.id;
                 });
             }
         })

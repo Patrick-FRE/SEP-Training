@@ -102,6 +102,9 @@ span{
     display:block;
     margin-right:1.5em;
 }
+button > * {
+    pointer-events: none;
+  }
 button{
     background-color: transparent;
     font-size: 20px;
