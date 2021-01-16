@@ -36,8 +36,8 @@ view = {
                 
                 iconCheck.setAttribute("class", "icon ion-md-checkmark")
                 iconCheck.setAttribute("data-id", i)
-                iconCheck.setAttribute("class", "icon ion-md-trash")
-                iconCheck.setAttribute("data-id", i)
+                iconCross.setAttribute("class", "icon ion-md-trash")
+                iconCross.setAttribute("data-id", i)
 
                 check.setAttribute("onclick", "controller.completeItem('" + i + "')")
                 cross.setAttribute("onclick", "controller.deleteItem('" + i + "')")

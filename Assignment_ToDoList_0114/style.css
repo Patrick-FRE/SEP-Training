@@ -4,3 +4,29 @@
    margin: 0px;
    box-sizing: border-box;
 }
+
+html {
+   height: 100%;
+}
+
+body {
+
+}
+
+h1 {
+   text-align: center;
+   color: #ffffff21;
+   font-size: 72px;
+   font-weight: 900;
+   margin-top: 100px;
+   margin-bottom: 10px;
+   font-style: italic;
+}
+
+#todo {
+   margin: auto;
+   width: 50%;
+   background: white;
+   box-shadow: 0 4px 12px -9x black;
+   border-radius: 6px
+}
