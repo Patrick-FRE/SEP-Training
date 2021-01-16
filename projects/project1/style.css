@@ -1,6 +1,14 @@
+/* ------ variables ------ */
+
 :root {
-    --a: green;
+    --lightgrey: lightgrey;
+    --grey: grey;
+    --blue: blue;
+    --purple: purple;
+    --lightblue: rgb(41, 129, 243);
 }
+
+/* ------ css reset ------ */
 
 *, *::after, *::before {
     margin: 0;
@@ -18,7 +26,139 @@ body {
     font-family: sans-serif;
 }
 
+/* ------ modifiers ------ */
+
 .clickable {
     cursor: pointer;
 }
+.inordered-list {
+    list-style-type: none;
+}
 
+/* ------ content page ------ */
+
+/* ------ blog header ------ */
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: underline;
+    font-size: 3rem;
+}
+
+.blog-header a {
+    font-size: 1.6rem;
+    color: var(--grey);
+    /* why the underline is still there? */
+    text-decoration: none; 
+}
+
+.blog-header button, .blog-header img {
+    background-color: transparent;
+    border: none;
+}
+.blog-header button:hover, 
+.blog-header img:hover {
+    background-color:var(--lightgrey);
+}
+
+/* ----- whole body ----- */
+.blog-body {
+    display: flex;
+}
+/* ----- blog content ----- */
+.blog-content {
+    width: 80%;
+    margin-inline: 1rem;
+}
+
+.blog-content * {
+    margin-bottom: 1rem;
+}
+
+.blog-content a {
+    color: var(--blue);
+}
+
+.blog-content h5 {
+    margin-top: 0;
+}
+
+.blog-content h1 {
+    margin-bottom: 0;
+}
+
+.blog-content li {
+    list-style-type: initial;
+    margin-left: 2rem;
+}
+
+.blog-content ol li {
+    list-style-type: decimal;
+    margin-left: 2rem;
+}
+/* ----- blog navigation bar ----- */
+.nav-bar {
+    width: 20%;
+}
+
+.nav-block {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.nav-block a {
+    display: block;
+    color: var(--blue);
+}
+/* how to make the a tag be purple after click
+.nav-block a:visited {
+    color: var(--purple);
+} */
+
+.nav-about {
+    background-color:var(--lightgrey);
+}
+
+.nav-block-title {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+/* ----- blog footer ----- */
+.footer-content {
+    margin-block: 2rem;
+}
+
+.footer-content a {
+    color: var(--lightblue);
+    text-decoration: none;
+    border: 0.1rem solid var(--lightblue);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.footer-content button {
+    color: var(--lightgrey);
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+    border: 0.1rem solid var(--lightgrey);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+/* ------ footer ------ */
+
+.footer {
+    background-color: var(--lightgrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+}
+
+.footer a {
+    margin: 0 0.5rem;
+}
