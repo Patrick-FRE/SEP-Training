@@ -33,7 +33,7 @@ header input{
 }
 
 .column{
-    border: solid;
+    /* border: solid; */
     float: left;
     width: 15%;
     height: 200px;
