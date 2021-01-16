@@ -1,3 +1,6 @@
+@import url("content.css");
+@import url("home.css");
+@import url("reset.css");
 /* ------ variables ------ */
 
 :root {
@@ -10,24 +13,6 @@
     --chartreuse: chartreuse;
 }
 
-/* ------ css reset ------ */
-
-*, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit;
-}
-
-html {
-    font-size: 62.5%;
-}
-
-body {
-    font-size: 1.6rem;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
 /* ------ modifiers ------ */
 
 .clickable {
@@ -36,8 +21,6 @@ body {
 .inordered-list {
     list-style-type: none;
 }
-
-/* ----------- content page ----------- */
 
 /* ------ blog header ------ */
 
@@ -63,92 +46,6 @@ body {
     background-color:var(--lightgrey);
 }
 
-/* ----- whole body ----- */
-.blog-body {
-    display: flex;
-}
-/* ----- blog content ----- */
-.blog-content {
-    width: 80%;
-    margin-inline: 1rem;
-}
-
-.blog-content * {
-    margin-bottom: 1rem;
-}
-
-.blog-content a {
-    color: var(--blue);
-}
-
-.blog-content h5 {
-    margin-top: 0;
-}
-
-.blog-content h1 {
-    margin-bottom: 0;
-}
-
-.blog-content li {
-    list-style-type: initial;
-    margin-left: 2rem;
-}
-
-.blog-content ol li {
-    list-style-type: decimal;
-    margin-left: 2rem;
-}
-/* ----- blog navigation bar ----- */
-.nav-bar {
-    width: 20%;
-}
-
-.nav-block {
-    margin-bottom: 1rem;
-    padding: 1rem;
-}
-
-.nav-block a {
-    display: block;
-    color: var(--blue);
-}
-/* how to make the a tag be purple after click
-.nav-block a:visited {
-    color: var(--purple);
-} */
-
-.nav-about {
-    background-color:var(--lightgrey);
-}
-
-.nav-block-title {
-    font-weight: bold;
-    font-style: italic;
-    font-size: 1.8rem;
-}
-/* ----- content footer ----- */
-.footer-content {
-    margin-block: 2rem;
-}
-
-.footer-content a {
-    color: var(--lightblue);
-    text-decoration: none;
-    border: 0.1rem solid var(--lightblue);
-    border-radius: 2rem;
-    padding: 1rem;
-}
-
-.footer-content button {
-    color: var(--lightgrey);
-    text-decoration: none;
-    background-color: transparent;
-    font-size: 1.6rem;
-    border: 0.1rem solid var(--lightgrey);
-    border-radius: 2rem;
-    padding: 1rem;
-}
-
 /* ------ footer ------ */
 
 .blog-footer {
@@ -164,59 +61,12 @@ body {
     color: var(--blue)
 }
 
-/* ----------- home page ----------- */
-
-.blog-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-inline: 2rem;
-}
-
-.blog-card {
-    margin: 1rem;
-    width: 45%;
-    border: 0.5rem solid var(--lightgrey);
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-}
-
-.blog-container a {
-    color: var(--blue);
-    margin-inline: 1rem 2rem;
-}
-
-.blog-container header {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-inline: 1rem 2rem;
-}
-
-.blog-container h5 {
-    color: var(--grey);
-    margin-inline: 1rem 2rem;
-}
-
-.blog-container p {
-    margin: 1rem 2rem 0rem 1rem;
-    min-height: 7rem;
-}
-
-.blog-world-header {
-    color: var(--cornflowerblue);
-    font-size: 1.3rem!important;
-}
-
-.blog-design-header {
-    color: var(--chartreuse);
-    font-size: 1.3rem!important;
-}
+/* ------ tried to use this to shrink and center the content but failed ------ */
 
 .whole-page-container {
     position: fixed;
     width: 100%;
     max-width: 70%;
-    /* left: 50%;
-    transform: translate(-50%, 0); */
+    left: 50%;
+    transform: translate(-50%, 0);
 } 

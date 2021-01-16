@@ -1,0 +1,48 @@
+/* ----------- home page ----------- */
+
+.blog-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-inline: 2rem;
+}
+
+.blog-card {
+    margin: 1rem;
+    width: 45%;
+    border: 0.5rem solid var(--lightgrey);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.blog-container a {
+    color: var(--blue);
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container h5 {
+    color: var(--grey);
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container p {
+    margin: 1rem 2rem 0rem 1rem;
+    min-height: 7rem;
+}
+
+.blog-world-header {
+    color: var(--cornflowerblue);
+    font-size: 1.3rem!important;
+}
+
+.blog-design-header {
+    color: var(--chartreuse);
+    font-size: 1.3rem!important;
+}

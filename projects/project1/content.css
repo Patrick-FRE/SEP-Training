@@ -1,0 +1,87 @@
+/* ----------- content page ----------- */
+
+/* ----- whole body ----- */
+.blog-body {
+    display: flex;
+}
+/* ----- blog content ----- */
+.blog-content {
+    width: 80%;
+    margin-inline: 1rem;
+}
+
+.blog-content * {
+    margin-bottom: 1rem;
+}
+
+.blog-content a {
+    color: var(--blue);
+}
+
+.blog-content h5 {
+    margin-top: 0;
+}
+
+.blog-content h1 {
+    margin-bottom: 0;
+}
+
+.blog-content li {
+    list-style-type: initial;
+    margin-left: 2rem;
+}
+
+.blog-content ol li {
+    list-style-type: decimal;
+    margin-left: 2rem;
+}
+/* ----- blog navigation bar ----- */
+.nav-bar {
+    width: 20%;
+}
+
+.nav-block {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.nav-block a {
+    display: block;
+    color: var(--blue);
+}
+/* how to make the a tag be purple after click
+.nav-block a:visited {
+    color: var(--purple);
+} */
+
+.nav-about {
+    background-color:var(--lightgrey);
+}
+
+.nav-block-title {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.8rem;
+}
+/* ----- content footer ----- */
+.footer-content {
+    margin-block: 2rem;
+}
+
+.footer-content a {
+    color: var(--lightblue);
+    text-decoration: none;
+    border: 0.1rem solid var(--lightblue);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+.footer-content button {
+    color: var(--lightgrey);
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 1.6rem;
+    border: 0.1rem solid var(--lightgrey);
+    border-radius: 2rem;
+    padding: 1rem;
+}
