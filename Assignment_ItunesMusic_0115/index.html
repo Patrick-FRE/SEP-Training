@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Albums</title>
-    <link rel="stylesheet" link="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+        crossorigin="anonymous"
+    />
 </head>
 <body>
     <header>
-
+        <input id="search" placeholder="search the artist or albums"/>        
+        <button class="btn" id='submit'>Search</button>        
     </header>
     
-    <div>
-        <h1>iTunes API App</h1>
-        <p>Enter artist here
-            <input id="search" />
-        </p>
-        <button class="btn" id='submit'>Search</button>
+    <div class="display">      
         <div class="row" id="output"></div>
     </div>
     <script src="script.js"></script>
