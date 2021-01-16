@@ -1,85 +1,101 @@
 * {
-    margin: 0 0;
-    padding: 0 0;
-    box-sizing: border-box;
+  margin: 0 0;
+  padding: 0 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
 }
 
 /* BASIC LAYOUT */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: 5rem 1fr 5rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #ff8000;
+}
+
 header {
-    background-color: #000;
-    height: 5vh;
-    width: 100vw;
-    position: absolute;
-    top: 0;
+  grid-area: header;
+  background-color: #000;
+  display: flex;
+  flex-direction: row;
+  /* height: 5vh; */
+  /* width: 100vw; */
 }
 
 footer {
-    background-color: #0b4d14;
-    height: 5vh;
-    width: 100vw;
-    position: absolute;
-    bottom: 0;
+  grid-area: footer;
+  background-color: #0b4d14;
+  /* height: 5vh; */
+  /* width: 100vw; */
 }
 
 main {
-    height: auto;
+  grid-area: main;
+  /* height: auto; */
 }
 
 /* NAV MENU */
 ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: auto;
 }
 
 ul li {
-    list-style-type: none;
-    margin-right: 1em;
-    
+  list-style-type: none;
+  margin-right: 1em;
 }
 
-ul li a{
-    color: white;
-    text-decoration: none;
+ul li a {
+  color: red;
 }
 
 .top_nav_menu_list,
 .footer_menu_list {
-    position: absolute;
-    left: 5vw;
+  position: absolute;
+  left: 5vw;
 }
 
 .footer_media_list {
-    position: absolute;
-    right: 5vw;
+  position: absolute;
+  right: 5vw;
 }
-
 
 /* MAIN AREA */
 .intro_area {
-    height: 20vh;
-    background-color: #c6bfbf;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    position: absolute;
-    top: 5vh;
-    
+  height: auto;
+  background-color: #c6bfbf;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  overflow: hidden;
 }
+
 .intro_area a {
-    color: green;
+  color: green;
 }
+
 .main_header {
-    margin: auto;
-    font-size: 4rem;
+  margin: auto;
+  font-size: 4rem;
 }
 
 .main_content {
-    column-count: 3;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    position: absolute;
-    top: 25vh;
+  column-count: 3;
+  margin-top: 10px;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
-
