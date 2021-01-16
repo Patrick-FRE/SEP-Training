@@ -1,0 +1,17 @@
+.quote{
+  border-width: 1px;
+  border-color: black;
+  background-color: white;
+}
+
+.h4-title{
+  font: italic;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
+.about{
+  background-color: rgb(247, 240, 240);
+  border-radius: 3px;
+  padding: 3rem;
+}
