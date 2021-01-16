@@ -28,7 +28,7 @@
     --card-width-md:450px;
     --card-heigt-md:550px;
     --card-width-sm: 280px;
-    --card-height-sm: 370px;
+    --card-height-sm: 380px;
     
 }
 *{
@@ -294,6 +294,9 @@ a:hover{
 .hidden-on-lgscreen{
     display:hidden;
 }
+.hideen-on-mdscreen{
+    display:block;
+}
 .hideen-on-smscreen{
     display:block;
 }
@@ -310,21 +313,34 @@ a:hover{
     height: var(--card-height-lg);
     box-shadow: 2px 2px 5px var(--primary-variant);
     border-radius: 8px;
-    transition:box-shadow .3s ease;
+    transition:box-shadow .3s, margin-top .3s ease;
     /* background-image:url('https://source.unsplash.com/fMD_Cru6OTk/1920x1280'); */
     background-size: cover;
     background-position: 50% 80%;
     position:relative;
     background-repeat: no-repeat;
+    margin-top: 20px;
 }
 .card:hover{
     box-shadow: 4px 4px 5px var(--primary-variant);
+    margin-top:5px;
 }
-h3.card-title{
+.card-content{
+    position: absolute;
+    bottom:0;
+    height:calc(var(--card-height-lg) * 0.4);
+    width:var(--card-width-lg);
+    background-color:white;
+    padding: 10px 30px;
+}
+.card-content>.card-title{
     padding-bottom:8px;
 }
 .card-content>p{
-    padding: 1em 0;
+    padding: 1em 0 2.5em 0;
+    overflow:hidden;
+    height: 70px;
+    width:calc(var(--card-width-lg) - 60px);
 }
 .hashtag-container{
     margin-top:1em;
@@ -336,6 +352,9 @@ h3.card-title{
 .card-link{
     color:black;
     text-decoration: none;
+}
+.card-link:hover{
+    color:black;
 }
 .life{
     background-color: var(--primary-color);
@@ -349,22 +368,12 @@ h3.card-title{
 .web-dev{
     background-color: var(--secondary-variant);
 }
-.card-content{
-    position: absolute;
-    bottom:0;
-    height:calc(var(--card-height-lg) * 0.45);
-    width:var(--card-width-lg);
-    background-color:white;
-    padding: 10px 30px;
-}
-.card-content>p:first-child{
+
+/* .card-content>p:first-child{
     overflow:hidden;
     height: 60px;
     width:calc(550px - 60px);
-}
-.car-content p:last-of-type{
-    margin-bottom: 20px;
-}
+} */
 .design-post{
     background-image:var(--design-picture);
 }
