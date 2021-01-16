@@ -151,7 +151,7 @@ body {
 
 /* ------ footer ------ */
 
-.footer {
+.blog-footer {
     background-color: var(--lightgrey);
     display: flex;
     justify-content: center;
@@ -159,6 +159,7 @@ body {
     height: 10rem;
 }
 
-.footer a {
+.blog-footer a {
     margin: 0 0.5rem;
+    color: var(--blue)
 }
