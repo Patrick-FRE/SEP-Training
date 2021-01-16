@@ -6,6 +6,8 @@
     --blue: blue;
     --purple: purple;
     --lightblue: rgb(41, 129, 243);
+    --cornflowerblue: cornflowerblue;
+    --chartreuse: chartreuse;
 }
 
 /* ------ css reset ------ */
@@ -35,7 +37,7 @@ body {
     list-style-type: none;
 }
 
-/* ------ content page ------ */
+/* ----------- content page ----------- */
 
 /* ------ blog header ------ */
 
@@ -43,14 +45,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-decoration: underline;
     font-size: 3rem;
 }
 
 .blog-header a {
     font-size: 1.6rem;
     color: var(--grey);
-    /* why the underline is still there? */
     text-decoration: none; 
 }
 
@@ -126,7 +126,7 @@ body {
     font-style: italic;
     font-size: 1.8rem;
 }
-/* ----- blog footer ----- */
+/* ----- content footer ----- */
 .footer-content {
     margin-block: 2rem;
 }
@@ -163,3 +163,60 @@ body {
     margin: 0 0.5rem;
     color: var(--blue)
 }
+
+/* ----------- home page ----------- */
+
+.blog-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-inline: 2rem;
+}
+
+.blog-card {
+    margin: 1rem;
+    width: 45%;
+    border: 0.5rem solid var(--lightgrey);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.blog-container a {
+    color: var(--blue);
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container h5 {
+    color: var(--grey);
+    margin-inline: 1rem 2rem;
+}
+
+.blog-container p {
+    margin: 1rem 2rem 0rem 1rem;
+    min-height: 7rem;
+}
+
+.blog-world-header {
+    color: var(--cornflowerblue);
+    font-size: 1.3rem!important;
+}
+
+.blog-design-header {
+    color: var(--chartreuse);
+    font-size: 1.3rem!important;
+}
+
+.whole-page-container {
+    position: fixed;
+    width: 100%;
+    max-width: 70%;
+    /* left: 50%;
+    transform: translate(-50%, 0); */
+} 
