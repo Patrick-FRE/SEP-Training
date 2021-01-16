@@ -22,7 +22,7 @@ const View = (() => {
         postcotent: 'post-content',
         removeBtn: 'remove-btn'
     }
-    const render = (element, htmlTemplate) =>{
+    const render = (element, htmlTemplate) => {
         element.innerHTML = htmlTemplate;
     }
     const setPostTemplate = (postArray) => {
@@ -59,13 +59,13 @@ const Model = ((view, api) => {
     const getAllPosts = api.getAllPosts;
     // const deletePost = postAPI.deletePost;
 
-    class State{
+    class State {
         #allposts = [];
 
-        get allposts(){
+        get allposts() {
             return this.#allposts
         }
-        set allposts(newposts){
+        set allposts(newposts) {
             this.#allposts = newposts;
             const tableElement = document.getElementById(view.domString.postcotent);
             const template = view.setPostTemplate(this.#allposts);
@@ -73,7 +73,7 @@ const Model = ((view, api) => {
         }
     }
 
-    return{
+    return {
         Post,
         getAllPosts,
         // deletePost,
@@ -91,25 +91,19 @@ const Controller = ((view, model) => {
 
     //delete post
     const addListnerOnRemove = () => {
-        const removeBtns = document.querySelectorAll("." + view.domString.removeBtn);
-        //event listener only fires once
-        //I am sure every button is attached with an event listener cause every first click can invoke 
-        //the deleting. I've tried random buttons 
-        //But after the first deleting, the other buttons' event listener won't be fired somehow??
-        removeBtns.forEach(btn =>{
-            btn.addEventListener('click', (event) =>{
-                if(event.target.className === view.domString.removeBtn){
-                    console.log(event.target);
-                    state.allposts = state.allposts.filter(post =>{
-                        if(+event.target.id === +post.id){
-                            console.log(event.target, post);
-                        } else{
-                            return post
-                        }
-                        // return post.id !== event.target.id;
-                    })
-                }
-            })
+        const postcontentTable = document.querySelector("#" + view.domString.postcotent);
+        postcontentTable.addEventListener('click', (event) => {
+            if (event.target.className === view.domString.removeBtn) {
+                console.log(event.target);
+                state.allposts = state.allposts.filter(post => {
+                    if (+event.target.id === +post.id) {
+                        console.log(event.target, post);
+                    } else {
+                        return post
+                    }
+                    // return post.id !== event.target.id;
+                })
+            }
         })
     }
 
@@ -126,7 +120,8 @@ const Controller = ((view, model) => {
         initPostView();
     }
     return {
-        init
+        init,
+        addEventListener
     }
 })(View, Model);
 
