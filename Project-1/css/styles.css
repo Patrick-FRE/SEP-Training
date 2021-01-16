@@ -1,0 +1,29 @@
+.nav {
+    display: inline-block;
+    float: none;
+}
+
+
+body {
+  background-color: #d6dae0!important;
+}
+
+.li {
+    text-align: center;
+
+}
+   
+  @media only screen and (max-width : 992px) {
+    .container {
+       display: inline-block;
+      }
+}
+
+/* Style the footer */
+.footer {
+  background-color: #181616;
+  color: aliceblue;
+  padding: 2px;
+  text-align: center;
+  margin-top: 10px;;
+}
