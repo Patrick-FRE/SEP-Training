@@ -1,6 +1,9 @@
 var post_cards_container = document.querySelector('#post_cards_container');
 var subscribe = document.querySelector('.subscribe');
 var search = document.querySelector('.search');
+var card_example_list = document.getElementsByClassName('card__example');
+
+
 
 subscribe.addEventListener("click",()=> {
     alert('Coming soon!');
@@ -22,7 +25,7 @@ var cardHTML =  `
         Nov 12
     </div>
     <div class="card__example">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupiLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupiLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
     <div class="card__continue">
         <a>Continue reading...</a>
@@ -38,3 +41,11 @@ const createCard = (num) => {
 }
 
 post_cards_container.innerHTML = createCard(6);
+
+console.log(card_example_list);
+[...card_example_list].forEach((post) => {
+    let text = post.innerHTML;
+    text = text.substr(0,100);
+    text += '...';
+    post.innerHTML = text;
+})
