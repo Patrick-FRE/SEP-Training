@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0 15%;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.new-post {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding: 7px 10px;
+  background-color: green;
+  border: 1px solid green;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.new-post:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  outline: 2px solid rgb(170, 170, 170);
+  padding: 15px;
+  height: 180px;
+}
+
+.card-link {
+  position: absolute;
+  bottom: 15px;
+  text-decoration: underline;
+}
+
+.date {
+  color: grey;
+}
+
+.btn-group {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.delete-btn {
+  color: red;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.fa-edit {
+  margin-right: 8px;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
