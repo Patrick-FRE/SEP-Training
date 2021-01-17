@@ -1,0 +1,53 @@
+@import url("card.css");
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem 1fr 3rem;
+    height: 100%;    
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
+}
+main {
+    grid-area: main;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
+}
+footer {
+    grid-area: footer;
+    border-top: 1px solid rgb(119, 30, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+footer a {
+    color: rgb(33, 136, 253);
+    padding: 3px 0;
+}

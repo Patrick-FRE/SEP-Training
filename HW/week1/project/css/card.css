@@ -1,0 +1,47 @@
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 400px;
+    height: 300px;
+    border: 8px solid rgb(236, 229, 229);
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.card div {
+    padding: 5px 0;
+}
+
+.card__subtitle {
+    color:skyblue;
+    font-size: small;
+}
+
+.card__title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.card__date {
+    font-size: small;
+    color: rgb(28, 60, 245);
+}
+
+.card__example {
+    height: 50%;
+    width: 80%;
+    overflow: hidden;
+  
+}
+
+.card__continue a{
+    
+    color: rgb(22, 106, 233);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: red;
+}
