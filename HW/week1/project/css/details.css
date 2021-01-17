@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -71,5 +72,40 @@ footer a {
 
 .main_footer {
     grid-area: main_footer;
-    background-color: aquamarine;
+}
+
+/* SIDEBAR */
+.sidebar > div {
+    margin: 1rem 0;
+}
+.sidebar__title {
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.sidebar__ul {
+    padding-left: 0;
+    list-style-type: none;
+    color:aqua;
+}
+
+.sidebar__content {
+    overflow:hidden;
+}
+
+.btn {
+    border: 1px solid;
+    border-radius: 80px;
+    min-height: 50px;
+    min-width: 100px;
+    margin: 5px;
+    background-color: transparent;
+}
+
+.btn--older {
+    color:aqua;
+}
+
+.btn--newer {
+    color: grey;
 }
