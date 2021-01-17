@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <input type="text" id="artistName"/>
+        <div id="list">
+            <table class="table table-sm" >
+                <thead>
+                    <tr>
+                        <th id="table">#</th>
+                        <th>Cover</th>
+                        <th>Artist Name</th>
+                        <th>Album</th>
+                    </tr>
+                </thead>
+                <tbody id="stable">
+
+                </tbody>
+            </table>
+        </div>
+        <script>
+            class MyJQuery {
+                #elements;
+                constructor(selector) {
+                    this.#elements = document.querySelectorAll(selector);
+                }
+                html(tmp) {
+                    this.#elements.forEach((element) => {
+                        element.innerHTML = tmp;
+                    });
+                }
+            }
+
+            const $$ = (selector) => {
+                return new MyJQuery(selector);
+            };
+            
+            const showlist = (userlist) => {
+                var str = '';
+                for(var i = 0; i < userlist.length; i++) {
+                    var user = userlist[i];
+                    str += '<tr id=' + i + '>';
+                    str += '<td>' + i + '</td>';
+                    str += '<td>' + '<img src="' + user.artworkUrl60 + '" width="42" height="42"/>' + '</td>';
+                    str += '<td>' + user.artistName + '</td>';
+                    str += '<td>' + user.collectionName + '</td>';
+                    str += '</tr>'; 
+                }
+                $("#stable").empty();
+                $("#stable").append(str);
+            }
+
+            $$.ajax = (optioins) => {
+                fetch(optioins.url)
+                .then(data => data.json())
+                .then(json => {
+                    optioins.success(json);
+                })
+            }
+
+            $("#artistName").keypress(function (e) {
+                var key = e.which;
+                if(key == 13) 
+                {
+                    const ARTIST_NAME = $("#artistName").val();
+                    const URL = "https://itunes.apple.com/search?term=" + ARTIST_NAME + "&media=music&entity=album&attribute=artistTerm&limit=50";
+                    $$.ajax({
+                        url: URL,
+                        success: function (result) {
+                            showlist(result.results);
+                        },
+                    });
+                    return false;  
+                }
+            }); 
+        </script>
+    </body>
+</html>
