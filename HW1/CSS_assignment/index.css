@@ -56,10 +56,9 @@ main {
 
 /* NAV MENU */
 ul {
-  min-width: 300px;
+  min-width: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -72,6 +71,10 @@ ul li {
 ul li a {
   color: red;
 }
+
+/* .footer_media_list {
+  justify-content: flex-end;
+} */
 
 a {
   text-decoration: none;
