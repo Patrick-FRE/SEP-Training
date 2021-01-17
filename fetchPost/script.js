@@ -50,19 +50,28 @@ function postData(url, data) {
 }
 
 
-
-
+function clickfn(id) {
+    let newpost = mypost.filter(post => post.id !== id)
+    mypost = newpost;
+    console.log(newpost.length);
+    renderr(template, newpost)
+}
 
 
 let template = (post) => {
-    return `<tr><td>${post.body}</td>
+    return `<tr id="${post.id}">
+<td>${post.body}</td>
 <td>${post.id}</td>
 <td>${post.title}</td>
-<td>${post.userId}</td></tr>
+<td>${post.userId}</td>
+<td><button onclick="clickfn(${post.id})">delete</button></td>
+</tr>
 `}
 
 function renderr(template, mypost) {
+
     let ele = document.getElementById('root')
+    ele.innerHTML = ''
     let tabl = document.createElement('table')
     mypost.map(post => {
         // let post = postz
@@ -80,7 +89,7 @@ function renderr(template, mypost) {
 postData('https://jsonplaceholder.typicode.com/posts', options)
     .then(data => {
         mypost = JSON.parse(data)
-        console.log(mypost);
+        // console.log(mypost);
         renderr(template, mypost)
     }) // JSON from `response.json()` call
     .catch(error => console.error(error))
