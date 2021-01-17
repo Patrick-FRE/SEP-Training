@@ -30,7 +30,7 @@
 }
 
 .card__example {
-    
+    height: 50%;
     background-color: aqua;
     border: 1px solid black;
     overflow: hidden;
