@@ -1,3 +1,4 @@
+@import url("card.css");
 * {
     box-sizing: border-box;
 }
@@ -5,7 +6,9 @@
 body {
     height: 100vh;
     margin: 0;
-    padding: 0;
+    padding-left: 10rem;
+    padding-right: 10rem;
+
 }
 
 .container {
@@ -15,18 +18,25 @@ body {
     "main"
     "footer";
     grid-template-columns: 1fr;
-    grid-template-rows: 2rem 1fr 3rem;
-    height: 100%;
-    background-color:aqua;
+    grid-template-rows: 4rem 1fr 3rem;
+    height: 100%;    
 }
 
 header {
     grid-area: header;
     background-color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 main {
     grid-area: main;
     background-color: antiquewhite;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8rem;
 }
 footer {
     grid-area: footer;

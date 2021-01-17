@@ -1,0 +1,40 @@
+.card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: 40%;
+    min-height: 15rem;
+    border: 8px solid rgb(236, 229, 229);
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.card div {
+    padding: 2px 0;
+}
+
+.card__subtitle {
+    color:skyblue;
+    font-size: small;
+}
+
+.card__title {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.card__date {
+    font-size: small;
+    color: rgb(28, 60, 245);
+}
+
+.card__example {
+    min-height: 100px;
+}
+
+.card__continue a{
+    
+    color: rgb(22, 106, 233);
+    text-decoration: underline;
+}
