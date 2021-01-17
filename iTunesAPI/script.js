@@ -1,6 +1,7 @@
 let state = []
 let searchKey = 'ken'
-let url = (searchKey = 'ken') => `https://itunes.apple.com/search?term=${searchKey}&media=music&entity=album&attribute=artistTerm&limit=50`
+let num = 20
+let url = (searchKey = 'ken', num = 20) => `https://itunes.apple.com/search?term=${searchKey}&media=music&entity=album&attribute=artistTerm&limit=${num}`
 
 // console.log(url(searchKey));
 // artworkUrl100
@@ -37,20 +38,28 @@ function render(template, fetch, url) {
                 let item = template(album);
                 temp += item
             })
+
+            temp += loadmoreButton
             box.innerHTML = temp
             console.log(state);
         })
         // .then(res => console.log(res))
         .catch(rej => console.log('err'));
+}
 
+let loadmoreButton = `<div id="load">
+<button id='loadbut' onclick="loadmorefn()">loadmore</button>
+</div>
+`
+let newNum = num
 
-
-
-
-
+function loadmorefn() {
+    newNum = newNum +10
+    render(template, fetch, url(searchKey, newNum))
 
 
 }
+
 
 let template = (item) => {
     return `
@@ -61,7 +70,7 @@ let template = (item) => {
     `
 };
 
-setTimeout(() => render(template, fetch, url()), 5000)
+setTimeout(() => render(template, fetch, url()), 0)
 
 fetch(url()   // mode: 'cors',
     // credentials: 'include',
