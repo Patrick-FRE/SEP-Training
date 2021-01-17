@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 2rem 1fr 3rem;
+    height: 100%;
+}
+
+header {
+    grid-area: header;
+    background-color: aliceblue;
+}
+main {
+    grid-area: main;
+    background-color: antiquewhite;
+}
+footer {
+    grid-area: footer;
+    background-color: azure;
+}
