@@ -1,7 +1,10 @@
 var post_cards_container = document.querySelector('#post_cards_container');
 var subscribe = document.querySelector('.subscribe');
 var search = document.querySelector('.search');
+
 var card_example_list = document.getElementsByClassName('card__example'); //ASYNC. can not use querySelectorAll. 
+var card_list = document.querySelectorAll('.card'); //ASYNC. can not use querySelectorAll. 
+
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
@@ -30,7 +33,7 @@ var cardHTML =  `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupiLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.datat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </div>
     <div class="card__continue">
-        <a>Continue reading...</a>
+        <a href="details.html">Continue reading...</a>
     </div>
 </div>`;
 

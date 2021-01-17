@@ -24,14 +24,13 @@ body {
 
 header {
     grid-area: header;
-    background-color: aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 8rem;
 }
 main {
     grid-area: main;
-    background-color: antiquewhite;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -40,5 +39,15 @@ main {
 }
 footer {
     grid-area: footer;
-    background-color: azure;
+    border-top: 1px solid rgb(119, 30, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+footer a {
+    color: rgb(33, 136, 253);
+    padding: 3px 0;
 }

@@ -11,7 +11,7 @@
 }
 
 .card div {
-    padding: 2px 0;
+    padding: 5px 0;
 }
 
 .card__subtitle {
@@ -31,8 +31,7 @@
 
 .card__example {
     height: 50%;
-    background-color: aqua;
-    border: 1px solid black;
+    width: 80%;
     overflow: hidden;
   
 }
@@ -41,4 +40,8 @@
     
     color: rgb(22, 106, 233);
     text-decoration: underline;
+}
+
+a:hover {
+    color: red;
 }
