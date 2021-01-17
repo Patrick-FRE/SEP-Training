@@ -3,9 +3,8 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    min-width: 40%;
     width: 400px;
-    min-height: 15rem;
+    height: 300px;
     border: 8px solid rgb(236, 229, 229);
     padding: 1rem;
     margin: 2rem;
@@ -31,8 +30,11 @@
 }
 
 .card__example {
-    width: 100px;
-    min-height: 100px;
+    
+    background-color: aqua;
+    border: 1px solid black;
+    overflow: hidden;
+  
 }
 
 .card__continue a{
