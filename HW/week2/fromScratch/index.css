@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header {
+    background-color: rgb(76, 159, 231);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.searchbar {
+    height: 30px;
+   
+}
+
+.searchbar__input {
+    height:100%;
+    margin-right: 0;
+    padding-right: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-right: none;
+    background-color: transparent;
+}
+
+.searchbar__searchButton {
+    height:100%;
+    margin-left: 0;
+    padding-left: 0;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-left: none;
+    background-color: transparent;
+}
+
+.title::after {
+    content:"";
+    width: 70%;
+    background-color: black;
+    height: 10px;
+}
+.title h1{
+        text-align: center;
+}
+
+
+/* RESULT */
+.result {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 10px;
+}
+
+.card {
+    height: 350px;
+    width: 250px;
+    margin: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 10px 0px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card > div {
+    margin: 5px 0;
+}
+
+.card__cover img{
+    width: 200px;
+    height: 200px;
+}
+
+.card__collectionName {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.15rem;
+    min-height: 50px;
+}
+
+.card__relaseDate {
+    min-height: 50px;
+   
+}
+
+.card__price {
+
+}
