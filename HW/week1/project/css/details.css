@@ -1,13 +1,18 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
     height: 100vh;
     margin: 0;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
 
+}
+
+a:hover {
+    color: red;
 }
 
 .container {
@@ -18,26 +23,89 @@ body {
     "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 4rem 1fr 3rem;
-    height: 100%;
-    background-color:aqua;
+    height: 100%;    
 }
 
 header {
     grid-area: header;
-    background-color: aliceblue;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 8rem;
 }
 main {
     grid-area: main;
-    background-color: antiquewhite;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-areas: 
+        "content sidebar"
+        "main_footer sidebar";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 5rem;
+    grid-gap: 10px;
+    padding: 0 8rem;
 }
 footer {
     grid-area: footer;
-    background-color: azure;
+    border-top: 1px solid rgb(119, 30, 30);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+footer a {
+    color: rgb(33, 136, 253);
+    padding: 3px 0;
+    text-decoration: underline;
+}
+
+.content {
+    grid-area: content;
+    background-color: aliceblue;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: antiquewhite;
+}
+
+.main_footer {
+    grid-area: main_footer;
+}
+
+/* SIDEBAR */
+.sidebar > div {
+    margin: 1rem 0;
+}
+.sidebar__title {
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.sidebar__ul {
+    padding-left: 0;
+    list-style-type: none;
+    color:aqua;
+}
+
+.sidebar__content {
+    overflow:hidden;
+}
+
+.btn {
+    border: 1px solid;
+    border-radius: 80px;
+    min-height: 50px;
+    min-width: 100px;
+    margin: 5px;
+    background-color: transparent;
+}
+
+.btn--older {
+    color:aqua;
+}
+
+.btn--newer {
+    color: grey;
 }
