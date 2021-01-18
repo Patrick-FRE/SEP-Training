@@ -15,14 +15,26 @@
 })();
 
 var searchBth = document.getElementById("searchBtn");
+var clearBtn = document.getElementById("clearBtn");
 var input = document.querySelector("input[name=artistName]");
 var result = document.getElementById("result");
 var show_name = document.getElementById("show_name");
 var artistName = "";
 
-// input.addEventListener("keyup",()=>{
-//     console.log(input.value);
-// })
+clearBtn.addEventListener("click",()=>{
+    input.value="";
+    clearBtn.style.display="none";
+})
+
+input.addEventListener("keyup",()=>{
+    if(input.value.length > 0){
+        clearBtn.style.display="block";
+    }else{
+        clearBtn.style.display="none";
+    }
+    console.log(input.value.length);
+})
+
 
 
 searchBth.addEventListener("click",async () => {
@@ -57,5 +69,6 @@ searchBth.addEventListener("click",async () => {
         `;
     }
     result.innerHTML = resHTML;
+    input.value = "";
 })
 
