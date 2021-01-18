@@ -29,25 +29,33 @@ searchBth.addEventListener("click",async () => {
     artistName = input.value;
     artistName = artistName.trim();
     artistName = artistName.split(" ").join("+");
+    resHTML = '';
 
     const res = await fetch(`https://itunes.apple.com/search?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=23`);
     const data = await res.json();
-    console.log(data.results);
-    resHTML = '';
-    data.results.forEach(item => {
-        resHTML += `
-            <div class="card">
-                <a href=${item.artistViewUrl} target="_blank">
-                    <div class="card__cover">
-                    <img src=${item.artworkUrl100} alt="album_cover">
-                    </div>
-                    <div class="card__collectionName">${item.collectionName}</div>
-                    <div class="card__relaseDate">${item.releaseDate}</div>
-                    <div class="card__price">$${item.collectionPrice}</div>
-                </a>
+    if(data.resultCount > 0){
+        data.results.forEach(item => {
+            resHTML += `
+                <div class="card">
+                    <a href=${item.artistViewUrl} target="_blank">
+                        <div class="card__cover">
+                        <img src=${item.artworkUrl100} alt="album_cover">
+                        </div>
+                        <div class="card__collectionName">${item.collectionName}</div>
+                        <div class="card__relaseDate">${item.releaseDate}</div>
+                        <div class="card__price">$${item.collectionPrice}</div>
+                    </a>
+                </div>
+            `;
+        });
+        show_name.innerHTML = artistName;
+    }else {
+        resHTML = `
+            <div class="result--error">
+                <h1>No results founded...Retype the artist's name</h1>
             </div>
         `;
-    });
+    }
     result.innerHTML = resHTML;
-    show_name.innerHTML = artistName;
 })
+
