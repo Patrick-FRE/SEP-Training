@@ -1,11 +1,4 @@
-// function appendData(data) {
-//     var mainContainer = document.getElementById("myData");
-//     for (var i = 0; i < data.length; i++) {
-//         var div = document.createElement("div");
-//         div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-//         mainContainer.appendChild(div);
-//     }
-// }
+
 
 const container = document.getElementById('grid-cards');
 var cardDiv = document.createElement('div');
@@ -13,7 +6,6 @@ cardDiv.setAttribute('class','card');
 
 const inputEle = document.querySelector('.input_search');
 inputEle.addEventListener('keypress', e=>{
-    e.preventDefault();
     if (e.key === 'Enter') {
         let ARTIST_NAME = document.getElementById('search').value;
         console.log(ARTIST_NAME)
@@ -25,7 +17,10 @@ inputEle.addEventListener('keypress', e=>{
                     displayRes(collection)
                 }
               })
+              e.preventDefault();
+              ARTIST_NAME=''
         }
+       
     }
 );
 const displayRes =(collection)=>{
