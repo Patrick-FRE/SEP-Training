@@ -52,35 +52,6 @@ const displayRes =(collection)=>{
      container.appendChild(div)
 }
 
- // for (const collection of data.results) {
-                //    let card= `<div class="card">
-                //     <img class="card-img-top" src="${collection.artworkUrl100}" >
-                //     <h5 class="card-title">{collection.collectionName}</h5>
-                //     <p class="card-text">{collection.primaryGenreName}</p>
-                //      </div>`;
-                //      card +=card;
-                //     console.log(card)
-                //     container.innerHTML=card;
-                // }
 
-// fetch(myRequest)
-//   .then(response => response.json())
-//   .then(data => {
-//     for (const product of data.products) {
-//       let listItem = document.createElement('li');
-//       listItem.appendChild(
-//         document.createElement('strong')
-//       ).textContent = product.Name;
-//       listItem.append(
-//         ` can be found in ${
-//           product.Location
-//         }. Cost: `
-//       );
-//       listItem.appendChild(
-//         document.createElement('strong')
-//       ).textContent = `£${product.Price}`;
-//       myList.appendChild(listItem);
-//     }
-//   })
 
 
