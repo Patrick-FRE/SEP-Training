@@ -1,0 +1,15 @@
+
+.container {
+    height: 100vh;
+    width: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.row {
+    margin-top: 1vh !important;
+}
+.large-btn {
+    width: 100%;
+}
