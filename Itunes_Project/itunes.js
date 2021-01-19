@@ -13,6 +13,7 @@ inputEle.addEventListener('keypress', e=>{
         .then(res=>res.json())
         .then(
             data => {
+                container.innerHTML =""
                 for (const collection of data.results) {
                     displayRes(collection)
                 }
