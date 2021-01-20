@@ -1,27 +1,25 @@
 console.log("This is in script!");
 
-fetch('https://itunes.apple.com/search?')
-  .then(response => response.json())
-  .then(json => console.log(json))
-
-
-
 
 //MVC pattern
 const albumAPI = (() => {
     // some variables and functions here
-    const baseUrl = 'https://itunes.apple.com/search?term='
-
-    const artistName = 'lady'
+    const baseUrl = 'https://itunes.apple.com/search?'
     const keywordUrl = '&media=music&entity=album&attribute=artistTerm&limit=50'
 
     //console.log([baseUrl, artistName, keywordUrl].join(''));
 
-    const getAlbums = () => fetch([baseUrl, artistName, keywordUrl].join(''))
-            .then(respond => respond.json())
-            //.then(json => console.log(json))
+    const getAlbums = (userInput) => {
+        let artistName = 'term=';
+        artistName += userInput.split(' ').join('+')
+        //console.log('In getAlbums: ', [baseUrl, artistName, keywordUrl].join(''));
+        const p = fetch([baseUrl, artistName, keywordUrl].join(''))
+        return p.then(respond => respond.json())
+        
+    }
+    
 
-    //return the fnctions
+    //return the functions
     return{
         getAlbums
     }
@@ -66,12 +64,12 @@ const View = (() => {
 })();
 
 const Model = ((api, view) => {
-    class AlbumCard {
-        constructor(collectionName, collectionLink){
-            this.clollectionName = collectionName;
-            this.collectionLink = collectionLink;
-        }
-    }
+    // class AlbumCard {
+    //     constructor(collectionName, collectionLink){
+    //         this.clollectionName = collectionName;
+    //         this.collectionLink = collectionLink;
+    //     }
+    // }
 
     class State {
         #albumList = [];
@@ -88,7 +86,7 @@ const Model = ((api, view) => {
         }
 
         get albumList(){
-            return this.albumList;
+            return this.#albumList;
         }
 
         set albumList(newList){
@@ -97,21 +95,19 @@ const Model = ((api, view) => {
             const container = document.querySelector('.' + view.domString.cardContainer);
             //console.log(container);
             //console.log('state.Album', this.#albumList);
-            const info = document.querySelector('.'+view.domString.info);
-            view.render(info, '');
             const tmpAlbumList = view.displayresult(this.#albumList);
             view.render(container, tmpAlbumList);
             
 
         }
     }
-
+    
     const fetchedAlbums = api.getAlbums;
 
     return{
         fetchedAlbums,
         State,
-        AlbumCard
+        //AlbumCard
     }
 
 })(albumAPI, View);
@@ -124,19 +120,30 @@ const AppController = ((view, model) => {
         searchElement.addEventListener('keyup', (event) => {
             if(event.key === 'Enter'){
                 console.log('seach input keyup---');
-                state.userSearch = event.target.value;
-                console.log(state.userSearch);
+                const info = document.querySelector('.' + view.domString.info);
+                const container = document.querySelector('.' + view.domString.cardContainer);
+                if(event.target.value){
+                    view.render(info, '');
+                    state.userSearch = event.target.value;
+                    model.fetchedAlbums(state.userSearch).then(data => {
+                        if(data.results.length === 0){
+                            view.render(info, `<p>Sorry, there is no result for "${event.target.value}"</p>`)
+                        }
+                        state.albumList = data.results;
+                    });
+                }else{
+                    view.render(info, '<p class="hint">Search Albums by ArtisName</p>');
+                    view.render(container, '');
+                }
             }
             
         })
+        
     }
 
     const initAlbums = () => {
-        model.fetchedAlbums().then(data => {
-            //console.log(data.results);
-            state.albumList = data.results;
-            addEventListenerOnSearch();
-        });
+        // console.log("In initAlbums --")
+        addEventListenerOnSearch();
     }
 
 

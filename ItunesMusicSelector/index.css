@@ -54,18 +54,19 @@ hr{
 }
 
 .result{
+    padding-left: 15px;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 50px;
     justify-content: flex-start;
-    align-content: space-between;
+    align-content: flex-start;
 }
 
 .card{
     max-width: var(--maxwidth-card);
     height: var(--height-card);
     margin-bottom: 30px;
-    margin-right: auto;
-
+    margin-right: 15px;
 }
 
 .card a{
