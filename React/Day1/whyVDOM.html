@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button class="Add">Add</button>
+    <ul class="list"></ul>
+    <script>
+      let list = ['patrick', 'Sam', 'Jane'];
+      const listElements = document.querySelector('.list');
+      const addElement = document.querySelector('.Add');
+      addElement.addEventListener('click', () => {
+        // update list
+        list = [...list, 'newName'];
+        listElements.innerHTML = list
+          .map((name) => `<li>${name}</li>`)
+          .join('');
+      });
+      listElements.innerHTML = list.map((name) => `<li>${name}</li>`).join('');
+    </script> -->
+    <div id="hello-example"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script>
+      console.log(React);
+      console.log(ReactDOM);
+
+      class HelloMessage extends React.Component {
+        render() {
+          return React.createElement('div', null, 'Hello ', this.props.name);
+        }
+      }
+
+      ReactDOM.render(
+        React.createElement(HelloMessage, {
+          name: 'Taylor',
+        }),
+        document.getElementById('hello-example')
+      );
+    </script>
+  </body>
+</html>
