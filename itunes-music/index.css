@@ -1,0 +1,23 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background: rgb(0, 78, 39);
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+  padding: 5px 10px;
+  border-radius: 15px;
+  border: none;
+  width: 20%;
+  min-width: 230px;
+}
