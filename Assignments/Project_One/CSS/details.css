@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+    padding: 0 5px 0;
+}
+.rows{
+    display: inline-block;
+}
+.column{
+    float: left;
+    padding: 10px;
+}
+.left{
+    width: 70%;
+    padding: 10px;
+}
+.right{
+    width: 30%;
+    padding: 5px;
+}
+h6{
+    color: rgb(175, 175, 175);
+}
+.card{
+    background-color:rgb(226, 221, 221);
+}
+.myimage{
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+.mybigimage{
+    position: absolute;
+    width: 0px;
+    -webkit-transition: width 0.4s linear 0;
+    transition: width 0.4s linear 0;
+    z-index: 10;
+}
+.myimage:hover + .mybigimage{
+    width: 300px;
+    border-radius: 50px;
+}
+
+.education.content{
+    margin-top: 0px;
+    text-align: justify;
+}
+.hr{
+    border: .1px solid gray;
+    margin: 10px 0 10px;
+}
+.boxed{
+    margin: 10px 0 10px;
+    border: 1px solid gray;
+}
+
+.project{
+    margin: 10px 0 10px;
+}
+.personal{
+    margin: 10px 0 5px;
+}
+.personal.content{
+    margin-top: 0px;
+}
+ul, ol{
+    margin-left: 20px;
+}
+.academic{
+    margin: 10px 0 5px;
+}
+.academic.content{
+    margin-top: 0px;
+}
+.btn{
+    width: 120px;
+    border-radius: 40px;
+    color: black;
+    background-color: rgb(181, 216, 182);
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.footer{
+    background-color: rgb(199, 191, 191);
+    width: 100%;
+    height: 70px;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 600px){
+    .column{
+      width: 100%;
+    }
+  }
