@@ -29,6 +29,8 @@ class View {
     this.input.name = "search";
 
     this.title = this.createElement("h1", "title");
+    this.title.textContent = "Search Albums by the Artist Name";
+
     this.albumList = this.createElement("ul", "album-list");
 
     this.header.append(this.input);
@@ -62,15 +64,12 @@ class View {
         const li = this.createElement("li", "album");
         li.id = album.collectionId;
 
-        const div = this.createElement("div", "album-wrapper");
-
         const img = this.createElement("img", "album-image");
         img.src = album.artworkUrl100;
 
         const h4 = this.createElement("h4", "album-name");
         h4.textContent = album.collectionCensoredName;
 
-        // li.append(div);
         li.append(img, h4);
         this.albumList.appendChild(li);
       });
@@ -84,7 +83,7 @@ class View {
   bindGetAlbums(handler) {
     this.input.addEventListener("keypress", (event) => {
       if (event.key === "Enter") {
-        if (this._artistName === "") alert("Please enter a name!");
+        if (this._artistName === "") alert("Please enter an artist name!");
         else handler(this._artistName);
       }
     });
