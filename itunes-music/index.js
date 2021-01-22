@@ -62,12 +62,15 @@ class View {
         const li = this.createElement("li", "album");
         li.id = album.collectionId;
 
+        const div = this.createElement("div", "album-wrapper");
+
         const img = this.createElement("img", "album-image");
         img.src = album.artworkUrl100;
 
         const h4 = this.createElement("h4", "album-name");
         h4.textContent = album.collectionCensoredName;
 
+        // li.append(div);
         li.append(img, h4);
         this.albumList.appendChild(li);
       });
