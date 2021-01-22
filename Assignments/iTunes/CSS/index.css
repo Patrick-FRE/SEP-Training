@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: green;
+    height: 70px;
+}
+.header{
+    transform: translateY(50%);
+}
+
+.container{
+    display: flex;
+    padding-left: 20%;
+}
+
+img{
+    margin-left: 30%;
+}
+
+h6{
+    padding-top: 5px;
+}
