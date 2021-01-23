@@ -1,0 +1,31 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Yeon Sung", cursive;
+}
+
+#root{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+:root {
+    --height-header: 60px;
+    --height-todolist: 300px;
+    --height-todolist-header: 30px;
+  
+    --width-todolist: 400px;
+  
+    --color-green: rgb(30, 255, 0);
+    --color-green-s: rgb(151, 245, 138);
+    --color-black: black;
+}

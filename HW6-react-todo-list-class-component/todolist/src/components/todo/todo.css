@@ -1,0 +1,39 @@
+ul li {
+    display: inline-block;
+    width: 100%;
+    height: var(--height-todolist-header);
+    
+    line-height: var(--height-todolist-header);
+    padding: 5px 15px;
+    font-size: 1rem;
+    border: none;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+ul li span {
+    overflow: hidden;
+    user-select: none;
+}
+
+ul li button {
+    width: 20px;
+    border: none;
+    background-color: rgb(30, 255, 0, 0);
+    color: red;
+    font-size: x-large;
+    user-select: none;
+}
+
+ul li:hover {
+    background-color: var(--color-green-s);
+}
+
+ul {
+    height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
+    overflow: auto;
+}
