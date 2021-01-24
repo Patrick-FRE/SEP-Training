@@ -49,10 +49,10 @@
     display: block;
     color: var(--blue);
 }
-/* how to make the a tag be purple after click
+/* how to make the a tag be purple after click */
 .nav-block a:visited {
     color: var(--purple);
-} */
+}
 
 .nav-about {
     background-color:var(--lightgrey);
