@@ -1,0 +1,20 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: var(--height-header);
+    width: 100%;
+
+    color: white;
+    line-height: var(--height-header);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 2rem;
+
+    background: linear-gradient(
+        to right,
+        var(--color-black),
+        var(--color-green)
+    );
+}
