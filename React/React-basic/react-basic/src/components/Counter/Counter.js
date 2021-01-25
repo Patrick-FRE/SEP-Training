@@ -13,15 +13,22 @@ class Counter extends React.Component {
     };
     this.handleAdd = this.handleAdd.bind(this);
   }
-
   handleAdd() {
     this.setState({
       counter: this.state.counter + 1,
     });
   }
-  //   handleAdd = () => {
-  //     console.log(this);
-  //   };
+  // handleAdd = () => {
+  //   console.log(this);
+  // };
+  componentDidMount() {
+    setInterval(() => {
+      this.setState({
+        counter: this.state.counter + 1,
+      });
+      console.log('interval');
+    }, 1000);
+  }
 
   render() {
     return (
@@ -34,3 +41,9 @@ class Counter extends React.Component {
 }
 
 export default Counter;
+
+// function foo() {}
+
+// const foo3 = foo.bind(this);
+
+// const foo2 = () => {};
