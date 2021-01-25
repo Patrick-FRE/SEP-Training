@@ -28,8 +28,8 @@ header{
     padding: 30px 0;
 }
 .search-bar{
-    position:absolute;
-    top:20%;
+    position: absolute;
+    top:10%;
     left:50%;
     transform:translate(-50%, -50%);
     height:var(--searchbar-height);
@@ -77,15 +77,24 @@ header{
 }
 main{
     padding: 60px 3vw;
+    margin-top:100px;
+
 }
-section.albumn-gallery{
-    padding: 100px 10vw;
+section.album-gallery{
+    padding: 70px 10vw;
+    display:grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    row-gap: 40px;
 }
-div.row{
+.result-row{
+    text-align: center;
+    width:100%;
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
-    
+    justify-content: center; 
+}
+.result-row>h1{
+    border-bottom: 1px solid var(--text-color-white) ;
 }
 .card-container{
     width:150px;
@@ -98,6 +107,7 @@ div.row{
     transition:.3s ease;
     background-color: var(--text-color-grey);
     border-radius: 5px;;
+    
 }
 .card-container:hover{
     margin-top:5px;
@@ -106,7 +116,7 @@ div.row{
 .card-container>p{
   margin-top: 5px;
 }
-img.albumn-cover{
+img.album-cover{
     max-width:100px;
     max-height:100px;
     width:auto;
