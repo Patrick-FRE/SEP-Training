@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #000;
+  font-size: 16px;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.contain {
+  width: 100%;
+  max-width: 780px;
+  padding: 0 16px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li, input {
+  display: block;
+  width: 100%;
+  background: #fff;
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.remove {
+  position: relative;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+
+.remove:focus {
+  outline: none;
+  background: #000;
+  color: #fff;
+}
+
+.remove:focus::before,
+.remove:focus::after {
+  background: #fff;
+}
+
+li:hover,
+input:hover {
+  box-shadow: -2px 2px 0px 0px #000;
+}
+
+
+
+
+li.complete div {
+  text-decoration: line-through;
+}
