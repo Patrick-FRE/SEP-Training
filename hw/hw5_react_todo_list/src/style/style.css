@@ -1,0 +1,115 @@
+:root {
+    --height-header: 60px;
+    --height-todolist: 300px;
+    --height-todolist-header: 30px;
+
+    --width-todolist: 400px;
+
+    --color-green: rgb(30, 255, 0);
+    --color-green-s: rgb(151, 245, 138);
+    --color-black: black;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: var(--height-header);
+    width: 100%;
+
+    color: white;
+    line-height: var(--height-header);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 2rem;
+
+    background: linear-gradient(
+        to right,
+        var(--color-black),
+        var(--color-green)
+    );
+
+    user-select: none;
+}
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: var(--height-header);
+    min-width: var(--height-todolist);
+}
+
+.todolist {
+    height: var(--height-todolist);
+    width: var(--width-todolist);
+    background-color: var(--color-green);
+    box-shadow: 2px 3px 5px var(--color-black);
+    border-radius: 5px;
+}
+
+.todolist__header {
+    width: 100%;
+    height: var(--height-todolist-header);
+    
+    line-height: var(--height-todolist-header);
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    user-select: none;
+}
+
+.todolist__input,
+ul li {
+    display: inline-block;
+    width: 100%;
+    height: var(--height-todolist-header);
+    
+    line-height: var(--height-todolist-header);
+    padding: 0 15px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li span {
+    overflow: hidden;
+    user-select: none;
+    line-height: var(--height-todolist-header);
+}
+
+ul li button {
+    width: 20px;
+    height: var(--height-todolist-header);
+    border: none;
+    background-color: rgb(30, 255, 0, 0);;
+    color: rgba(255, 0, 0, 0.1);
+    font-size: 1.5rem;
+    user-select: none;
+    outline: none;
+}
+ul li button:hover {
+    font-size: 1.6rem;
+    color: rgba(255, 0, 0, 1);
+    cursor: pointer;
+}
+ul li button:active {
+    color: rgba(255, 0, 0, 1);
+    font-size: 1.4rem;
+}
+
+ul li:hover {
+    background-color: var(--color-green-s);
+}
+
+ul {
+    height: calc(var(--height-todolist) - var(--height-todolist-header) * 2);
+    overflow: auto;
+}
