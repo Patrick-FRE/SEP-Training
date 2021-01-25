@@ -21,14 +21,15 @@ html, body{
     background-color:var(--background-color);
     color:var(--text-color-white);
     width: 100%;
+    letter-spacing: 1px;
 }
 header{
     text-align: center;
-    padding: 20px 6vw;
+    padding: 30px 0;
 }
 .search-bar{
     position:absolute;
-    top:10%;
+    top:20%;
     left:50%;
     transform:translate(-50%, -50%);
     height:var(--searchbar-height);
@@ -76,4 +77,38 @@ header{
 }
 main{
     padding: 60px 3vw;
+}
+section.albumn-gallery{
+    padding: 100px 10vw;
+}
+div.row{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+.card-container{
+    width:150px;
+    height: 190px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8), 2px 2px 10px rgba(0,0,0, 0.6);
+    text-align: center;
+    padding:20px;
+    font-size:14px;
+    margin-top:20px;
+    transition:.3s ease;
+    background-color: var(--text-color-grey);
+    border-radius: 5px;;
+}
+.card-container:hover{
+    margin-top:5px;
+    background-color: var(--primary-color);
+}
+.card-container>p{
+  margin-top: 5px;
+}
+img.albumn-cover{
+    max-width:100px;
+    max-height:100px;
+    width:auto;
+    height:auto;
 }

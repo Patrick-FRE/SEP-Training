@@ -4,18 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iTunes Albumns Gallery</title>
+    <title>iTunes Music Library</title>
     <link href="./style.css" rel="stylesheet">
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </head>
 
 <body>
-    <div class="search-bar">
-        <input class="search-txt" type="text" name="" placeholder="Type to search">
-        <button class="search-btn"><span class="iconify" data-icon="eva:search-fill"
-            data-inline="false"></span></button>
-    </div>
+    <header><h1>iTunes Music Library</h1></header>
+
     <main>
+        <div class="search-bar">
+            <input class="search-txt" type="text" name="" placeholder="Type to search">
+            <button class="search-btn"><span class="iconify" data-icon="eva:search-fill"
+                data-inline="false"></span></button>
+        </div>
+        <section class="albumn-gallery">
+            <div class="row">
+                <div class="card-container">
+                    <img class="albumn-cover" src="https://upload.wikimedia.org/wikipedia/en/7/7b/David_Bowie_-_Heroes.png">
+                    <p>Albumn Name</p>
+                </div>
+                <div class="card-container"></div>
+                <div class="card-container"></div>
+                <div class="card-container"></div>
+                <div class="card-container"></div>
+            </div>
+        </section>
 
     </main>
     <script src="./app.js"></script>
