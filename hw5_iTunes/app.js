@@ -1,13 +1,13 @@
-const fetchAPI = ((model) => {
-  const baseURL = `https://itunes.apple.com/search?term=${model.artistName}&media=music&entity=album&attribute=artistTerm&limit=50`;
-  //artistName will from model
+const fetchAPI = ((controller) => {
+  const baseURL = `https://itunes.apple.com/search?term=${controller.getInput.value}&media=music&entity=album&attribute=artistTerm&limit=50`;
+  //artistName will from Controller
 
   const getAllAlbums = () => fetch(baseURL).then((response) => response.json());
 
   return {
     getAllAlbums,
   };
-})();
+})(Controller);
 
 const View = () => {
   const domString = {
@@ -21,11 +21,11 @@ const View = () => {
   const setGalleryTemplate = (albumArray) => {
     let template = "";
     albumArray.forEach((album) => {
-      template += `<div class="card-container">
+      template += `<a href="${album.collectionViewUrl}"><div class="card-container">
             <img class="album-cover" id="${album.collectionId}"
                 src="${album.artworkUrl100}">
             <p>${album.collectionName}</p>
-        </div>`;
+        </div></a>`;
     });
 
     return {
