@@ -1,0 +1,8 @@
+/*css reset*/
+*::after,
+*::before,
+* {
+  margin: var(--reset-margin);
+  padding: var(--reset-padding);
+  box-sizing: var(--reset-box-sizing);
+}
