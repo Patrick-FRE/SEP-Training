@@ -1,5 +1,6 @@
 import React from 'react';
 import Todo from '../../components/Todo/Todo';
+import { getAllTodos } from '../../apis/todos.api';
 
 import './TodoList.css';
 
@@ -8,6 +9,7 @@ class TodoList extends React.Component {
     super(props);
     this.state = {
       userInput: '',
+      todos: [],
     };
     this.handleUserInputChange = this.handleUserInputChange.bind(this);
     this.handleUserInputSubmit = this.handleUserInputSubmit.bind(this);
@@ -23,9 +25,18 @@ class TodoList extends React.Component {
     alert('test');
   }
 
+  componentDidMount() {
+    getAllTodos().then((data) => {
+      console.log(data);
+      this.setState({
+        todos: data,
+      });
+    });
+  }
+
   render() {
     return (
-      <section class="section-todolist">
+      <section className="section-todolist">
         <div className="todolist-container">
           <form onSubmit={this.handleUserInputSubmit} className="todolist-form">
             <div className="todolist-form__row">
@@ -39,10 +50,14 @@ class TodoList extends React.Component {
                 onChange={this.handleUserInputChange}
               ></input>
             </div>
-            <div className="todolist-form__row">
-              <Todo></Todo>
-            </div>
           </form>
+          <ul className="todolist-items">
+            {this.state.todos
+              ? this.state.todos.map((todo) => (
+                  <Todo key={todo.id} todo={todo}></Todo>
+                ))
+              : null}
+          </ul>
         </div>
       </section>
     );
