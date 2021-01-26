@@ -1,0 +1,20 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.app-header {
+  width: 100%;
+  height: var(--app-header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--theme-primary);
+  color: var(--color-white);
+}
+.app-content {
+  width: 100%;
+  height: 100%;
+  padding-top: var(--app-header-height);
+}

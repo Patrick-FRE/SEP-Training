@@ -1,0 +1,12 @@
+/* css rest */
+*::after,
+*::before,
+* {
+  margin: var(--reset-margin);
+  padding: var(--reset-padding);
+  box-sizing: var(--reset-box-sizing);
+}
+
+body {
+  font-family: var(--reset-font);
+}
