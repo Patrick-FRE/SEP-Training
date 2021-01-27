@@ -23,11 +23,15 @@ body {
 
 }
 
+.itemb{
+    flex: 1 1 30%;
+}
 .container {
     display: flex;
+    flex: 1 1 auto;
     width: 100%;
     border: 10px solid green;
-    flex: 1 1 100%;
+    /* flex: 1 1 100%; */
     margin: 20px 0;
 
     /* align-content: center; */
@@ -63,7 +67,7 @@ h2 {
 }
 
 .item {
-    flex: 1 1 40%;
+    /* flex: 1 1 40%; */
     font-size: 2rem;
     color: blueviolet;
     text-align: center;
