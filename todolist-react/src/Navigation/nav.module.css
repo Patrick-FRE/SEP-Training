@@ -1,0 +1,16 @@
+.Nav{
+    background-color: #eaebbe;
+    color: #0c0c0c;
+    position: fixed;
+    font-size: 25px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.NavItem{
+    margin-left: 15px;
+}
+
