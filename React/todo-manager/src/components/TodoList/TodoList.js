@@ -1,6 +1,6 @@
 import React from 'react';
 import Todo from '../../components/Todo/Todo';
-import { getAllTodos } from '../../apis/todos.api';
+import { getAllTodos, addTodo, removeTodo } from '../../apis/todos.api';
 
 import './TodoList.css';
 
@@ -13,6 +13,7 @@ class TodoList extends React.Component {
     };
     this.handleUserInputChange = this.handleUserInputChange.bind(this);
     this.handleUserInputSubmit = this.handleUserInputSubmit.bind(this);
+    this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
   }
 
   handleUserInputChange(e) {
@@ -23,6 +24,23 @@ class TodoList extends React.Component {
   handleUserInputSubmit(e) {
     e.preventDefault();
     alert('test');
+    /// add Todo to the Todos.
+    // call Add todo API
+
+    addTodo({ userId: 1, title: this.state.userInput }).then((data) => {
+      this.setState((preState) => ({
+        userInput: '',
+        todos: [data, ...preState.todos],
+      }));
+    });
+  }
+
+  handleRemoveTodo(id) {
+    removeTodo(id).then((data) => {
+      this.setState((preState) => ({
+        todos: preState.todos.filter((todo) => todo.id !== id),
+      }));
+    });
   }
 
   componentDidMount() {
@@ -54,7 +72,11 @@ class TodoList extends React.Component {
           <ul className="todolist-items">
             {this.state.todos
               ? this.state.todos.map((todo) => (
-                  <Todo key={todo.id} todo={todo}></Todo>
+                  <Todo
+                    key={todo.id}
+                    todo={todo}
+                    handleRemoveTodo={this.handleRemoveTodo}
+                  ></Todo>
                 ))
               : null}
           </ul>

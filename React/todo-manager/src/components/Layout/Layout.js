@@ -11,9 +11,7 @@ class Layout extends React.Component {
         <header className="app-header">
           <Header></Header>
         </header>
-        <main className="app-content">
-          <TodoList></TodoList>
-        </main>
+        <main className="app-content">{this.props.children}</main>
       </div>
     );
   }
