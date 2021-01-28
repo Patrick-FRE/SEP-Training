@@ -1,6 +1,7 @@
 import React from 'react';
 import Todo from '../../components/Todo/Todo';
-import { getAllTodos, addTodo, removeTodo } from '../../apis/todos.api';
+
+import { withTodos } from '../../hoc/withTodos';
 
 import './TodoList.css';
 
@@ -9,54 +10,33 @@ class TodoList extends React.Component {
     super(props);
     this.state = {
       userInput: '',
-      todos: [],
     };
     this.handleUserInputChange = this.handleUserInputChange.bind(this);
-    this.handleUserInputSubmit = this.handleUserInputSubmit.bind(this);
-    this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
+    this.handleUserSubmit = this.handleUserSubmit.bind(this);
   }
-
   handleUserInputChange(e) {
     this.setState({
       userInput: e.target.value,
     });
   }
-  handleUserInputSubmit(e) {
+
+  handleUserSubmit(e) {
     e.preventDefault();
-    alert('test');
-    /// add Todo to the Todos.
-    // call Add todo API
-
-    addTodo({ userId: 1, title: this.state.userInput }).then((data) => {
-      this.setState((preState) => ({
-        userInput: '',
-        todos: [data, ...preState.todos],
-      }));
+    this.setState({
+      userInput: '',
     });
-  }
-
-  handleRemoveTodo(id) {
-    removeTodo(id).then((data) => {
-      this.setState((preState) => ({
-        todos: preState.todos.filter((todo) => todo.id !== id),
-      }));
-    });
-  }
-
-  componentDidMount() {
-    getAllTodos().then((data) => {
-      console.log(data);
-      this.setState({
-        todos: data,
-      });
-    });
+    const newTodo = {
+      userId: 1,
+      title: this.state.userInput,
+    };
+    this.props.addTodo(newTodo);
   }
 
   render() {
     return (
       <section className="section-todolist">
         <div className="todolist-container">
-          <form onSubmit={this.handleUserInputSubmit} className="todolist-form">
+          <form onSubmit={this.handleUserSubmit} className="todolist-form">
             <div className="todolist-form__row">
               <header className="todolist-header">TodoList</header>
             </div>
@@ -70,12 +50,12 @@ class TodoList extends React.Component {
             </div>
           </form>
           <ul className="todolist-items">
-            {this.state.todos
-              ? this.state.todos.map((todo) => (
+            {this.props.todos
+              ? this.props.todos.map((todo) => (
                   <Todo
                     key={todo.id}
                     todo={todo}
-                    handleRemoveTodo={this.handleRemoveTodo}
+                    handleRemoveTodo={() => this.props.removeTodo(todo.id)}
                   ></Todo>
                 ))
               : null}
@@ -85,4 +65,4 @@ class TodoList extends React.Component {
     );
   }
 }
-export default TodoList;
+export default withTodos(TodoList);

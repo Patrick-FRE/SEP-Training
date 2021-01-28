@@ -1,25 +1,11 @@
 import React from 'react';
 import { getAllTodos } from '../../apis/todos.api';
+import { withTodos } from '../../hoc/withTodos';
 
 class TodoCount extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-    };
-  }
-
-  componentDidMount() {
-    getAllTodos().then((data) => {
-      this.setState({
-        count: data.length,
-      });
-    });
-  }
-
   render() {
-    return <h1>Totoal Count: {this.state.count}</h1>;
+    return <h1>Totoal Count: {this.props.count}</h1>;
   }
 }
 
-export default TodoCount;
+export default withTodos(TodoCount);

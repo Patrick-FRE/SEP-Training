@@ -8,8 +8,8 @@ class App extends React.Component {
   render() {
     return (
       <Layout>
-        <TodoCount></TodoCount>
-        {/* <TodoList></TodoList> */}
+        {/* <TodoCount></TodoCount> */}
+        <TodoList></TodoList>
       </Layout>
     );
     // return <h1>hello</h1>;
