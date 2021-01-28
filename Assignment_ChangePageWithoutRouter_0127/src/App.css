@@ -1,0 +1,38 @@
+.navbar{
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
+.homepage{
+  height: 800px;
+  background-color: #4CAF50;
+}
+.pagetwo{
+  height: 800px;
+  background-color: #af4ca7;
+}
+.pagethree{
+  height: 800px;
+  background-color: #4e4caf;
+}
