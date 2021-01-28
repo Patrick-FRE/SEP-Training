@@ -1,0 +1,9 @@
+body {
+  font-family: var(--font-family-worksans);
+  font-size: var(--font-size-lg);
+  background-image: var(--linear-gradient-color);
+  height: 100vh;
+  width: 100vw;
+  /* background-image: -webkit-linear-gradient(var(--linear-gradient-color));
+  background-image: -moz-linear-gradient(var(--linear-gradient-color)); */
+}

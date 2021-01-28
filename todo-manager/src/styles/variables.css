@@ -2,4 +2,24 @@
   --reset-margin: 0;
   --reset-padding: 0;
   --reset-box-sizing: border-box;
+
+  --primary-color: #8c54fb;
+  --primary-color-v: #8264be;
+  --secondary-color: #ce4f51;
+  --secondary-color-v: #dc6062;
+
+  --text-color: #232324;
+  --white-color: #f2f2f3;
+
+  --linear-gradient-color: linear-gradient(
+    94.43deg,
+    #8c54fb -18.98%,
+    #ce4f51 113.48%
+  );
+
+  --header-height: 80px;
+
+  --font-family-worksans: "Work Sans", sans-serif;
+  --font-size-lg: 16px;
+  --font-size-sm: 14px;
 }
