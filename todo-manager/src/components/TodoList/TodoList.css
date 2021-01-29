@@ -9,6 +9,35 @@
   list-style: none;
   overflow: auto;
 }
+.input-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+}
+.input-label__hidden {
+  height: 0;
+  width: 0;
+  transition: height 0.3s ease-in, width 0.3s ease-in;
+}
+.input-label__collapsed {
+  width: 100%;
+  height: 60px;
+  display: block;
+  background-color: var(--secondary-color);
+  /* border-radius: 5px; */
+  padding: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: height 0.3s ease-in, width 0.3s ease-in;
+}
+.todo-input {
+  height: 100%;
+  width: 100%;
+  padding: 0 8px;
+  border: none;
+  outline: none;
+  background: var(--white-color);
+}
 .todo__add-btn {
   width: 60px;
   height: 60px;
@@ -16,17 +45,17 @@
   border: none;
   position: relative;
   z-index: 2;
-  top: -10px;
-  left: 50%;
+  /* top: -10px; */
+  /* left: 50%; */
   font-size: 25px;
   background-color: var(--secondary-color);
   color: var(--white-color);
-  transform: translateX(-50%);
+  /* transform: translateX(-50%); */
   outline: none;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 2px 2px 10px rgba(0, 0, 0, 0.2);
-  transition: 0.3s ease;
+  transition: 0.3s ease-in;
 }
 .todo__add-btn:hover {
   background-color: var(--secondary-color-v);
-  top: -15px;
+  /* top: -15px; */
 }

@@ -11,8 +11,16 @@ class TodoList extends React.Component {
     this.state = {
       userInput: "",
       todos: [],
+      isCollapsed: false,
     };
+    this.hadleInputCollapsed = this.hadleInputCollapsed.bind(this);
   }
+
+  hadleInputCollapsed(e) {
+    // console.log("input button is clicked!", e);
+    this.setState({ isCollapsed: !this.state.isCollapsed });
+  }
+
   componentDidMount() {
     TodoAPI.getAllTodos().then((data) => {
       console.log(data);
@@ -31,9 +39,28 @@ class TodoList extends React.Component {
               ))
             : null}
         </ul>
-        <button type="button" className="todo__add-btn">
-          <FontAwesomeIcon icon={faPlus} />
-        </button>
+        <div className="input-container">
+          <label
+            className={
+              this.state.isCollapsed
+                ? "input-label__collapsed"
+                : "input-label__hidden"
+            }
+          >
+            <input
+              className="todo-input"
+              type="text"
+              placeholder="Type your todo"
+            ></input>
+          </label>
+          <button
+            onClick={this.hadleInputCollapsed}
+            type="button"
+            className="todo__add-btn"
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
+        </div>
       </section>
     );
   }

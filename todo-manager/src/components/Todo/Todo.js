@@ -33,7 +33,7 @@ class Todo extends React.Component {
               : "todo-content__uncompleted"
           }
         >
-          {limitCharStr(title, 30, "...")}
+          {limitCharStr(title, 35, "...")}
         </p>
         <button
           className={
