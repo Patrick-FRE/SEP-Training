@@ -8,4 +8,5 @@ class TodoCount extends React.Component {
   }
 }
 
-export default withTodos(TodoCount);
+//export default withTodos(TodoCount);
+export default TodoCount;

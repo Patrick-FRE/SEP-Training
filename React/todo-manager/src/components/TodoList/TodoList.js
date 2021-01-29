@@ -2,8 +2,20 @@ import React from 'react';
 import Todo from '../../components/Todo/Todo';
 
 import { withTodos } from '../../hoc/withTodos';
+import ColorTodo from '../ColorTodo/ColorTodo';
 
 import './TodoList.css';
+
+// function foo() {
+//   foo2(); // coupling
+// }
+
+// function fooDecoup(cb) {
+//   cb(); // decoupling
+// }
+// fooDecoup(foo2);
+
+// function foo2() {}
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -38,7 +50,7 @@ class TodoList extends React.Component {
         <div className="todolist-container">
           <form onSubmit={this.handleUserSubmit} className="todolist-form">
             <div className="todolist-form__row">
-              <header className="todolist-header">TodoList</header>
+              <header className="todolist-header">{this.props.title}</header>
             </div>
             <div className="todolist-form__row">
               <input
@@ -50,19 +62,12 @@ class TodoList extends React.Component {
             </div>
           </form>
           <ul className="todolist-items">
-            {this.props.todos
-              ? this.props.todos.map((todo) => (
-                  <Todo
-                    key={todo.id}
-                    todo={todo}
-                    handleRemoveTodo={() => this.props.removeTodo(todo.id)}
-                  ></Todo>
-                ))
-              : null}
+            {this.props.children(this.props.todos, this.props.removeTodo)}
           </ul>
         </div>
       </section>
     );
   }
 }
-export default withTodos(TodoList);
+//export default withTodos(TodoList);
+export default TodoList;

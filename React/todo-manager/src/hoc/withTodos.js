@@ -43,12 +43,14 @@ export const withTodos = (WrappedComponnet) =>
     }
 
     render() {
+      console.log(this.props);
       return (
         <WrappedComponnet
           count={this.state.todos.length}
           todos={this.state.todos}
           addTodo={this.hanldeAddTodo}
           removeTodo={this.handleRemoveTodo}
+          {...this.props} //
         ></WrappedComponnet>
       );
     }
