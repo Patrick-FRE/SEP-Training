@@ -8,7 +8,8 @@
   --secondary-color: #ce4f51;
   --secondary-color-v: #dc6062;
 
-  --text-color: #232324;
+  --text-color-black: #232324;
+  --text-color-grey: #c9c9c9;
   --white-color: #f2f2f3;
 
   --linear-gradient-color: linear-gradient(
