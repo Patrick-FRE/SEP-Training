@@ -1,0 +1,15 @@
+:root {
+  --reset-margin: 0;
+  --reset-padding: 0;
+  --reset-box-sizing: border-box;
+  --reset-font: 'Roboto', sans-serif;
+
+  --color-white: #fff;
+
+  --theme-primary: #20232a;
+  --theme-secondary: #61dafb;
+
+  --app-header-height: 60px;
+
+  --section-background-color: rgb(196, 193, 193);
+}
