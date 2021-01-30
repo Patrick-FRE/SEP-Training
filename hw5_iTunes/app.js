@@ -94,7 +94,7 @@ const Controller = ((model, view) => {
   const inputListener = () => {
     const searchInputEle = document.getElementById(view.domString.searchInput);
     searchInputEle.addEventListener("change", (event) => {
-      console.log("event listener works");
+      // console.log("event listener works");
       let name = event.target.value;
       if (name !== 0) {
         const searchTerm = name.toLowerCase().split(" ").join("+");
@@ -109,6 +109,7 @@ const Controller = ((model, view) => {
           searchResult.innerHTML = `Find ${state.results} albums of ${name}`;
         });
       }
+      searchInputEle.value = "";
     });
   };
 

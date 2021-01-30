@@ -49,6 +49,7 @@ body {
   float: right;
   cursor: pointer;
   transition: 0.4s;
+  outline: none;
 }
 .search-txt {
   border: none;
