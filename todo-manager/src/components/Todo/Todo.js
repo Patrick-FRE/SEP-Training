@@ -9,39 +9,37 @@ class Todo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isCompleted: false,
-      isActive: false,
+      isCompleted: this.props.todo.completed,
+      isActive: this.props.todo.completed,
     };
   }
   render() {
-    const { title } = this.props.todo;
-    const eventhandler = (e) => {
-      e.isChecked
-        ? this.setState({ isCompleted: true, isActive: true })
-        : this.setState({ isCompleted: false, isActive: false });
-      // console.log(this.state);
-    };
-    // const { handleRemovedTodo } = this.props;
+    const { id, title, completed } = this.props.todo;
+    const { handleRemoveTodo, handleUpdateTodo } = this.props;
+    // console.log(this.props);
 
     return (
       <li className="todo">
-        <Checkbox onClick={eventhandler}></Checkbox>
+        {/* how to pass todo to checkbox? */}
+        <Checkbox
+          todo={this.props.todo}
+          handleUpdateTodo={handleUpdateTodo}
+        ></Checkbox>
         <p
           className={
-            this.state.isCompleted
-              ? "todo-content__completed"
-              : "todo-content__uncompleted"
+            completed ? "todo-content__completed" : "todo-content__uncompleted"
           }
         >
-          {limitCharStr(title, 35, "...")}
+          {limitCharStr(title, 30, "...")}
         </p>
         <button
           className={
-            this.state.isActive
+            completed
               ? "todo__btn-remove__active"
               : "todo__btn-remove__unactive"
           }
           type="button"
+          onClick={() => handleRemoveTodo(id)}
         >
           <FontAwesomeIcon icon={faTrash} />
         </button>

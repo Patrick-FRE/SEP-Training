@@ -26,6 +26,7 @@
 }
 .todo__btn-remove__active {
   display: block;
+  margin-right: 12px;
   outline: none;
   border: none;
   cursor: pointer;

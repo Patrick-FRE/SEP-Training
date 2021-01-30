@@ -5,32 +5,25 @@ class Checkbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isChecked: false,
+      isChecked: this.props.completed,
     };
     this.handelCheckboxChange = this.handelCheckboxChange.bind(this);
-    this.handleToggleCheck = this.handleToggleCheck.bind(this);
   }
 
   handelCheckboxChange(e) {
-    console.log("checkbox changed!", e);
+    // this will never be invoked, I am just assigning it to the invisible input to avoid some errors
     this.setState({ isChecked: e.target.checked });
   }
 
-  handleToggleCheck() {
-    // console.log("toggle is chekced");
-    this.setState({ isChecked: !this.state.isChecked }, () => {
-      if (this.props.onClick) {
-        this.props.onClick(this.state);
-      }
-    });
-  }
-
   render() {
+    const { handleUpdateTodo } = this.props;
+    const { id, completed } = this.props.todo;
+
     return (
-      <span onClick={this.handleToggleCheck}>
+      <span onClick={() => handleUpdateTodo(id, !completed)}>
         <input
           type="checkbox"
-          checked={this.state.isChecked}
+          checked={completed}
           onChange={this.handelCheckboxChange}
         />
         <span></span>

@@ -14,11 +14,61 @@ class TodoList extends React.Component {
       isCollapsed: false,
     };
     this.hadleInputCollapsed = this.hadleInputCollapsed.bind(this);
+    this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleUserSubmit = this.handleUserSubmit.bind(this);
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+    this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
+    this.handleUpdateTodo = this.handleUpdateTodo.bind(this);
   }
 
-  hadleInputCollapsed(e) {
+  hadleInputCollapsed() {
     // console.log("input button is clicked!", e);
     this.setState({ isCollapsed: !this.state.isCollapsed });
+  }
+
+  //add todo
+  handleUserInput(e) {
+    this.setState({ userInput: e.target.value });
+  }
+  handleUserSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      userInput: "",
+    });
+    const newTodo = {
+      userId: 1,
+      title: this.state.userInput,
+      completed: false,
+    };
+    this.handleAddTodo(newTodo);
+  }
+
+  handleAddTodo(newTodo) {
+    TodoAPI.addTodo(newTodo).then((data) => {
+      this.setState((preState) => ({
+        todos: [data, ...preState.todos],
+      }));
+      console.log(this.state.todos);
+    });
+  }
+
+  handleRemoveTodo(id) {
+    TodoAPI.removeTodo(id).then(() => {
+      this.setState((preState) => ({
+        todos: preState.todos.filter((todo) => todo.id !== id),
+      }));
+    });
+  }
+
+  handleUpdateTodo(id, completed) {
+    TodoAPI.updateTodo(id, completed).then((data) => {
+      console.log(data);
+      this.setState((preState) => ({
+        todos: preState.todos.map((todo) =>
+          todo.id === data.id ? data : todo
+        ),
+      }));
+    });
   }
 
   componentDidMount() {
@@ -29,17 +79,23 @@ class TodoList extends React.Component {
       });
     });
   }
+
   render() {
     return (
       <section className="section-todolist">
         <ul className="todolist-container">
           {this.state.todos
             ? this.state.todos.map((todo) => (
-                <Todo key={todo.id} todo={todo}></Todo>
+                <Todo
+                  key={todo.id}
+                  todo={todo}
+                  handleRemoveTodo={this.handleRemoveTodo}
+                  handleUpdateTodo={this.handleUpdateTodo}
+                ></Todo>
               ))
             : null}
         </ul>
-        <div className="input-container">
+        <form onSubmit={this.handleUserSubmit} className="input-container">
           <label
             className={
               this.state.isCollapsed
@@ -48,6 +104,8 @@ class TodoList extends React.Component {
             }
           >
             <input
+              onChange={this.handleUserInput}
+              value={this.state.userInput}
               className="todo-input"
               type="text"
               placeholder="Type your todo"
@@ -60,7 +118,7 @@ class TodoList extends React.Component {
           >
             <FontAwesomeIcon icon={faPlus} />
           </button>
-        </div>
+        </form>
       </section>
     );
   }

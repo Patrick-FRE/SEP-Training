@@ -18,3 +18,14 @@ export const removeTodo = (id) =>
   fetch([endPoint, id].join("/"), {
     method: "DELETE",
   }).then((response) => response.json());
+
+export const updateTodo = (id, completed) =>
+  fetch([endPoint, id].join("/"), {
+    method: "PATCH",
+    body: JSON.stringify({
+      completed: completed,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  }).then((response) => response.json());
