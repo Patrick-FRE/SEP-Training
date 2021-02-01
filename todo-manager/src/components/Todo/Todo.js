@@ -6,21 +6,12 @@ import { limitCharStr } from "../../utilis/limitCharStr.util";
 import "./Todo.css";
 
 class Todo extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isCompleted: this.props.todo.completed,
-      isActive: this.props.todo.completed,
-    };
-  }
   render() {
     const { id, title, completed } = this.props.todo;
     const { handleRemoveTodo, handleUpdateTodo } = this.props;
-    // console.log(this.props);
 
     return (
       <li className="todo">
-        {/* how to pass todo to checkbox? */}
         <Checkbox
           todo={this.props.todo}
           handleUpdateTodo={handleUpdateTodo}

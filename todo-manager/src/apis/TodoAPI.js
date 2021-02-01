@@ -19,11 +19,11 @@ export const removeTodo = (id) =>
     method: "DELETE",
   }).then((response) => response.json());
 
-export const updateTodo = (id, completed) =>
+export const updateTodo = (id, compBoolean) =>
   fetch([endPoint, id].join("/"), {
     method: "PATCH",
     body: JSON.stringify({
-      completed: completed,
+      completed: compBoolean,
     }),
     headers: {
       "Content-type": "application/json; charset=UTF-8",
