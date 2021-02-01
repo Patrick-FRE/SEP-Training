@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 
 interface Props {
-  todo: Todo;
-  deleteTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
+  todo: ITodo;
 }
 
-export default function TodoItem({ todo, deleteTodo, toggleTodo }: Props) {
+export default function TodoItem({ todo }: Props) {
+  const { toggleTodo, deleteTodo } = useContext(GlobalContext) as IContext;
+
   return (
     <>
       <p

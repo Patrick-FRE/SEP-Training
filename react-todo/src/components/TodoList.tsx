@@ -1,23 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 import TodoItem from "./TodoItem";
 
-interface Props {
-  todos: Todo[];
-  deleteTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
-}
+export default function TodoList() {
+  const { todos, fetchTodos } = useContext(GlobalContext) as IContext;
 
-export default function TodoList({ todos, deleteTodo, toggleTodo }: Props) {
+  useEffect(() => {
+    fetchTodos();
+  }, [fetchTodos]);
+
   return (
     <ul>
       {todos.length !== 0 ? (
-        todos.map((todo: Todo) => (
+        todos.map((todo: ITodo) => (
           <li key={todo.id}>
-            <TodoItem
-              todo={todo}
-              deleteTodo={deleteTodo}
-              toggleTodo={toggleTodo}
-            />
+            <TodoItem todo={todo} />
           </li>
         ))
       ) : (

@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 
-interface Props {
-  handleOnSubmit: (e: React.FormEvent, text: string) => void;
-}
-
-export default function AddTodo(props: Props) {
+export default function AddTodo() {
   const [text, setText] = useState("");
+  const { handleOnSubmit } = useContext(GlobalContext) as IContext;
 
   const onSubmit = (e: React.FormEvent) => {
-    props.handleOnSubmit(e, text);
+    handleOnSubmit(e, text);
     setText("");
   };
 
