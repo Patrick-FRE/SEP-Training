@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useCallback, useReducer } from "react";
 import { GlobalReducer } from "./GlobalReducer";
 
 interface Props {
@@ -47,11 +47,12 @@ export function GlobalProvider({ children }: Props) {
     initialState
   );
 
-  const fetchTodos = async () => {
+  const fetchTodos = useCallback(async () => {
     try {
       const url = "https://jsonplaceholder.typicode.com/todos/?_limit=10";
       const res = await fetch(url);
       const data = await res.json();
+
       dispatch({
         type: ActionType.GET,
         payload: data,
@@ -62,7 +63,7 @@ export function GlobalProvider({ children }: Props) {
         payload: error.response.data.error,
       });
     }
-  };
+  }, []);
 
   const handleOnSubmit = async (e: React.FormEvent, text: string) => {
     e.preventDefault();

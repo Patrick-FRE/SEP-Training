@@ -16,3 +16,24 @@ interface IContext {
     deleteTodo: (id: number) => void,
     toggleTodo: (id: number) => void
 }
+
+// type Action = {
+//       type: ActionType.GET;
+//       payload: ITodo[];
+//     }
+//   | {
+//       type: ActionType.ADD;
+//       payload: ITodo;
+//     }
+//   | {
+//       type: ActionType.DELETE;
+//       payload: number;
+//     }
+//   | {
+//       type: ActionType.TOGGLE;
+//       payload: number;
+//     }
+//   | {
+//       type: ActionType.ERROR;
+//       payload: string;
+// };
