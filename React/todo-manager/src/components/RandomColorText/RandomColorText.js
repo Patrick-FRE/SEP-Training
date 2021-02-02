@@ -20,11 +20,11 @@ class RandomColorText extends React.Component {
   }
 
   render() {
-    return this.props.children
-      .split('')
-      .map((char, index) => (
-        <span style={{ color: this.state.colors[index] }}>{char}</span>
-      ));
+    return this.props.children.split('').map((char, index) => (
+      <span key={index} style={{ color: this.state.colors[index] }}>
+        {char}
+      </span>
+    ));
   }
 }
 

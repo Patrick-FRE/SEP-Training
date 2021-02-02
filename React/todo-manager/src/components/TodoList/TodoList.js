@@ -3,6 +3,7 @@ import Todo from '../../components/Todo/Todo';
 
 import { withTodos } from '../../hoc/withTodos';
 import ColorTodo from '../ColorTodo/ColorTodo';
+import { store } from '../../Redux/Redux';
 
 import './TodoList.css';
 
@@ -44,13 +45,21 @@ class TodoList extends React.Component {
     this.props.addTodo(newTodo);
   }
 
+  componentDidMount() {
+    store.subscribe(() => {
+      this.forceUpdate();
+    });
+  }
+
   render() {
     return (
       <section className="section-todolist">
         <div className="todolist-container">
           <form onSubmit={this.handleUserSubmit} className="todolist-form">
             <div className="todolist-form__row">
-              <header className="todolist-header">{this.props.title}</header>
+              <header className="todolist-header">
+                {this.props.title + store.getState().value}
+              </header>
             </div>
             <div className="todolist-form__row">
               <input

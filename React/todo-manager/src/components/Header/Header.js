@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from '../Logo/Logo';
+import Counter from '../../components/Counter/Counter';
 
 import './Header.css';
 
@@ -8,6 +9,7 @@ class Header extends React.Component {
     return (
       <div className="header">
         <Logo></Logo>
+        <Counter></Counter>
       </div>
     );
   }

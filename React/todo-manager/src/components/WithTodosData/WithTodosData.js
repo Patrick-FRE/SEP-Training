@@ -34,7 +34,6 @@ class WithTodosData extends React.Component {
 
   componentDidMount() {
     getAllTodos().then((data) => {
-      console.log(data);
       this.setState({
         todos: data,
       });
@@ -42,7 +41,6 @@ class WithTodosData extends React.Component {
   }
 
   render() {
-    console.log(this.props.children);
     if (typeof this.props.render === 'function') {
       return this.props.render(
         this.state.todos,

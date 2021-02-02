@@ -6,11 +6,13 @@ import TodoList from './components/TodoList/TodoList';
 import WithTodosData from './components/WithTodosData/WithTodosData';
 import ColorTodo from './components/ColorTodo/ColorTodo';
 import Todo from './components/Todo/Todo';
+import Counter from './components/Counter/Counter';
 
 class App extends React.Component {
   render() {
     return (
       <Layout>
+        <Counter></Counter>
         {/* <TodoCount></TodoCount> */}
         {/* <TodoList title="My Todo List" name="Patrick"></TodoList> */}
         <WithTodosData
