@@ -9,7 +9,7 @@ class Layout extends React.Component {
     return (
       <div className="app-container">
         <header className="app-header">
-          <Header></Header>
+          <Header handleUserInputChange={this.props.handleUserInputChange}></Header>
         </header>
         <main className="app-content">{this.props.children}</main>
       </div>

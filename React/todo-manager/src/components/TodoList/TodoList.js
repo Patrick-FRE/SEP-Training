@@ -45,7 +45,7 @@ class TodoList extends React.Component {
 
   componentDidMount() {
     getAllTodos().then((data) => {
-      console.log(data);
+      //console.log(data);
       this.setState({
         todos: data,
       });

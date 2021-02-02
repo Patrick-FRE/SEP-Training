@@ -7,7 +7,7 @@ class Todo extends React.Component {
   render() {
     const { id, userId, completed, title } = this.props.todo;
     const { handleRemoveTodo } = this.props;
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <li className="todo">
         <p className="todo__content"> {limitCharStr(title, 40, '...')}</p>
