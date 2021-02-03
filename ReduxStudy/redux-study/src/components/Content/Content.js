@@ -1,5 +1,6 @@
 import React from "react";
 import "./Content.css";
+import { connect } from "react-redux";
 
 class Content extends React.Component {
   render() {
@@ -11,4 +12,10 @@ class Content extends React.Component {
   }
 }
 
-export default Content;
+const mapStateToProps = (state /*ownProps*/) => {
+  return {
+    counter: state.value,
+  };
+};
+
+export default connect(mapStateToProps)(Content);

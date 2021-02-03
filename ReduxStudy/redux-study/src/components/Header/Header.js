@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { connect } from "react-redux";
 
 class Header extends React.Component {
   //   constructor(props) {
@@ -14,4 +15,10 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+const mapStateToProps = (state /*ownProps*/) => {
+  return {
+    counter: state.value,
+  };
+};
+
+export default connect(mapStateToProps)(Header);
