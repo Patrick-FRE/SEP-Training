@@ -14,13 +14,13 @@ export const withTodos = (WrappedComponent) =>
     }
 
     componentDidMount() {
-      getTodos().then((data) => {
-        console.log(data);
-        this.setState({
-          todos: data,
+        getTodos().then((data) => {
+          console.log(data);
+          this.setState({
+            todos: data,
+          });
         });
-      });
-    }
+      }
 
     addTodo = (text) => {
       let newTodos = [{ text }, ...this.state.todos];
