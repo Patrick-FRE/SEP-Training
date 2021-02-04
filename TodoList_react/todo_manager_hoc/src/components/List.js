@@ -18,12 +18,12 @@ class ToDoList extends Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
     if (!this.state.inputValue) return;
-    this.addTodo(this.state.inputValue);
+    this.props.addTodo(this.state.inputValue);
     this.setState({
-      inputValue: "",
+      inputValue: " ",
     });
+    e.preventDefault();
   }
 
   render() {
@@ -39,7 +39,7 @@ class ToDoList extends Component {
           />
         </form>
         <ul>
-          {this.props.todos.map(({ text, isComplete }, index) => (
+          {this.props.todos.map(({ title, isComplete }, index) => (
             <li
               key={index}
               className={isComplete ? "complete" : null}
@@ -47,7 +47,7 @@ class ToDoList extends Component {
               onClick={this.props.handleComplete}
               tabIndex="0"
             >
-              <div>{text}</div>
+              <div>{title}</div>
               <button
                 className="remove"
                 data-index={index}

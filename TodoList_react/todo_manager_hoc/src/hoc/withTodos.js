@@ -14,16 +14,24 @@ export const withTodos = (WrappedComponent) =>
     }
 
     componentDidMount() {
-        getTodos().then((data) => {
-          console.log(data);
-          this.setState({
-            todos: data,
-          });
+      getTodos().then((data) => {
+        console.log(data);
+        this.setState({
+          todos: data,
         });
-      }
+      });
+    }
 
-    addTodo = (text) => {
-      let newTodos = [{ text }, ...this.state.todos];
+    addTodo = (title) => {
+      let newTodos = [
+        {
+          completed: false,
+          id: 101,
+          title: title,
+          userId: 6,
+        },
+        ...this.state.todos,
+      ];
       this.setState({
         todos: newTodos,
       });
@@ -49,12 +57,16 @@ export const withTodos = (WrappedComponent) =>
     };
 
     render() {
-      return (<WrappedComponent
-            todos={this.state.todos}
-            count={this.state.todos.length}
-            addTodo={this.addTodo}
-            handleComplete={this.handleComplete}
-            handleRemove={this.handleRemove}
-      > </WrappedComponent>);
+      return (
+        <WrappedComponent
+          todos={this.state.todos}
+          count={this.state.todos.length}
+          addTodo={this.addTodo}
+          handleComplete={this.handleComplete}
+          handleRemove={this.handleRemove}
+        >
+          {" "}
+        </WrappedComponent>
+      );
     }
   };
