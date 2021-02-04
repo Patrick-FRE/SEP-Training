@@ -1,24 +1,24 @@
 import { createStore } from 'redux'
 
 let initState = {
-    count: 1
+    count: 0
 }
 
 //aciton creator
+
+const actionTypes = {
+    ADD_COUNT: 'ADD_COUNT'
+}
+
 const ADD_COUNT = () => {
     return {
-        type: 'ADD_COUNT'
+        type: actionTypes.ADD_COUNT
     }
 }
 
-const actionTypes = {
-    ADD_COUNT: ADD_COUNT
-}
-
-
 export let myReducer = (state = initState, aciton) => {
     switch (aciton.type) {
-        case 'ADD_COUNT':
+        case actionTypes.ADD_COUNT:
             return { count: state.count + 1 }
 
         default:
@@ -34,19 +34,24 @@ export let mycreateStore = (reducer) => {
     // 1
     function subscribe(cb) {
         cbqueue.push(cb)
-        console.log(cbqueue.length, 'cbqueeu ;ength now');
-        
+        // console.log(cbqueue.length, 'cbqueeu ;ength now');
+        return function () {
+            cbqueue.splice(cbqueue.indexOf(cb), 1)
+        }
+
     }
     // 2
     function dispatch(action) {
         state = reducer(state, action)
-        console.log(state, 'in dispatch');
-        while (cbqueue.length > 0) {
+        // console.log(state, 'in dispatch');
+        /* while (cbqueue.length > 0) {
             let exe = cbqueue.shift()
             exe();
-        }
+        } */
+
+        // cbqueue.forEach((cb) => { cb() })
         // side effect
-        // cbqueue.forEach(x=>x())
+        cbqueue.forEach(x=>x())
     }
     // 3
     function getState() {

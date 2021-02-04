@@ -15,8 +15,8 @@ export const myconnect = (mapStateToProps, mapDispatchToProps) => Wrapped => {
         store = this.context
 
         render() {
-            this.store.dispatch(ADD_COUNT())
-            console.log(this.store, 'im store');
+            // this.store.dispatch(ADD_COUNT())
+            // console.log(this.store, 'im store');
             // const wrappedStateToProps = mapStateToProps(this.store.getState())
             // const wrappedDispatchToProps = mapDispatchToProps(this.store.dispatch)
             return (
@@ -31,17 +31,22 @@ export const myconnect = (mapStateToProps, mapDispatchToProps) => Wrapped => {
         }
 
         handleAdd = () => {
-            console.log('pushing cb');
-            this.store.subscribe(() => this.forceUpdate())
+            // console.log('pushing cb');
+
             this.store.dispatch(ADD_COUNT())
 
         }
 
         componentDidMount() {
+            this.unsub = this.store.subscribe(() => {
+                this.forceUpdate();
+            });
+        }
+        componentWillUnmount() {
+            this.unsub();
         }
     }
 }
-
 export const MyProvider = (props) => {
     return (
         <MyReduxContext.Provider value={props.store}>
