@@ -3,6 +3,8 @@ import './App.css';
 import React from 'react';
 import { connect } from 'react-redux'
 import { ADD_COUNT } from './Actions/actions'
+import { myconnect } from './React-Redux/react-redux'
+
 
 class App extends React.Component {
 
@@ -17,9 +19,9 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-
     this.props.Add()
-    console.log(this.props);
+    console.log(this.props.count, ':count now');
+    this.forceUpdate()
 
   }
 
@@ -43,7 +45,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => {
-  console.log(dispatch,'imdispatch');
+  console.log(dispatch, 'imdispatch');
   return {
     Add: () => dispatch(ADD_COUNT())
   }
@@ -51,4 +53,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default myconnect(mapStateToProps, mapDispatchToProps)(App);
