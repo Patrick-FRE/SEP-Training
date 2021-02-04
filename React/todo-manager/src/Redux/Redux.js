@@ -30,7 +30,7 @@ function counterReducer(state = { value: 0 }, action) {
   }
 }
 
-export const store = createStore(counterReducer);
+export const store = myCreateStore(counterReducer);
 store.subscribe(() => {
   console.log(store.getState());
 });
@@ -52,7 +52,11 @@ function myCreateStore(reducerFn) {
   let listeners = [];
 
   function subscribe(callbackFn) {
+    console.log('subscribe');
     listeners.push(callbackFn);
+    return function () {
+      listeners.splice(listeners.indexOf(callbackFn), 1); // remove callgn in the listner
+    };
   }
   function getState() {
     return state;

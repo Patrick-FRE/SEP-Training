@@ -2,6 +2,7 @@ import React from 'react';
 
 import { store, actionCreater } from '../../Redux/Redux';
 import { connect } from 'react-redux';
+import { myConnect } from '../../React-Redux/react-redux';
 
 // class Counter extends React.Component {
 //   componentDidMount() {
@@ -44,15 +45,17 @@ class Counter extends React.Component {
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
+  console.log('mapStateToProps', state);
   return {
     counter: state.value,
   };
 };
 
 const mapDispatchToProps = (dispatch /*, ownProps*/) => {
+  console.log(dispatch);
   return {
     add: () => dispatch(actionCreater.incremented()),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default myConnect(mapStateToProps, mapDispatchToProps)(Counter);

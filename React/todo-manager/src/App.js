@@ -12,10 +12,10 @@ class App extends React.Component {
   render() {
     return (
       <Layout>
-        <Counter></Counter>
+        <Counter name="patrick"></Counter>
         {/* <TodoCount></TodoCount> */}
         {/* <TodoList title="My Todo List" name="Patrick"></TodoList> */}
-        <WithTodosData
+        {/* <WithTodosData
           render={(todos, addTodo, removeTodo) => (
             <TodoList
               title="HeTodoListllo"
@@ -36,7 +36,7 @@ class App extends React.Component {
               }
             </TodoList>
           )}
-        ></WithTodosData>
+        ></WithTodosData> */}
         {/* <WithTodosData
           render={(todos, addTodo, removeTodo) => (
             <TodoCount count={todos.length}></TodoCount>

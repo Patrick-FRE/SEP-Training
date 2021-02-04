@@ -4,11 +4,12 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Redux';
+import { MyProvider } from './React-Redux/react-redux';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <MyProvider store={store}>
     <App />
-  </Provider>,
+  </MyProvider>,
   document.getElementById('root')
 );
 
