@@ -1,0 +1,25 @@
+.li-item {
+    text-align: left;
+    list-style-type: none;
+    color: rgb(112, 127, 255);
+    width:auto;
+  }
+  .list-container {
+    border: white 1px solid;
+    height: 25px;
+    margin: 1px;
+    width:650px;
+    font-size: 0.9em;
+  }
+  .button-item {
+    float: right;
+    color:white;
+    background-color:rgb(94, 108, 231);
+    border-radius: 5px;
+    font-size: 0.8em;
+  }
+  .button-container {
+    display: inline;
+    margin: auto !important;
+  }
+  
