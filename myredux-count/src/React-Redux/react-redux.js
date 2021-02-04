@@ -16,14 +16,13 @@ export const myconnect = (mapStateToProps, mapDispatchToProps) => Wrapped => {
 
         render() {
             this.store.dispatch(ADD_COUNT())
-
             console.log(this.store, 'im store');
-            const wrappedStateToProps = mapStateToProps(this.store.getState())
-            const wrappedDispatchToProps = mapDispatchToProps(this.store.dispatch)
+            // const wrappedStateToProps = mapStateToProps(this.store.getState())
+            // const wrappedDispatchToProps = mapDispatchToProps(this.store.dispatch)
             return (
                 <Wrapped
                     count={this.store.getState().count}
-                    Add={() => this.store.dispatch(ADD_COUNT())}
+                    Add={() => this.handleAdd()}
 
                 ></Wrapped>
             )
@@ -31,11 +30,14 @@ export const myconnect = (mapStateToProps, mapDispatchToProps) => Wrapped => {
 
         }
 
+        handleAdd = () => {
+            console.log('pushing cb');
+            this.store.subscribe(() => this.forceUpdate())
+            this.store.dispatch(ADD_COUNT())
+
+        }
 
         componentDidMount() {
-            this.store.subscribe(() => this.forceUpdate()
-            )
-            // console.log(store.subscribe, 'inDidMount');
         }
     }
 }

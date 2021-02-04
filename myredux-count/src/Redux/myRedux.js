@@ -26,7 +26,7 @@ export let myReducer = (state = initState, aciton) => {
     }
 }
 
-let store = (reducer) => {
+export let mycreateStore = (reducer) => {
     let state = reducer(undefined, { type: 'noMatchhere' })
     let cbqueue = []
     // let that = this
@@ -34,40 +34,40 @@ let store = (reducer) => {
     // 1
     function subscribe(cb) {
         cbqueue.push(cb)
+        console.log(cbqueue.length, 'cbqueeu ;ength now');
+        
     }
     // 2
     function dispatch(action) {
         state = reducer(state, action)
         console.log(state, 'in dispatch');
-        // side effect
-        console.log(cbqueue, 'cbqueue');
-        while (cbqueue) {
+        while (cbqueue.length > 0) {
             let exe = cbqueue.shift()
-            //     console.log(exe);
-            // }
+            exe();
         }
-        // 3
-        function getState() {
-            return state;
-        }
-        // 打包
-        return {
-            dispatch,
-            subscribe,
-            getState
-        }
-
-
+        // side effect
+        // cbqueue.forEach(x=>x())
     }
+    // 3
+    function getState() {
+        return state;
+    }
+    // 打包
+    return {
+        dispatch,
+        subscribe,
+        getState
+    }
+
+
 }
+
+export const myStore = mycreateStore(myReducer)
 // export const myStore = createStore(myReducer)
 
-export const myStore = store(myReducer)
 
 // myStore.subscribe(() => console.log('in subs'))
 // console.log(myStore.dispatch, 'mystore_dispatch');
 // myStore.dispatch({ type: 'ADD_TODO' })
-// myStore.dispatch(actionTypes.ADD_COUNT())
-// myStore.dispatch(actionTypes.ADD_COUNT())
-// myStore.dispatch(actionTypes.ADD_COUNT())
+
 // console.log(myStore.getState())

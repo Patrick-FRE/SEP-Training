@@ -19,9 +19,9 @@ class App extends React.Component {
   }
 
   handleClick = () => {
-    this.props.Add()
     console.log(this.props.count, ':count now');
-    this.forceUpdate()
+    this.props.Add()
+    // this.forceUpdate()
 
   }
 
