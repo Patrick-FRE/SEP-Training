@@ -45,13 +45,15 @@
 // var my = new MyClass('David');
 // console.log(my); //
 
-// var obj = {name: 'David'};
+
 // function foo(input) {
 //     input.name = 'Jojo';
 //     console.log(input);
 // }
 // foo(obj); //
 // console.log(obj); //
+
+
 
 // const arr = [1, 2, 3];
 // console.log(arr);
@@ -785,9 +787,9 @@
 //     });
 // }
 
-function foo() {
-    console.log(a);
-    let a = 5;
-}
-foo();
-console.log(typeof undefined)
+// function foo() {
+//     console.log(a);
+//     let a = 5;
+// }
+// foo();
+// console.log(typeof undefined)
