@@ -32,6 +32,7 @@ class App extends React.Component {
         <h1>I'm a counter</h1>
         <h2>count now: {this.props.count ? this.props.count : 0}
         </h2>
+        <h3>{this.props.str}</h3>
         <button onClick={this.handleClick}>add</button>
       </div>
     );

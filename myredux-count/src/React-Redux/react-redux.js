@@ -23,7 +23,7 @@ export const myconnect = (mapStateToProps, mapDispatchToProps) => Wrapped => {
                 <Wrapped
                     count={this.store.getState().count}
                     Add={() => this.handleAdd()}
-
+                    {...this.props}
                 ></Wrapped>
             )
 

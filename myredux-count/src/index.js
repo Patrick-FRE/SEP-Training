@@ -12,7 +12,7 @@ import { MyProvider } from './React-Redux/react-redux'
 
 ReactDOM.render(
   <MyProvider store={myStore}>
-    <App />
+    <App str="just an abc" />
   </MyProvider>,
   document.getElementById('root')
 );
