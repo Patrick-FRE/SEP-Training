@@ -1,6 +1,7 @@
 import React from "react";
 import "./Header.css";
 import { connect } from "react-redux";
+import { myConnect } from "../../react-redux/React-Redux";
 
 class Header extends React.Component {
   //   constructor(props) {
@@ -21,4 +22,4 @@ const mapStateToProps = (state /*ownProps*/) => {
   };
 };
 
-export default connect(mapStateToProps)(Header);
+export default myConnect(mapStateToProps)(Header);

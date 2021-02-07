@@ -1,6 +1,7 @@
 import React from "react";
 import "./Content.css";
 import { connect } from "react-redux";
+import { myConnect } from "../../react-redux/React-Redux";
 
 class Content extends React.Component {
   render() {
@@ -18,4 +19,4 @@ const mapStateToProps = (state /*ownProps*/) => {
   };
 };
 
-export default connect(mapStateToProps)(Content);
+export default myConnect(mapStateToProps)(Content);
