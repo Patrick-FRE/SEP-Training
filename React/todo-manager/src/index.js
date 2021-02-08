@@ -5,13 +5,16 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { store } from './Redux/Redux';
 import { MyProvider } from './React-Redux/react-redux';
+import StonksApp from './StonkApp/Stonks';
 
-ReactDOM.render(
-  <MyProvider store={store}>
-    <App />
-  </MyProvider>,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <MyProvider store={store}>
+//     <App />
+//   </MyProvider>,
+//   document.getElementById('root')
+// );
+
+ReactDOM.render(<StonksApp></StonksApp>, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
