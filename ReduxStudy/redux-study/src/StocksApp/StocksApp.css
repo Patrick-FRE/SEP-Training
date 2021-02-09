@@ -1,0 +1,5 @@
+section > ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}

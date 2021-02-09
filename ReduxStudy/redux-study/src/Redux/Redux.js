@@ -2,7 +2,7 @@ import { createStore } from "redux";
 
 //Action Types
 const INCREMENTED = "counter/incremented";
-const DECREMENTED = "conter/decremented";
+const DECREMENTED = "counter/decremented";
 const actionTypes = {
   INCREMENTED,
   DECREMENTED,
