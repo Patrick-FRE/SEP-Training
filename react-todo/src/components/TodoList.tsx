@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { ITodo, IContext } from "../types";
 import TodoItem from "./TodoItem";
 
 export default function TodoList() {

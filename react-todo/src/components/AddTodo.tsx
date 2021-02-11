@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { IContext } from "../types";
 
 export default function AddTodo() {
   const [text, setText] = useState("");

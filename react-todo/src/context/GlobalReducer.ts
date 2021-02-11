@@ -1,4 +1,4 @@
-import { Action, ActionType } from './GlobalContext'
+import { ITodo, ITodos, ActionType, Action } from '../types'
 
 export const GlobalReducer: React.Reducer<ITodos, Action> = (state, action) => {
     switch (action.type) {

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { ITodo, IContext } from "../types";
 
 interface Props {
   todo: ITodo;

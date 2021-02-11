@@ -1,39 +1,10 @@
 import React, { createContext, useCallback, useReducer } from "react";
 import { GlobalReducer } from "./GlobalReducer";
+import { ITodo, ITodos, ActionType, Action } from "../types";
 
 interface Props {
   children: React.ReactNode;
 }
-
-export enum ActionType {
-  GET = "GET_TODO",
-  ADD = "ADD_TODO",
-  DELETE = "DELETE_TODO",
-  TOGGLE = "TOGGLE_TODO",
-  ERROR = "TODO_ERROR",
-}
-
-export type Action =
-  | {
-      type: ActionType.GET;
-      payload: ITodo[];
-    }
-  | {
-      type: ActionType.ADD;
-      payload: ITodo;
-    }
-  | {
-      type: ActionType.DELETE;
-      payload: number;
-    }
-  | {
-      type: ActionType.TOGGLE;
-      payload: number;
-    }
-  | {
-      type: ActionType.ERROR;
-      payload: string;
-    };
 
 const initialState: ITodos = {
   todos: [],
