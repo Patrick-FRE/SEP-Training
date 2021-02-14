@@ -1,0 +1,21 @@
+.todoList{
+    height: 500px;
+    width: 600px;
+    overflow: scroll;
+}
+
+.title{
+    text-align: center;
+    margin: 5px;
+}
+
+.newTodo{
+    text-align: center;
+}
+
+.newTodo input{
+    margin: 5px;
+    padding: 5px;
+    width: 400px;
+    border-radius: 5px;
+}

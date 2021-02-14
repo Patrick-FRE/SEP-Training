@@ -1,45 +1,22 @@
 import React from 'react';
 import './todolist.css';
-import myAPI from '../../helpers/api';
+import { withTodos } from '../../hoc/withTodos';
 import Todo from "../todo/todo";
 
 
 class Todolist extends React.Component {
-
-    state = {
-        todos:[]
-    }
-
-    constructor(props){
-        super(props);
-        this.deleteTodo = this.deleteTodo.bind(this);
-        myAPI.getTodolist().then(results=>{
-            this.setState({
-                todos:results
-            });
-        });
-    }
-
     addTodo(e){
         if(e.key === 'Enter'){
-            const newTodo = e.target.value;
-            const tmp = this.state.todos;
-            tmp.unshift({
+            this.props.addTodo({
                 id:Date.now().toString(),
-                title:newTodo
-            });
-            this.setState({
-                todos:tmp
+                title:e.target.value
             });
             e.target.value = "";
         }
     }
 
     deleteTodo(id){
-        const tmp = this.state.todos.filter(x=>x.id!==id);
-        this.setState({
-            todos:tmp
-        });
+        this.props.deleteTodo(id);
     }
 
     render() {
@@ -54,7 +31,7 @@ class Todolist extends React.Component {
                                 onKeyDown={(e)=>this.addTodo(e)}
                             />
                             <ul id="todolist-content">
-                                {this.state.todos.map(todo=><Todo title={todo.title} key={todo.id} id={todo.id} delete={this.deleteTodo}></Todo>)}
+                                {this.props.todos.map(todo=><Todo title={todo.title} key={todo.id} id={todo.id} delete={(id)=>this.deleteTodo(id)}></Todo>)}
                             </ul>
                         </section>
                     </>
@@ -62,4 +39,4 @@ class Todolist extends React.Component {
     }
 }
 
-export default Todolist;
+export default withTodos(Todolist);

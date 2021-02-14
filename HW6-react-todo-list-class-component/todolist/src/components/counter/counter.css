@@ -1,0 +1,8 @@
+.counter{
+    background-color: rgb(79, 180, 75);
+    border-style: solid;
+    margin-left: 15px;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 2px 3px 5px var(--color-black);
+}

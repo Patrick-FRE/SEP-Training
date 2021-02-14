@@ -1,0 +1,14 @@
+.header{
+    padding: 5px;
+    display: flex;
+    flex-direction:row !important;
+}
+
+.header h1{
+    margin-left: 5px;
+    width: 300px;
+}
+
+.tabs{
+    width: 30%;
+}
