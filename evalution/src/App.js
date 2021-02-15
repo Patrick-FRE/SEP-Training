@@ -6,27 +6,30 @@ import actions from "./store/actions";
 //  artworkUrl100 collectionName
 function App() {
   const dispatch = useDispatch();
-
-  const [albums, setAlbums] = useState([]);
-  const [searchName, setSearchName] = useState("");
-  const searchHandler = (event) => {
-    if (event.code === "Enter") {
-      getAlbumsByArtistName(searchName).then((data) => {
-        setAlbums([...data.results]);
-      });
-    }
-  };
-  const inputHandler = (event) => {
-    setSearchName(event.target.value);
-  };
+  let albums = useSelector((s) => {
+    return s.albums;
+  });
+  const searchName = useSelector((s) => {
+    return s.searchName;
+  });
 
   return (
     <div className="App">
       <header>
         <input
           placeholder={`Search...`}
-          onKeyPress={searchHandler}
-          onChange={inputHandler}
+          // onKeyPress={searchHandler}
+          onKeyPress={(event) => {
+            if (event.code === "Enter") {
+              getAlbumsByArtistName(searchName).then((data) => {
+                // setAlbums([...data.results]);
+                dispatch({ type: "setAlbums", payload: [...data.results] });
+              });
+            }
+          }}
+          onChange={(event) => {
+            dispatch({ type: "updateSearchName", payload: event.target.value });
+          }}
         ></input>
       </header>
       <main>
