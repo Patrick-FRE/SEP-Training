@@ -1,4 +1,4 @@
-const getAlbumsByArtistName = async (ARTIST_NAME) => {
+const getAlbumsByArtistName = (ARTIST_NAME) => {
   return fetch(
     `https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=50`,
     {

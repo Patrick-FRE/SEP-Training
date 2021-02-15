@@ -1,16 +1,21 @@
-import getAlbumsByArtistName from "./iTunesAPI";
+import getAlbumsByArtistName from "./APIs/iTunesAPI";
+import AlbumList from "./components/AlbumList";
+import { useState } from "react";
+//  artworkUrl100 collectionName
 function App() {
   let searchName = 1;
-  let albums = [];
+
   const searchHandler = (event) => {
     if (event.code === "Enter") {
-      getAlbumsByArtistName(searchName).then((data) => (albums = data.result));
+      getAlbumsByArtistName(searchName).then((data) => {
+        setAlbums([...data.results]);
+      });
     }
   };
   const inputHandler = (event) => {
     searchName = event.target.value;
-    console.log(searchName);
   };
+  const [albums, setAlbums] = useState([]);
   return (
     <div className="App">
       <header>
@@ -24,13 +29,7 @@ function App() {
         <header>{`Search ALbums by ${
           searchName ? searchName : "ArtisName"
         }`}</header>
-        <section>
-          {albums.length > 0
-            ? albums.map((album) => {
-                <div>albums.name</div>;
-              })
-            : null}
-        </section>
+        <AlbumList albums={albums}></AlbumList>
       </main>
     </div>
   );
