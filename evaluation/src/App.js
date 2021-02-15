@@ -12,9 +12,9 @@ const App = () => {
         <Layout>
           <Switch>
             <Route exact path="/">
-              <Redirect to="/albumlist" component={Result} />
+              <Redirect to="/albumlist" render={(props) => <Result {...props} />} />
             </Route>
-            <Route to="/albumlist" component={Result} />
+            <Route to="/albumlist" render={(props) => <Result {...props} />} />
           </Switch>
         </Layout>
       </Router>

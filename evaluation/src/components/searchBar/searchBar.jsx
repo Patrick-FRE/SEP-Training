@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./searchBar.css";
 import { connect } from "react-redux";
 import { searchAlbums } from "../../actions/albumAction";
+import { useHistory } from "react-router-dom";
 
 function SearchBar(props) {
+  const history = useHistory();
   const { searchAlbums } = props;
   const [searchedName, setSearchedName] = useState("");
   const handleSubmit = (e) => {
@@ -11,7 +13,10 @@ function SearchBar(props) {
       e.preventDefault();
       searchAlbums(searchedName);
       setSearchedName("");
-      // alert(searchedName);
+      history.push({
+        pathname: "/albumlist",
+        search: `?query=${searchedName.split(" ").join("+")}`,
+      });
     }
   };
 
@@ -28,10 +33,7 @@ function SearchBar(props) {
             setSearchedName(e.target.value);
           }}
         />
-        <i class="fa fa-search search-btn"></i>
-        <button type="button" class="clean-btn" onClick={() => handleSubmit()}>
-          X
-        </button>
+        <i class="fa fa-search search-btn" onClick={() => searchAlbums(searchedName)}></i>
       </div>
     </form>
   );
