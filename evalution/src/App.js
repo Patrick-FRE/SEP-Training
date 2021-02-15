@@ -1,10 +1,14 @@
 import getAlbumsByArtistName from "./APIs/iTunesAPI";
 import AlbumList from "./components/AlbumList";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import actions from "./store/actions";
 //  artworkUrl100 collectionName
 function App() {
-  let searchName = 1;
+  const dispatch = useDispatch();
 
+  const [albums, setAlbums] = useState([]);
+  const [searchName, setSearchName] = useState("");
   const searchHandler = (event) => {
     if (event.code === "Enter") {
       getAlbumsByArtistName(searchName).then((data) => {
@@ -13,9 +17,9 @@ function App() {
     }
   };
   const inputHandler = (event) => {
-    searchName = event.target.value;
+    setSearchName(event.target.value);
   };
-  const [albums, setAlbums] = useState([]);
+
   return (
     <div className="App">
       <header>
