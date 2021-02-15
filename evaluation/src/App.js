@@ -3,13 +3,21 @@ import Layout from "./components/layout/layout";
 import Result from "./components/result/result";
 import { Provider } from "react-redux";
 import store from "./store";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Layout>
-        <Result />
-      </Layout>
+      <Router>
+        <Layout>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/albumlist" component={Result} />
+            </Route>
+            <Route to="/albumlist" component={Result} />
+          </Switch>
+        </Layout>
+      </Router>
     </Provider>
   );
 };
