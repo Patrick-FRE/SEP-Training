@@ -26,7 +26,10 @@ function Result(props) {
 
   return (
     <section className="result__wrapper">
-      <h1 className="result__title">{artistName === "" ? "Search Albums by ArtistName" : `${count} results for ${artistName}`}</h1>
+      <div className="result__title">
+        <h1>{artistName === "" ? "Search Albums by ArtistName" : `${count} results for ${artistName}`}</h1>
+      </div>
+
       <section className="result__content">
         {albums.map((item) => (
           <ResultCard item={item} />
