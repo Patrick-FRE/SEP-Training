@@ -1,0 +1,68 @@
+form {
+    width: 30%;
+    margin: 20px;
+  }
+  
+  .input__wrapper {
+    width: 100%;
+    position: relative;
+    border: none;
+    outline: none;
+    margin: 20px 0;
+  }
+  
+  .user-input {
+    width: 100%;
+    height: 40px;
+    padding: 5px 40px;
+    border-radius: 200px;
+    font-size: 1.5rem;
+    outline: none;
+    color: #5d687f;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    outline: none;
+  }
+  
+  .user-input:focus {
+      border-color: #66afe9;
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(102 175 233 / 60%);
+  }
+  
+  .clean-btn {
+    height: 40px;
+    width: 40px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #5d687f;
+    display: none;
+  }
+  
+  .clean-btn:hover {
+    color: red;
+  }
+  
+  .search-btn {
+    position: absolute;
+    top:0;
+    right:0;
+    height: 40px;
+    width: 40px;
+    line-height: 40px; 
+    outline: none;
+    border: none;
+    background-color: transparent;
+    font-size: 1.3rem;
+    color: blue;
+    cursor: pointer;
+  }
+  
