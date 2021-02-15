@@ -1,6 +1,7 @@
 import React from "react";
 import "./result.css";
 import { connect } from "react-redux";
+import ResultCard from "../resultCard/resultCard";
 
 function Result(props) {
   const { count, artistName, albums } = props;
@@ -10,7 +11,7 @@ function Result(props) {
         {count} results for {artistName}
       </h1>
       {albums.map((item) => (
-        <div>{item.collectionName}</div>
+        <ResultCard item={item} />
       ))}
     </div>
   );

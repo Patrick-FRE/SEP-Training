@@ -1,5 +1,12 @@
 import React from "react";
-
-export default function ResultCard() {
-  return <div>Card</div>;
+import "./resultCard.css";
+import { connect } from "react-redux";
+export default function ResultCard(props) {
+  const { collectionName, artworkUrl100 } = props.item;
+  return (
+    <div className="card">
+      <img src={artworkUrl100} className="card__img" alt="album_cover" />
+      <div className="card__content">{collectionName}</div>
+    </div>
+  );
 }
