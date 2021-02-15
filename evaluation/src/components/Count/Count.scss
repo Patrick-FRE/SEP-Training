@@ -1,0 +1,11 @@
+@import '../../styles/variable.scss';
+
+.count-container {
+	width: 30vw;
+	text-align: center;
+	margin: 10px auto;
+	border-bottom: 1px solid $green-bgcolor;
+	.title {
+		padding: 10px 0;
+	}
+}

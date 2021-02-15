@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss'
+import Layout from './components/Layout/Layout'
+import Display from './components/Display/Display'
+import Count from './components/Count/Count'
+
+// import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Layout>
+			<Count></Count>
+			<Display></Display>
+		</Layout>
+	)
 }
 
-export default App;
+export default App
