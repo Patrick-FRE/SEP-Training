@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import SearchForm from './SearchForm';
-import MoviesContainer from './MoviesContainer';
-import Spinner from '../layout/Spinner';
+import MoviesContainer from './AlbumContainer';
+
 
 export class Landing extends Component {
   render() {
@@ -12,14 +12,11 @@ export class Landing extends Component {
     return (
       <div className="container">
         <SearchForm />
-        {loading ? <Spinner /> : <MoviesContainer />}
+        <MoviesContainer />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  loading: state.movies.loading
-});
 
-export default connect(mapStateToProps)(Landing);
+export default connect()(Landing);

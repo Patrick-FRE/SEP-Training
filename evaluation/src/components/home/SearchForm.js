@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import {
   searchAlbums,
   fetchAlbums,
-  setLoading
 } from '../../actions/searchActions';
 
 export class SearchForm extends Component {
@@ -16,7 +15,6 @@ export class SearchForm extends Component {
   onSubmit = e => {
     e.preventDefault();
     this.props.fetchAlbums(this.props.text);
-    this.props.setLoading();
   };
 
   render() {
@@ -31,7 +29,7 @@ export class SearchForm extends Component {
               type="text"
               className="form-control"
               name="searchText"
-              placeholder="Search Movies, TV Series ..."
+              placeholder="Search Albums"
               onChange={this.onChange}
             />
             <button type="submit" className="btn btn-primary btn-bg mt-3">
@@ -50,5 +48,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { searchAlbums, fetchAlbums, setLoading }
+  { searchAlbums, fetchAlbums}
 )(SearchForm);

@@ -1,4 +1,4 @@
-import { SEARCH_ALBUM, FETCH_ALBUM, LOADING } from './types';
+import { SEARCH_ALBUM, FETCH_ALBUM} from './types';
 import axios from 'axios';
 
 
@@ -16,15 +16,11 @@ export const fetchAlbums = text => dispatch => {
     .then(response =>
       dispatch({
         type: FETCH_ALBUM,
-        payload: response.data
+        payload: response.response.json()
       })
     )
     .catch(err => console.log(err));
 };
 
 
-export const setLoading = () => {
-  return {
-    type: LOADING
-  };
-};
+

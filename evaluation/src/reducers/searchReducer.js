@@ -1,13 +1,11 @@
 import {
   SEARCH_ALBUM,
   FETCH_ALBUM,
-  LOADING
 } from '../actions/types';
 
 const initialState = {
   text: '',
   albums: [],
-  loading: false,
 };
 
 export default function(state = initialState, action) {
@@ -25,11 +23,7 @@ export default function(state = initialState, action) {
         loading: false
       };
    
-    case LOADING:
-      return {
-        ...state,
-        loading: true
-      };
+    
     default:
       return state;
   }
