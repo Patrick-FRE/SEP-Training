@@ -1,6 +1,6 @@
 # React Project API
 
-**React Display component with search filter and Following page with Router**
+**React Display component with search filter and /albumlist page with Router**
 
 _Using function Components to build_
 - using React-Redux for cental state and Dispatch
@@ -23,7 +23,6 @@ _Using function Components to build_
 ## Project structure
 - API folder
 - Components folder
-  - API
   - acitons | reducers
   - PageContainer(diplay album Grid) 
   
