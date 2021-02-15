@@ -1,17 +1,19 @@
-// // // 1. Write a JavaScript function that reverse a number.
-// // // Example x = 32243;
-// // // Expected Output : 34223
+// // 1. Write a JavaScript function that reverse a number.
+// // Example x = 32243;
+// // Expected Output : 34223
 // const reverseNumber = num => {
-//     let str = "";
+//     let res = 0;
 //     let target = num;
+
 //     while (target > 0) {
-//         str += target % 10;
+//         res *= 10;
+//         res +=  target % 10; 
 //         target = Math.floor(target / 10);
 //     }
-//     return parseInt(str);
+//     return num % 10 === 0 ? res * 10 : res;
 // };
 // // ~test~
-// const x = 1234567089;
+// const x = 9876504321;
 // console.log(reverseNumber(x));
 
 // // // 2. Write a JavaScript function that checks whether a passed string is palindrome or not?
@@ -334,7 +336,7 @@
 
 // // 21. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array.
 // // Sample array : [1, 2, 3] and subset length is 2
-// // Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
+// // Expected output : [[2, 1], [3, 1], [3, 2]]
 // const subset = (arr, len) => {
 //     const res = [];
 //     const subArr = [];
@@ -357,7 +359,7 @@
 // };
 // // ~test~
 // const arr = [4, 6, 5, 4, 2];
-// const len = 3;
+// const len = 2;
 // console.log(subset(arr, len));
 
 // // 22. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.

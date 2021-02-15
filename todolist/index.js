@@ -128,6 +128,7 @@ const AppController = ((view, model) => {
 
     const addListenerOnRemove = () => {
         const todolistContent = document.querySelector('#' + view.domString.todolist);
+
         todolistContent.addEventListener('click', (event) => {
             if (event.target.className === 'btn-remove') {
                 state.todolist = state.todolist.filter(todo => {

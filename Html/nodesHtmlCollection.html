@@ -1,84 +1,140 @@
 <!DOCTYPE html>
 <!-- this comment is a child of the document -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nodelists Versus HTMLCollections</title>
-    <meta name="viewport" content="width=device-width">
-    <!-- This comment is a child element of the head element -->
-</head>
-<!-- this comment is a child of the html element -->
-<body>
-    <h1>Heading</h1>
-    <main id="main">
-        <section id="a">
-            <p>Section A has five paragraphs. Each paragraph is a Child Element Node of the section Element Node. The text inside each paragraph tag is a Text Node.</p>
-            <p>Eligendi porro fuga velit libero suscipit temporibus repellendus facilis molestias, eaque modi reiciendis aut incidunt voluptas saepe assumenda omnis aperiam ex, dolor animi ab dolores tempore exercitationem! Veritatis, et, explicabo.</p>
-            <p>Saepe autem voluptates, quibusdam, quis provident hic, ab tenetur placeat numquam maxime, amet sunt rerum. Nemo distinctio alias inventore rem doloribus, nostrum magni natus illo reprehenderit provident pariatur explicabo officia.</p>
-            <p>Excepturi, iure, unde. Eos fugiat quos aperiam fuga minima esse quisquam corrupti dolore tempora ad ex nulla, explicabo, fugit reiciendis quaerat beatae ea voluptate delectus distinctio consequatur quo totam laborum!</p>
-            <p>Necessitatibus officiis, dolorem ratione voluptatum quas explicabo mollitia quis, porro maxime doloribus ab iste dolorum esse, cumque aliquid assumenda repellat voluptatem aut et! Placeat perferendis reprehenderit, cumque iste tempore aut.</p>
-        </section>
-        <section id="b">
-            <p>Section B has four paragraphs. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut doloribus beatae vel illum mollitia fugiat modi aperiam excepturi natus quisquam ab molestias, expedita distinctio, ea totam harum quo illo soluta.</p>
-            <p>Eligendi porro fuga velit libero suscipit temporibus repellendus facilis molestias, eaque modi reiciendis aut incidunt voluptas saepe assumenda omnis aperiam ex, dolor animi ab dolores tempore exercitationem! Veritatis, et, explicabo.</p>
-            <p>Saepe autem voluptates, quibusdam, quis provident hic, ab tenetur placeat numquam maxime, amet sunt rerum. Nemo distinctio alias inventore rem doloribus, nostrum magni natus illo reprehenderit provident pariatur explicabo officia.</p>
-            <p>Excepturi, iure, unde. Eos fugiat quos aperiam fuga minima esse quisquam corrupti dolore tempora ad ex nulla, explicabo, fugit reiciendis quaerat beatae ea voluptate delectus distinctio consequatur quo totam laborum!</p>
-        </section>
-        <!-- comment node after the two sections -->
-    </main>
-    
-    <script>
-        let main = document.getElementById('main');
-        let d = main.ownerDocument;    //the document object that main belongs to
-        let html = document.documentElement;  //the <html> element
-        let body = document.body;  // the <body>
-        
-        let df = new DocumentFragment();
-        let txt = document.createTextNode('a text node');
-        df.appendChild(txt);
-        main.appendChild(df);
-        let nodeTypes = {
-            1: 'Element',
-            3: 'Text',
-            8: 'Comment',
-            9: 'Document',
-            10: 'DocType',
-            11: 'Document Fragment'
-        };
-        
-        
-        let mainChildren = main.children;   //Elements only, HTMLCollection
-        let num = mainChildren.length;
-        for(let i=0; i<num; i++){
-            let nt = mainChildren[i].nodeType;
-            console.log('main.children', i, nodeTypes[nt]);
-        }
-        console.log('')
-        let mainChildNodes = main.childNodes;  //Nodes, NodeList [LIVE]
-        let numNodes = mainChildNodes.length;
-        for(let n=0; n<numNodes; n++){
-            let nt = mainChildNodes[n].nodeType;
-            console.log('main.childNodes', n, nodeTypes[nt]);
-        }
-        console.log('')
-        let doc = document.childNodes;
-        let numDocNodes = doc.length;
-        for(let c=0; c<numDocNodes; c++){
-            let nt = doc[c].nodeType;
-            console.log('document.childNodes', c, nodeTypes[nt], doc[c].nodeName);
-        }
-        console.log('')
-        //NodeList
-        document.querySelectorAll('.abc');
-        document.body.childNodes
-        
-        //HTMLCollections
-        main.getElementsByClassName('.abc')
-        main.getElementsByTagName('pre')
-        main.getElementsByTagNameNS('xml');
-        main.children
-        
-        /*******************************
+    <head>
+        <meta charset="UTF-8" />
+        <title>Nodelists Versus HTMLCollections</title>
+        <meta name="viewport" content="width=device-width" />
+        <!-- This comment is a child element of the head element -->
+    </head>
+    <!-- this comment is a child of the html element -->
+    <body>
+        <h1>Heading</h1>
+        <main id="main">
+            <section id="a">
+                <p>
+                    Section A has five paragraphs. Each paragraph is a Child
+                    Element Node of the section Element Node. The text inside
+                    each paragraph tag is a Text Node.
+                </p>
+                <p>
+                    Eligendi porro fuga velit libero suscipit temporibus
+                    repellendus facilis molestias, eaque modi reiciendis aut
+                    incidunt voluptas saepe assumenda omnis aperiam ex, dolor
+                    animi ab dolores tempore exercitationem! Veritatis, et,
+                    explicabo.
+                </p>
+                <p>
+                    Saepe autem voluptates, quibusdam, quis provident hic, ab
+                    tenetur placeat numquam maxime, amet sunt rerum. Nemo
+                    distinctio alias inventore rem doloribus, nostrum magni
+                    natus illo reprehenderit provident pariatur explicabo
+                    officia.
+                </p>
+                <p>
+                    Excepturi, iure, unde. Eos fugiat quos aperiam fuga minima
+                    esse quisquam corrupti dolore tempora ad ex nulla,
+                    explicabo, fugit reiciendis quaerat beatae ea voluptate
+                    delectus distinctio consequatur quo totam laborum!
+                </p>
+                <p>
+                    Necessitatibus officiis, dolorem ratione voluptatum quas
+                    explicabo mollitia quis, porro maxime doloribus ab iste
+                    dolorum esse, cumque aliquid assumenda repellat voluptatem
+                    aut et! Placeat perferendis reprehenderit, cumque iste
+                    tempore aut.
+                </p>
+            </section>
+            <section id="b">
+                <p>
+                    Section B has four paragraphs. Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Ut doloribus beatae vel illum
+                    mollitia fugiat modi aperiam excepturi natus quisquam ab
+                    molestias, expedita distinctio, ea totam harum quo illo
+                    soluta.
+                </p>
+                <p>
+                    Eligendi porro fuga velit libero suscipit temporibus
+                    repellendus facilis molestias, eaque modi reiciendis aut
+                    incidunt voluptas saepe assumenda omnis aperiam ex, dolor
+                    animi ab dolores tempore exercitationem! Veritatis, et,
+                    explicabo.
+                </p>
+                <p>
+                    Saepe autem voluptates, quibusdam, quis provident hic, ab
+                    tenetur placeat numquam maxime, amet sunt rerum. Nemo
+                    distinctio alias inventore rem doloribus, nostrum magni
+                    natus illo reprehenderit provident pariatur explicabo
+                    officia.
+                </p>
+                <p>
+                    Excepturi, iure, unde. Eos fugiat quos aperiam fuga minima
+                    esse quisquam corrupti dolore tempora ad ex nulla,
+                    explicabo, fugit reiciendis quaerat beatae ea voluptate
+                    delectus distinctio consequatur quo totam laborum!
+                </p>
+            </section>
+            <!-- comment node after the two sections -->
+        </main>
+
+        <script>
+            let main = document.getElementById("main");
+            let d = main.ownerDocument; //the document object that main belongs to
+            let html = document.documentElement; //the <html> element
+            let body = document.body; // the <body>
+
+            let df = new DocumentFragment();
+            let txt = document.createTextNode("a text node");
+            df.appendChild(txt);
+            main.appendChild(df);
+
+            let nodeTypes = {
+                1: "Element",
+                3: "Text",
+                8: "Comment",
+                9: "Document",
+                10: "DocType",
+                11: "Document Fragment",
+            };
+
+            let mainChildren = main.children; //Elements only, HTMLCollection
+            let num = mainChildren.length;
+
+            for (let i = 0; i < num; i++) {
+                let nt = mainChildren[i].nodeType;
+                console.log("main.children", i, nodeTypes[nt]);
+            }
+            console.log("");
+            let mainChildNodes = main.childNodes; //Nodes, NodeList [LIVE]
+            let numNodes = mainChildNodes.length;
+            for (let n = 0; n < numNodes; n++) {
+                let nt = mainChildNodes[n].nodeType;
+                console.log("main.childNodes", n, nodeTypes[nt]);
+            }
+            console.log("");
+            let doc = document.childNodes;
+            let numDocNodes = doc.length;
+            for (let c = 0; c < numDocNodes; c++) {
+                let nt = doc[c].nodeType;
+                console.log(
+                    "document.childNodes",
+                    c,
+                    nodeTypes[nt],
+                    doc[c].nodeName
+                );
+            }
+            console.log("");
+            //NodeList
+            document.querySelectorAll(".abc");
+            document.body.childNodes;
+
+            //HTMLCollections
+            main.getElementsByClassName(".abc");
+            main.getElementsByTagName("pre");
+            main.getElementsByTagNameNS("xml");
+            main.children;
+
+            /*******************************
         Be careful when using
         firstChild      v. firstElementChild
         lastChild       v. lastElementChild
@@ -89,6 +145,6 @@
         link: https://www.youtube.com/watch?v=ubNP6fbT2Ac
         author: Steve Griffith
         *******************************/
-    </script>
-</body>
+        </script>
+    </body>
 </html>

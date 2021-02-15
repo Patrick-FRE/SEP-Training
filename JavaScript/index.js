@@ -113,9 +113,18 @@
 //     }
 // }
 
+// function Person(name, age) {
+//     this.name = name;
+//     this.age = age;
+// }
+// Person.prototype.walk = function() {
+//     console.log(this.name + ' walk around the world!');
+// }
+
 // const p = new Person();
 // p.name = 'Jojo'
-// console.log(p.#name);
+// console.log(p.name);
+// p.walk()
 
 // // inheritance
 // class Employee extends Person {
@@ -130,6 +139,13 @@
 //         console.log('walk ' + num);
 //     }
 // }
+
+// function Employee(name, age, company) {
+//     Person.call(this, name, age);
+//     this.company = company;
+// }
+// const p = new Employee('Jojo', 20, 'Jump');
+// console.log(p);
 
 // const e = new Employee('David', 3, 'Antra');
 // e.walk(); //
@@ -147,10 +163,12 @@
 //     Person.call(this, name, age);
 //     this.company = company;
 // }
-// Employee.prototype = Object.create(Person.prototype);
+// Employee.prototype = Person.prototype;
+// Employee.prototype.constructor = Employee;
 
 // const e = new Employee('David', 3, 'Antra');
-// console.log(e.wolk()); //
+// console.log(e); //
+// e.walk();
 
 // Polymorphism
 // class Animal {
@@ -258,13 +276,13 @@
 // }
 
 // Array.prototype.myFilter = function (callback) {
-//     const cb = [];
+//     const arr = [];
 //     for (let i = 0; i < this.length; i++) {
 //         if (callback(this[i], i, this)) {
-//             cb.push(this[i]);
+//             arr.push(this[i]);
 //         };
 //     }
-//     return cb;
+//     return arr;
 // }
 // const arr = [2, 2, 3, 4];
 // const cb = ele => ele === 2;
@@ -415,11 +433,6 @@
 
 // ES6 arrow function:
 
-// Array.prototype.myForEach = function(callback) {
-//     for (let i = 0; i < this.length; i++) {
-//         callback(this[i], i, this);
-//     }
-// }
 // const myObj = {
 //     myMethod(item) {
 //         console.log(this);
@@ -443,12 +456,12 @@
 
 // function foo() {
 //     console.log(arguments);
-//     // const bar = function() {
-//     //     console.log(arguments);
-//     // };
-//     const bar = () => {
+//     const bar = function() {
 //         console.log(arguments);
 //     };
+//     // const bar = () => {
+//     //     console.log(arguments);
+//     // };
 //     bar('c', 'd');
 // }
 // foo('a', 'b');
@@ -494,6 +507,13 @@
 // console.log(foo(3)(45, 1)());
 
 // async
+
+// console.log(0);
+// setTimeout(() => console.log(1), 1000);
+// console.log(2);
+// setTimeout(() => console.log(3), 0);
+// console.log(4);
+
 // event loop: call stack, async API, message queue
 
 // function foo() {
@@ -506,6 +526,9 @@
 // call stack:
 // async API: console.log(0) 5s,console.log(1) 4s, console.log(i), console.log(3), console.log(4), 1s
 // message queue: console.log(4),console.log(3), console.log(i), console.log(i), console.log(i)
+
+
+// // callback function;
 
 // const foo = () => {
 //     console.log('this is foo()');
@@ -522,7 +545,9 @@
 //     console.log(timer, 's');
 //     setTimeout(cb, timer * 1000);
 // }
+
 // callFnInRandomTime(foo);
+
 // callFnInRandomTime(() => {
 //     callFnInRandomTime(() => {
 //         callFnInRandomTime(() => {
@@ -787,9 +812,37 @@
 //     });
 // }
 
-// function foo() {
-//     console.log(a);
-//     let a = 5;
+// // function foo() {
+// //     console.log(a);
+// //     let a = 5;
+// // }
+// // foo();
+// // console.log(typeof undefined)
+
+// function slowestKey(keyTimes) {
+//     let [ptime, keyNum] = [...keyTimes[0]];
+
+//     keyTimes.forEach((item, i) => {
+//         if (keyTimes[i - 1]) {
+//             const eachpress = item[1] - keyTimes[i - 1][1];
+//             if (eachpress > ptime)
+//                 [ptime, keyNum] = [eachpress, item[0]];
+//         }
+//     });
+//     const keys = [...'abcdefghijklmnopqrstuvwxyz'];
+//     return keys[keyNum];
 // }
-// foo();
-// console.log(typeof undefined)
+// const tar = [[20, 12], [1, 13], [0, 17]];
+// const tar1 = [[0, 2], [1, 5], [0, 9], [2, 15]];
+// const tar2 = [[0, 1], [1, 3], [4, 5], [5, 6], [4, 10]];
+// console.log(slowestKey(tar));
+// console.log(slowestKey(tar1));
+// console.log(slowestKey(tar2));
+
+// const obj = {
+//     foo: function(input) {
+//         console.log(input);
+//     }
+// }
+// const obj1 = JSON.parse(JSON.stringify(obj));
+// obj.foo(111);
