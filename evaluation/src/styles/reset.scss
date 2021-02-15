@@ -1,0 +1,14 @@
+/* scss reset*/
+@import './variable.scss';
+
+*::after,
+*::before,
+* {
+	margin: $--reset-margin;
+	padding: $--reset-padding;
+	box-sizing: $--reset-box-sizing;
+}
+
+body {
+	font-family: $--reset-font;
+}
