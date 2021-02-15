@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import reducers from './redux/reducers'
+import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter } from 'react-router-dom'
+
+
+const store = createStore(reducers)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter><Provider store={store}><App/></Provider></BrowserRouter>
+  ,
   document.getElementById('root')
 );
 

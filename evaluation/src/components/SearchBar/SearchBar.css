@@ -1,0 +1,19 @@
+.header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightseagreen;
+  }
+  .form-control{
+    border: 1px solid #D0CFCE;
+    padding: 8px 0;
+  }
+  
+  .btn{
+    margin-left: 10px;
+    height: 5vh;
+    background-color: rgb(161, 89, 22);
+    border-radius: 30%;
+  }

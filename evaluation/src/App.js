@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
+import React from "react";
+import { connect } from "react-redux";
+import { INPUT_CHANGE, FETCH_ALBUMS } from "./redux/actions";
+import { useHistory } from "react-router-dom";
+import SearchBar from "./components/SearchBar/SearchBar";
+import AlbumList from "./components/AlbumList/AlbumList";
 
-function App() {
+function App(props) {
+  let history = useHistory();
+  const { INPUT_CHANGE, state, FETCH_ALBUMS } = props;
+
+  const handleChange = (e) => {
+    INPUT_CHANGE(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch(
+      `https://itunes.apple.com/search?term=${state.input}&media=music&entity=album&attribute=artistTerm&limit=50`
+    ).then((res) => {
+      console.log(res.results);
+      FETCH_ALBUMS(res.results);
+    });
+  };
+
+  history.push({
+    pathname: "/albumlist",
+    search: "?query=" + `${state.input}`,
+  });
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="header">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            required
+            placeholder="Search here..."
+            className="searchbar"
+            onChange={handleChange}
+          ></input>
+          <button type="submit" className="button">
+            Search
+          </button>
+        </form>
+      </div>
+      <div>
+        <Switch>
+          <Route
+            path="/albumlist"
+            render={() => <AlbumList albums={state.albums} />}
+          />
+        </Switch>
+      </div>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({ state: state });
+const mapDispatchToProps = (dispatch) => ({
+  INPUT_CHANGE: (input) => dispatch(INPUT_CHANGE(input)),
+  FETCH_ALBUMS: (Albums) => dispatch(FETCH_ALBUMS(Albums)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
