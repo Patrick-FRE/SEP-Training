@@ -1,4 +1,5 @@
 import "./album.scss";
+
 const Album = (props) => {
   const { artworkUrl100, collectionName } = props.album;
   return (
