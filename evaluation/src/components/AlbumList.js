@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { fetchAlbums } from "../redux/albumList/albumListActions";
 
-function AlbumList({ albums, resultCount }) {
+function AlbumList({ albums, resultCount, fetchAlbums }) {
   const param = useLocation().search;
   const query = new URLSearchParams(param);
-  console.log(albums);
+  const query_param = query.get("query");
+
+  useEffect(() => {
+    if (!albums && query_param) fetchAlbums(query_param);
+  }, []);
+
   return (
     <section className="search-result">
       {param === "" ? (
@@ -13,7 +19,7 @@ function AlbumList({ albums, resultCount }) {
       ) : (
         <>
           <div className="title">
-            {resultCount} results for "{query.get("query")}"
+            {resultCount} results for "{query_param}"
           </div>
           <ul className="album-list">
             {albums &&
@@ -43,8 +49,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  // updateName: (e) => dispatch(updateName(e)),
-  // fetchAlbums: (artistName) => dispatch(fetchAlbums(artistName)),
+  fetchAlbums: (artistName) => dispatch(fetchAlbums(artistName)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumList);
