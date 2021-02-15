@@ -1,0 +1,10 @@
+.header{
+    padding: 10px;
+    display: flex;
+    flex-direction:row !important;
+    justify-content: center;
+}
+
+.popover{
+    padding: 10px;
+}

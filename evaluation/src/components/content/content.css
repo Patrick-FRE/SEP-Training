@@ -1,0 +1,27 @@
+.title{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.main{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.albumcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.album{
+    margin: 10px;
+    min-width: 200px;
+    max-width: 200px;
+    height: 310px;
+    background-color: lightgoldenrodyellow !important;
+}
