@@ -1,0 +1,65 @@
+/* for Grid */
+
+/* pagecontainer */
+.pagecon {
+    /* display: block; */
+    margin: 20px 30px;
+    /* border: 1px solid #027374; */
+    text-align: center;
+    /* height: 70vh; */
+  }
+  /* -------------------------- */
+  /* display content */
+  .display {
+    margin: 10px 20px;
+    /* border: 1px solid #027374; */
+    height: 65vh;
+  }
+
+
+#grid {
+    /* border: 1px solid red; */
+  
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+  }
+  .item {
+    cursor: pointer;
+    /* flex: 1 1 auto; */
+    border: 1px solid rgb(11, 107, 114);
+    border-radius: 5px;
+    width: 100px;
+    height: 150px;
+    margin: 20px;
+    /* box-sizing: border-box; */
+    overflow: hidden;
+  }
+  .item:hover {
+    transform: scale(1.1);
+    transition-timing-function: ease-in;
+  
+    /* Quick on the way out */
+    transition: 0.2s;
+  }
+  
+  img {
+    /* border: 1px dashed red; */
+    width: 80%;
+    height: 60%;
+    display: block;
+    /* margin-top: 5px; */
+    margin: 5px auto;
+    border-radius: 4px;
+  }
+  
+  img + h3 {
+    margin: 0 5px;
+    font-size: 12px;
+    text-align: center;
+    /* border: 1px solid red; */
+    overflow: hidden;
+  }
+  

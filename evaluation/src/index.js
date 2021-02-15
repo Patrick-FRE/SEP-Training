@@ -3,11 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import 'semantic-ui-css/semantic.min.css'
+import { BrowserRouter, Link, Route } from 'react-router-dom'
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux'
+import reducer from './reducers/reducers'
+
+const store = createStore(reducer)
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
+
+  ,
   document.getElementById('root')
 );
 
