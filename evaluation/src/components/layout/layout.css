@@ -5,7 +5,6 @@ header {
 
 main {
     grid-area: main;
-    background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;

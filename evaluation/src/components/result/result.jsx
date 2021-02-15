@@ -16,12 +16,13 @@ function Result(props) {
   let query = useQuery();
   const searchedName = query.get("query");
   console.log(searchedName);
-  const [urlQ, seturlQ] = useState("");
+  const [urlQ, seturlQ] = useState(searchedName);
 
   useEffect(() => {
-    seturlQ(searchedName);
-    searchAlbums(searchedName ?? "");
-  }, [albums]);
+    if (searchedName) {
+      searchAlbums(searchedName);
+    }
+  }, [urlQ, albums]);
 
   return (
     <section className="result__wrapper">
