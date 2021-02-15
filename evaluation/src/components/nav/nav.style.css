@@ -1,0 +1,13 @@
+nav{
+    display: flex;
+    min-height:7vh;
+    background: rgb(197, 215, 223);
+    text-align: left;
+    padding:1px;
+    
+}
+nav h3{
+    margin-left:40px;
+    font-family: 'Monoton', cursive;
+    color:rgb(57, 103, 134);
+}
