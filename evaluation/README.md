@@ -19,6 +19,7 @@ _Using function Components to build_
 - search albums by names and redirect to /albumlist?query=${name}
 - display grid with {50} items on /albumlist page
 - each item with album Cover and title
+- advanced router logic: 1. redirect | 2. search On Enter | 3. refresh Page maintaining query=${userinput} | 
 
 ## Project structure
 - API folder
