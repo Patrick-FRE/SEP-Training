@@ -1,23 +1,32 @@
-import React from 'react';
-import{BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-
-import  Nav  from './components/nav/nav.component';
+import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { HashRouter as Router, Route } from 'react-router-dom';
 
 import './App.css';
 
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
-function app(){
-  return(
-    <Router>
-    <div className = "App">
-    <Nav/>
-    {/* <Switch>
-    <Route path="/" exact component={HomePage}/>
-    <Route path="/:name"exact component = {userDetail}/>
-    <Route path="/:name/followers" component={Followers}/>
-    </Switch> */}
-    </div>
-    </Router>
-  )
+import Landing from './components/home/Landing';
+
+
+import store from './store';
+
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <div>
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            
+            <Footer />
+          </div>
+        </Router>
+      </Provider>
+    );
+  }
 }
-export default app;
+
+export default App;
