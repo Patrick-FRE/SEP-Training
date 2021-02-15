@@ -1,0 +1,10 @@
+.nav-container{
+    display: flex;
+    list-style-type: none;
+
+}
+li{
+    padding-right: 25px;
+    font-size: 1em;
+    color:white;
+}

@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.top-bar {
+    box-sizing: border-box;
+    background-color: #000;
+    height: 50px;
+    width: 100%;
+
+}
+
+.nav {
+    height: 50px;
+    background-color: black;
+    padding-left: 8%;
+}
+
+.title {
+    background-color: #c6bfbf;
+    height: 150px;
+    width: 100%;
+
+}
+
+.title_container {
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.title_content_1 {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2%;
+    margin-bottom: 1%;
+}
+
+.content_container {
+    padding-left: 7%;
+    padding-right: 7%;
+    display: flex;
+}
+
+.article_2 {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 100px;
+}
+
+footer {
+    height: 50px;
+    background-color: #0b4d14;
+    display: flex;
+    align-items: center;
+
+}
+
+.footer_right {
+    justify-content: right;
+    margin-left: auto;
+    padding-right: 8%;
+    /* line-height: 50px;
+    margin:0 auto; */
+}
+
+.footer_left {
+    justify-content: left;
+    margin-right: auto;
+    padding-left: 8%;
+}
+
+footer a {
+    padding-right: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.dropbtn {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #6fa7f0;
+}
+
+
+@media (max-width:768px) {
+ 
+    .nav .title .content  {
+        flex-direction: column;
+        word-wrap: break-word;
+        word-break: break-all;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    .dropbtn{
+        width:min-content;
+        overflow:hidden;
+        font-size: 0.5rem;
+    }
+
+    .title_content_1 {
+        font-size: 0.5rem;
+    }
+    .title_content{
+        font-size: 0.4rem;
+        overflow: hidden;
+    }
+    .dropdown-content {
+        min-width: 25%;
+    }
+
+}

@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0
+}
+.container{
+  
+    width:100%;
+    text-align: center;
+}
+.nav{
+    background-color: black;
+    height:100px;
+    width:100%;
+
+  
+}
+.nav p{
+    margin: 0 auto;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    line-height: 100px;
+
+}
+.showData{
+    margin: 20px;
+    border-collapse: collapse;
+   
+}
+
+td, th {
+    border: 2px solid #000000;
+    text-align: left;
+    padding: 8px;
+  }
+  input {
+background-color: cornflowerblue;
+color:white;
+font-weight: bold;
+  }
