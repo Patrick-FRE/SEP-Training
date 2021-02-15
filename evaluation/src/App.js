@@ -14,6 +14,7 @@ const App = () => {
             <Route exact path="/">
               <Redirect to="/albumlist" render={(props) => <Result {...props} />} />
             </Route>
+
             <Route to="/albumlist" render={(props) => <Result {...props} />} />
           </Switch>
         </Layout>
