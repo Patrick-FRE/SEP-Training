@@ -9,6 +9,7 @@ import AlbumList from "./components/AlbumList/AlbumList";
 
 function App(props) {
   let history = useHistory();
+  // const { ChangeKW, state, Add_Albums } = props
   const { INPUT_CHANGE, state, FETCH_ALBUMS } = props;
 
   const handleChange = (e) => {
@@ -16,19 +17,23 @@ function App(props) {
   };
 
   const handleSubmit = (e) => {
+    // console.log(`https://itunes.apple.com/search?term=${state.input}&media=music&entity=album&attribute=artistTerm&limit=50`, 'IN state');
     e.preventDefault();
     fetch(
       `https://itunes.apple.com/search?term=${state.input}&media=music&entity=album&attribute=artistTerm&limit=50`
-    ).then((res) => {
+    ).then((response) => response.json()).then((res) => {
       console.log(res.results);
       FETCH_ALBUMS(res.results);
     });
   };
 
-  history.push({
-    pathname: "/albumlist",
-    search: "?query=" + `${state.input}`,
-  });
+    history.push({
+      pathname: "/albumlist",
+      search: "?query=" + `${state.input}`, 
+      state: {
+        update: true,
+      },
+    });
   return (
     <div className="App">
       <div className="header">
