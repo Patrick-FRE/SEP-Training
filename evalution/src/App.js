@@ -1,10 +1,24 @@
+import getAlbumsByArtistName from "./iTunesAPI";
 function App() {
-  const searchName = 1;
-  const albums = [];
+  let searchName = 1;
+  let albums = [];
+  const searchHandler = (event) => {
+    if (event.code === "Enter") {
+      getAlbumsByArtistName(searchName).then((data) => (albums = data.result));
+    }
+  };
+  const inputHandler = (event) => {
+    searchName = event.target.value;
+    console.log(searchName);
+  };
   return (
     <div className="App">
       <header>
-        <input placeholder={`Search...`}></input>
+        <input
+          placeholder={`Search...`}
+          onKeyPress={searchHandler}
+          onChange={inputHandler}
+        ></input>
       </header>
       <main>
         <header>{`Search ALbums by ${
