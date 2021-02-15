@@ -2,8 +2,8 @@ import { searchAlbum } from "../apis/itunes.api";
 export const SEARCH_ALBUMS = "SEARCH_ALBUMS";
 
 export const searchAlbums = (name) => (dispatch) => {
-  console.log("Fetch");
   const param = name.split(" ").join("+");
+  console.log(param);
   searchAlbum(param).then((data) => {
     const results = data.results;
     dispatch({
