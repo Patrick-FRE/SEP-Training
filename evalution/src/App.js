@@ -16,11 +16,9 @@ function App() {
       <header>
         <input
           placeholder={`Search...`}
-          // onKeyPress={searchHandler}
           onKeyPress={(event) => {
             if (event.code === "Enter") {
               getAlbumsByArtistName(searchName).then((data) => {
-                // setAlbums([...data.results]);
                 dispatch({ type: "setAlbums", payload: [...data.results] });
               });
             }
