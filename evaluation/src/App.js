@@ -64,7 +64,7 @@ function App(props) {
               {/* icon */}
 
               <i
-                onClick={null/* handleSubmit */}
+                onClick={handleSubmit}
                 aria-hidden="true" className="search circular link icon"></i>
             </div>
           </form>
