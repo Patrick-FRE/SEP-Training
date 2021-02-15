@@ -1,0 +1,15 @@
+.people-container{
+    background-color: rgb(250, 193, 118);
+    height:30px;
+    text-align: center;
+    display: inline-block;
+    width:100%;
+    align-items: center;
+    
+}
+input{
+    margin:10px;
+}
+li{
+    list-style: none;
+}
