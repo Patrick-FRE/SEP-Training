@@ -12,7 +12,7 @@ function App(props) {
 
 
   let history = useHistory();
-  const { ChangeKW, state, Add_Albums } = props
+  const { state, Add_Albums } = props
 
   const handleChange = (e) => {
 
@@ -27,6 +27,8 @@ function App(props) {
     getTodos(state.keyword).then(res => {
       console.log(res.results)
       Add_Albums(res.results)
+      let trackgoback = history.location.search.slice(7)
+      props.ChangeKW(trackgoback)
     })
 
 
