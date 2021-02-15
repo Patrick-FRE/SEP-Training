@@ -29,10 +29,7 @@ function App(props) {
 
     history.push({
       pathname: "/albumlist",
-      search: "?query=" + `${state.input}`, 
-      state: {
-        update: true,
-      },
+      search: "?query=" + `${state.input}`
     });
   return (
     <div className="App">
