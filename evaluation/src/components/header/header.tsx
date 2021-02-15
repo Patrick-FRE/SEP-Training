@@ -61,19 +61,7 @@ const Header:FunctionComponent = (props:any) => {
                 setAnchorEl(e.target as any);
                 return;
             }
-            getAlbums(name).then(res=>{
-                props.setAlbums(res.results.map((result:any)=>
-                    {
-                        return{
-                            name:result['collectionCensoredName'],
-                            img:result['artworkUrl100'],
-                            artist:result['artistName']
-                        }
-                    }
-                ),name);
-                history.push(`/albumlist?query=${name}`);
-                (e.target as HTMLInputElement).value = "";
-            });
+            history.push(`/albumlist?query=${name}`);
         }
     }
 
@@ -96,7 +84,7 @@ const Header:FunctionComponent = (props:any) => {
                 ),name);
             });            
         }
-    },[]);
+    },[query]);
 
     const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
     const handleClose = () => {
