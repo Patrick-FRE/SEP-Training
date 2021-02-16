@@ -1,0 +1,22 @@
+.card-container {
+    background-color: rgb(204, 218, 224);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 1px;
+    cursor: pointer; 
+    transition: transform 0.25s ease-out;
+    margin:5px;
+  }
+  
+  img{
+      width:285px;
+      height:320px;
+     
+  }
+  
+  
+  .card-container:hover {
+    transform: scale(1.05);
+  }
+  
+  

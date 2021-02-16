@@ -1,15 +1,16 @@
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import rootReducer from './reducers';
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { albumReducer } from "./reducers/reducers";
 
-const middleware = [thunk];
+// import { orderReducer } from "./reducers/orderReducers";
+
 const initialState = {};
-
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
-  rootReducer,
+  combineReducers({
+    album: albumReducer,
+  }),
   initialState,
-  composeWithDevTools(applyMiddleware(...middleware))
+  composeEnhancer(applyMiddleware(thunk))
 );
-
 export default store;

@@ -1,0 +1,17 @@
+.search input {
+    -webkit-appearance: none;
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 150px;
+    line-height: 26px;
+    margin-bottom: 30px;
+  }
+  .search{
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    align-items: center;
+  }
