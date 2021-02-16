@@ -4,12 +4,17 @@
     border-radius: 3px;
     flex: 0 0 10rem;
     margin: 1rem;
-    height: 250px;
-    width: 250px;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px teal, 0 10px 10px teal;
 }
 
 .card__img {
-    padding: .5rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem ;
+    display: block;
 }
 
 .card__content {
