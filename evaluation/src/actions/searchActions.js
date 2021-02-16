@@ -1,26 +1,18 @@
-import { SEARCH_ALBUM, FETCH_ALBUM} from './types';
-import axios from 'axios';
+import { SEARCH_ALBUM} from './types';
 
 
 
-export const searchAlbums = text => dispatch => {
-  dispatch({
-    type: SEARCH_ALBUM,
-    payload: text
+const searchAlbum = (ARTIST_NAME) =>
+  fetch(`https://itunes.apple.com/search?term=${ARTIST_NAME}&media=music&entity=album&attribute=artistTerm&limit=50`).then((res) => res.json());
+
+export const searchAlbums = (text) => (dispatch) => {
+  const param = text.split(" ").join("+");
+  searchAlbum(param).then((data) => {
+    const results = data.results;
+    dispatch({
+      type: SEARCH_ALBUM,
+      payload: { albums: results, text: text },
+    });
   });
 };
-
-export const fetchAlbums = text => dispatch => {
-  axios
-    .get(`https://itunes.apple.com/search?term=${text}&media=music&entity=album&attribute=artistTerm&limit=50`)
-    .then(response =>
-      dispatch({
-        type: FETCH_ALBUM,
-        payload: response.response.json()
-      })
-    )
-    .catch(err => console.log(err));
-};
-
-
 

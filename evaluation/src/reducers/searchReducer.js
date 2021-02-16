@@ -1,6 +1,5 @@
 import {
   SEARCH_ALBUM,
-  FETCH_ALBUM,
 } from '../actions/types';
 
 const initialState = {
@@ -13,16 +12,9 @@ export default function(state = initialState, action) {
     case SEARCH_ALBUM:
       return {
         ...state,
-        text: action.payload,
-        loading: false
+        text: action.payload.text,
+        albums:action.payload.albums
       };
-    case FETCH_ALBUM:
-      return {
-        ...state,
-        albums: action.payload,
-        loading: false
-      };
-   
     
     default:
       return state;

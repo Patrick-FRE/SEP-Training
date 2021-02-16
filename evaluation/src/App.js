@@ -5,7 +5,8 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 
-import Landing from './components/home/Landing';
+
+import Landing from './components/landing/Landing';
 
 
 import store from './store';
