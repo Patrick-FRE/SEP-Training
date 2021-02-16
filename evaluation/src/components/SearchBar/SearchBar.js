@@ -4,7 +4,7 @@ import "./SearchBar.css";
 const SearchBar = (props) => {
 
   return (
-    <div className="search">
+    <div className="header">
     <form onSubmit={props.handleSubmit}>
       <input
         type="text"

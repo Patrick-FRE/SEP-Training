@@ -5,7 +5,7 @@ const INITIAL_STATE = {
 
 export default function reducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'INPUT_CHANGE': {
+    case 'SEARCH_ALBUM': {
       state = { ...state, 
         input: action.payload }
       return state

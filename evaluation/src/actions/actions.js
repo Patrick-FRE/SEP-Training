@@ -3,8 +3,8 @@ export const FETCH_ALBUMS = artist => ({
   payload: artist
 })
 
-export const INPUT_CHANGE = artist => ({
-  type: 'INPUT_CHANGE',
+export const SEARCH_ALBUM = artist => ({
+  type: 'SEARCH_ALBUM',
   payload: artist
 })
 
