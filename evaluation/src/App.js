@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,7 +11,9 @@ import AlbumList from "./components/AlbumList";
 function App() {
   return (
     <Router>
-      <Header />
+      <header>
+        <SearchBar />
+      </header>
 
       <main>
         <Switch>

@@ -43,20 +43,29 @@ main {
 
 .album {
   list-style: none;
-  border: 2px solid lightblue;
+  border: 1px solid lightblue;
+  border-radius: 3px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: rgb(219, 219, 219);
 }
 
 .album-image {
   width: 100%;
+  padding: 0.3rem;
 }
 
 .album-name {
   text-align: center;
-  padding: 5px;
-  background: rgb(219, 219, 219);
+  padding: 0 0.3rem 0.3rem;
   width: 100%;
   height: 100%;
+  font-size: 0.7rem;
+  word-wrap: break-word;
+}
+
+.fallback-container {
+  display: flex;
+  justify-content: center;
 }

@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import { albumListReducer } from "./albumList/albumListReducer";
-import { artistNameReducer } from "./artistName/artistNameReducer";
+import { searchInputReducer } from "./searchInput/searchInputReducer";
 
 const rootReducer = combineReducers({
   albums: albumListReducer,
-  artist: artistNameReducer,
+  search: searchInputReducer,
 });
 
 export default rootReducer;
