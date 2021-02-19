@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./result.css";
 import { connect } from "react-redux";
 import { searchAlbums } from "../../actions/albumAction";
@@ -16,18 +16,21 @@ function Result(props) {
   let query = useQuery();
   const searchedName = query.get("query");
   console.log(searchedName);
-  const [urlQ, seturlQ] = useState(searchedName);
+
+  let queryName = useRef(null);
 
   useEffect(() => {
-    if (searchedName) {
+    if (queryName.current != searchedName) {
       searchAlbums(searchedName);
+      queryName.current = searchedName;
+      console.log("equals");
     }
-  }, [urlQ, albums]);
+  });
 
   return (
     <section className="result__wrapper">
       <div className="result__title">
-        <h1>{artistName === "" ? "Search Albums by ArtistName" : `${count} results for ${artistName}`}</h1>
+        <h1>{!artistName ? "Search Albums by ArtistName" : `${count} results for ${artistName}`}</h1>
       </div>
 
       <section className="result__content">
