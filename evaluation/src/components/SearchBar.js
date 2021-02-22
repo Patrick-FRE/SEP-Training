@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
@@ -10,8 +10,13 @@ export default function SearchBar() {
   const searchInput = useSelector((state) => state.search.searchInput);
   const dispatch = useDispatch();
 
+  const inputRef = useRef();
   const history = useHistory();
   const query_param = useQuery();
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   useEffect(() => {
     if (query_param) dispatch(updateInput(query_param));
@@ -37,6 +42,7 @@ export default function SearchBar() {
         required
         value={searchInput}
         onChange={(e) => dispatch(updateInput(e.target.value))}
+        ref={inputRef}
       />
     </form>
   );
