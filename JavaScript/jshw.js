@@ -438,37 +438,37 @@
 // const arr = ["Australia", "Germany", "United States of America"];
 // console.log(Longest_Country_Name(arr));
 
-// // 26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
-// const findLongestNRepeat = str => {
-//     const set = new Set();
-//     let i = 0;
-//     while (i < str.length) {
-//         let j = i;
-//         const markSet = new Set();
-//         while (j <= str.length) {
-//             if (!markSet.has(str[j])) markSet.add(str[j++]);
-//             else {
-//                 set.add(str.slice(i, j));
-//                 break;
-//             }
-//             if (j == str.length - 1) set.add(str.slice(i, j));
-//         }
-//         i++;
-//     }
-//     const res = [...set];
-//     let len = 0;
-//     let result = "";
-//     res.map(ele => {
-//         if (ele.length > len) {
-//             len = ele.length;
-//             result = ele;
-//         }
-//     });
-//     return result;
-// };
-// // ~test~
-// const str = "abcdeqwedadefghijklmnopqfassd";
-// console.log(findLongestNRepeat(str));
+// 26. Write a JavaScript function to find longest substring in a given a string without repeating characters.
+const findLongestNRepeat = str => {
+    const set = new Set();
+    let i = 0;
+    while (i < str.length) {
+        let j = i;
+        const markSet = new Set();
+        while (j <= str.length) {
+            if (!markSet.has(str[j])) markSet.add(str[j++]);
+            else {
+                set.add(str.slice(i, j));
+                break;
+            }
+            if (j == str.length - 1) set.add(str.slice(i, j));
+        }
+        i++;
+    }
+    const res = [...set];
+    let len = 0;
+    let result = "";
+    res.map(ele => {
+        if (ele.length > len) {
+            len = ele.length;
+            result = ele;
+        }
+    });
+    return result;
+};
+// ~test~
+const str = "abcdeqwedadefghijklmnopqfassd";
+console.log(findLongestNRepeat(str));
 
 // // 27. Write a JavaScript function that returns the longest palindrome in a given string.
 // const longestPalindrome = function (s) {

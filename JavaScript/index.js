@@ -436,14 +436,31 @@
 // const myObj = {
 //     myMethod(item) {
 //         console.log(this);
-//         // const foo = function() {
-//         //     console.log(this)
-//         // }.bind(this);
+        // const foo = function() {
+        //     console.log(this)
+        // }.bind(this);
 
 //         item.forEach(() => {
 //             console.log(this)
 //         });
 //     }
+// }
+// myObj.myMethod([1]); //
+
+// const myObj = {  // Promise 
+//     myMethod(item) {  // executor()
+//         console.log(this); 
+//         const foo = function() { // <--- resolve()
+//             console.log(this)
+//         }.bind(this); // this in foo, foo in myMethod, myMethod in myObj: this ---> ???
+
+//         item.forEach(() => {
+//             console.log(this)
+//         });
+//     },
+//     likethen() {  // <-- then()
+//         console.log(this); // this in likethen, likethen in myObj: this ---> myObj
+//     } 
 // }
 // myObj.myMethod([1]); //
 
@@ -839,10 +856,3 @@
 // console.log(slowestKey(tar1));
 // console.log(slowestKey(tar2));
 
-// const obj = {
-//     foo: function(input) {
-//         console.log(input);
-//     }
-// }
-// const obj1 = JSON.parse(JSON.stringify(obj));
-// obj.foo(111);
