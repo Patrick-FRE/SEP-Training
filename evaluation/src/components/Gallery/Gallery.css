@@ -1,0 +1,30 @@
+section#album-gallery {
+  padding: 40px 4vw;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  row-gap: 40px;
+}
+.not-found {
+  grid-column-start: 1;
+  grid-column-end: 6;
+  text-align: center;
+}
+
+@media only screen and (max-device-width: 1024px) {
+  section#album-gallery {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 30px;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+  section#album-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media only screen and (max-device-width: 414px) {
+  section#album-gallery {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+  }
+}

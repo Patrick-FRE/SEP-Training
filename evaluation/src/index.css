@@ -1,0 +1,9 @@
+@import url("./styles/reset.css");
+@import url("./styles/variables.css");
+
+html,
+body {
+  font-size: 16px;
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
