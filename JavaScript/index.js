@@ -375,16 +375,17 @@
 // const obj = { name: 'Dio', age: 200 };
 // const {name, age} = { name: 'Dio', age: 200 };
 
-// const arr = [
-//     { name: 'Dio' },
-//     (data) => {
-//         arr[0] = {...arr[0], ...data}
-//     }
-// ];
+const arr = [
+    { name: 'Dio' },
+    (data) => {
+        return {...arr[0], ...data}
+    }
+];
 
-// const [state, setState] = arr;
-// setState({age: 200});
-// console.log(state);
+const [state, setState] = arr;
+setState({age: 200});
+const [state1, setState1] = arr;
+console.log(state1);
 
 // this:
 // global this;
@@ -664,7 +665,6 @@
 //     setTimeout(() => {
 //         resolve('hello');
 //     }, timer * 1000);
-
 // })
 //     .then(data => {  // 
 //         console.log('this is data: ', data);
